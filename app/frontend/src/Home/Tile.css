@@ -1,0 +1,41 @@
+.myTile{
+    display: flex;
+    border: 2px solid #999;
+    width: 30%;
+    padding: 15px;
+    border-radius: 10px;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    cursor: pointer;
+}
+.leftTile{
+    display: flex;
+    flex-direction: column;
+}
+.myTile .leftTile .tile_name{    
+    font-size: 30px;
+    color: #aaa;
+    margin-bottom: 10px;
+}
+.myTile .leftTile .tile_number{
+    color: white;
+    font-size: 35px;
+}
+.myTile .leftTile .tile_statistic{
+    color: lightgray;
+    margin-top: 10px;
+    font-size: 20px;
+}
+.rightTile{
+    font-size: 40px;
+    color: #06acdc;
+    background: #666;
+    padding: 10px;
+    height: 60px;
+    border-radius: 15px;
+}
+.myTile:hover {
+    background-color: #666;
+    border: 2px solid black;
+}

@@ -1,0 +1,51 @@
+.navigationContainer {
+    width: 335px;
+    height: 100%;
+    background-color: #333;
+    position: fixed;
+    padding: 10px;
+    z-index: 5000;
+    color: whitesmoke;
+    font-size: 22px;
+}
+.navigationContainer .navigation_item{
+    display: flex;
+    font-size: 25px;
+    margin-top: 15px;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+
+    position: relative;
+    background: linear-gradient(to left, #333 50%, #666 50%) right;
+    background-size: 200%;
+    transition: 0.5s ease-out;
+}
+.navigationContainer .activeLink{
+    background: #666 !important;
+}
+
+.navigationBar{
+    width: 325px;
+    height: 100%;
+    background-color: #333;
+    position: fixed;
+    padding: 10px;
+    z-index: 1;
+    color: whitesmoke;
+    font-size: 22px;
+    margin-top: 60px;
+}
+.navigation_item:hover{
+    background-color: #666;
+    background-position: left;
+}
+.navigationIcon{
+    width: 40px;
+    display: flex;
+    justify-content: center;
+}
+.navigationList a{
+    color: white;
+    text-decoration: none;
+}

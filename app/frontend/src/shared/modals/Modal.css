@@ -1,0 +1,51 @@
+.modal {
+  z-index: 3051305130513051;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 50%;
+  transform: translate(-50%, -50%);
+  background: #666;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+  border-radius: 8px;
+  border: 3px solid #06acdc;
+  padding: 20px;
+  color: white;
+}
+.modalContent h1{
+  text-align: center;
+  font-size: 27px;
+}
+.bluebar{
+  width: 75%;
+  height: 3px;
+  background-color: #06acdc;
+  margin: 20px auto;
+}
+.smallModal{
+  width: 500px;
+}
+.mediumHeight{
+  height: 500px;
+  overflow: auto;
+}
+.requiredDisclaimer{
+      text-align: center;
+    font-size: 18px;
+    text-transform: capitalize;
+    margin-bottom: 15px;
+}
+.modal_icon svg{
+  font-size: 30px;
+}
+.modal_heading{    
+  display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+  }
+  .modalFormContainer{
+    padding-top: 10px;
+    max-height: 400px;
+    overflow: auto;
+  }

@@ -1,0 +1,15 @@
+Facebook
+    facebook_social
+    #1877F2
+Linkedin
+    linkedin_social
+    #0077B5
+Pinterest
+    pinterest_social
+    #E60023
+Instagram
+    instagram_social
+    #c13584
+TikTok
+    tiktok_social
+    #DE8C9D

@@ -1,0 +1,31 @@
+.homeEventTable{
+    width: 90%;
+    margin: auto;
+    margin-top: 15px;
+    border-spacing: 0px 10px;
+}
+.homeEventTable th, .homeEventTable td {
+    border-bottom: 1px solid darkgray;
+    padding-bottom: 10px;
+}
+.homeEventTable th:last-child {
+    text-align: center;
+}
+span.eventStatus {
+    padding: 5px 10px;
+    border-radius: 25px;
+    font-size: 15px;
+    display: flex;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+span.eventCurrent {
+    background: green;
+}
+span.eventPast{
+    background-color: lightcoral;
+}
+span.eventFuture{
+    background-color: chocolate;
+}

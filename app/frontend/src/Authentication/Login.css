@@ -1,0 +1,126 @@
+.loginContainer{
+    background-color: #fff;
+    z-index: 5;
+    position: absolute;
+    display: flex;
+    border-radius: 10px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.loginArea, .hubInformation{
+    width: 500px;
+    height: 700px;
+}
+.hubInformation{
+    background-color: whitesmoke;
+}
+.loginContainer .loginButton{
+    width: 50%;
+    display: flex;
+    justify-self: center;
+}
+.forgotPassword{
+    display: flex;
+    justify-content: center;
+    padding: 25px;
+}
+.forgotPassword .forgotPasswordLink{
+    color: chocolate;
+    font-size: 23px;
+    cursor: pointer;
+}
+.forgotPassword .forgotPasswordLink:hover{
+    color: #06acdc;
+}
+.loginContainer .loginLogoContainer{
+        display: flex;
+    justify-content: center;
+    padding: 25px;
+}
+.loginContainer .loginLogoContainer img{
+    width: 250px
+}
+.client_name_display{
+    display: flex;
+    justify-content: center;
+}
+.client_name_display .client_name{
+    font-size: 30px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.please_login{
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+.please_login_display{
+    font-size: 20px;
+}
+.login_form_group{
+    margin-top: 20px;
+    height: 135px;
+}
+.login_label{
+    font-size: 23px;
+    display: flex;
+    justify-self: center;
+    margin-top: 20px;
+}
+.loginFooter{
+    display: flex;
+    justify-content: center;
+}   
+.loginFooter button{
+    font-size: 20px;
+    width: 200px;
+}
+.hubInformation{
+    width: 500px;
+    height: 700px;
+    background-color: whitesmoke;
+}
+.community_logo{
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+.community_logo img{
+    width: 66%;
+}
+.socialLabel{    
+    font-size: 23px;
+    display: flex;
+    justify-self: center;
+    margin-top: 25px;
+}
+.needHelp{
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+    align-items: center;
+}    
+.needHelpLabel{
+    margin-top: 20px;
+}
+.needHelpAddress{
+    margin-top: 20px;
+    font-size: 22px;
+    color: chocolate;
+    cursor: pointer;
+}
+.needHelpAddress:hover{
+    text-decoration: underline;
+}
+.requestDemo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 25px;
+    font-size: 20px;
+}
+.requestDemo .requestDemoButton{
+    font-size: 18px;
+    margin-top: 20px;
+}

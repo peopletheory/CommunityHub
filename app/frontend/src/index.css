@@ -1,0 +1,74 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body{
+  width: 100%;
+  height: 100vh;
+}
+#root{
+  width: 100%;
+  height: 100%;
+}
+#root main{
+  width: 100%;
+  height: 100%;
+}
+.shadow1 {
+    box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.75);
+    -webkit-box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.75);
+}
+.shadow2{
+    box-shadow: 0px 5px 15px 0px rgba(6, 172, 220, 0.75);
+    -webkit-box-shadow: 0px 5px 15px 0px rgba(6, 172, 220, 0.75);
+    -moz-box-shadow: 0px 5px 15px 0px rgba(6, 172, 220, 0.75);
+}
+.orange_bar_horizontal{
+  width: 75%;
+  height: 4px;
+  background-color: chocolate;
+  display: flex;
+  justify-self: center;
+}
+.mainContent{
+    width: 100%;
+    height: 100%;
+
+}
+.workspace{
+  margin-left: 325px;
+  flex: 1;
+  position: relative;
+  z-index: 10000000;
+}
+.blackbar{
+  display: flex;
+  background-color: black;
+  height: 3px;
+  width: 100%;
+}
+.pageContent{
+  margin-top: 15px;
+}
+.workspace {
+    width: calc(100% - 340px) !important;
+    margin-left: 325px;
+    height: 100%;
+}
+.workspace {
+    width: 100%;
+    height: 100%;
+    padding: 15px;
+    /* overflow: auto; */
+    margin-left: 345px !important;
+    width: 100%;
+    height: 100%;
+    padding: 15px;
+    /* overflow: auto; */
+    margin-left: 345px !important;
+    height: calc(100% - 75px);
+    bottom: 0;
+    position: absolute;
+}

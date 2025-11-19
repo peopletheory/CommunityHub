@@ -1,0 +1,23 @@
+.tableItem{
+    border: 2px solid #999;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: #333;
+    color: white;
+    margin-top: 25px;
+}
+.bottomHomeContent{
+    display: flex;
+    justify-content: space-between;
+}
+.bottomHomeContent .leftTable{
+    width: 74%;
+}
+.bottomHomeContent .rightTable{
+    width: 24%
+}
+.bottomHomeContent h3.eventHeading{
+    font-size: 25px;
+    text-align: center;
+    color: white;
+}

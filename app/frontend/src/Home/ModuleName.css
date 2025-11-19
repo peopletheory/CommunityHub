@@ -1,0 +1,22 @@
+.icon{
+    font-size: 75px;
+}
+.moduleNameContainer{
+    display: flex;
+}
+.moduleNameContainer .moduleInformation{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 25px;
+}
+.moduleNameContainer .moduleTitle{
+        font-weight: bold;
+    color: white;
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+.moduleNameContainer .moduleDescription{
+    color: #bbb;
+    display: none;
+}

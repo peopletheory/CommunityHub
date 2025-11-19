@@ -1,0 +1,15 @@
+.centerLogo {
+    display: flex;
+    height: 57px;
+    border-radius: 5px;
+    align-items: center;
+}
+.centerLogo img {
+    height: 80%;
+}
+.clientInformation .displayName {
+    font-size: 20px;
+}
+.clientInformation:hover {
+    background-color: #555;
+}

@@ -1,0 +1,21 @@
+.memberHeading{
+    display: flex;
+    justify-content: space-between;
+}
+.memberButtons{
+    display: flex;
+    height: fit-content;
+    align-self: center;
+    gap: 25px;
+    margin-right: 20px;
+}
+.memberContainer{
+    display: flex;
+    justify-content: space-between;
+}
+.member_bar{
+    width: 75%;
+    background-color: #06acdc;
+    height: 3px;
+    margin: 20px auto;
+}

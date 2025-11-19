@@ -1,0 +1,19 @@
+.breadcrumbContainer{
+    display: flex;
+    width: fit-content;
+    margin-left: 25px;
+}
+.breadcrumbContainer .breadcrumbs{
+        font-size: 23px;
+    display: flex;
+    align-items: center;
+    margin-left: 25px;
+    color: #bbb;
+}
+.breadCrumbSeperator {
+    margin-left: 15px;
+    margin-right: 15px;
+}
+.breadCrumbContent{
+    color: white;
+}

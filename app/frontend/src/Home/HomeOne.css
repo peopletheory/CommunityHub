@@ -1,0 +1,375 @@
+.template{
+    position: fixed;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    font-size: 20px;
+}
+.shadow2{
+    box-shadow: 0px 5px 15px 0px rgba(6, 172, 220, 0.75);
+    -webkit-box-shadow: 0px 5px 15px 0px rgba(6, 172, 220, 0.75);
+    -moz-box-shadow: 0px 5px 15px 0px rgba(6, 172, 220, 0.75);
+}
+.sidebar{
+    position: fixed;
+    width: 250px;
+    height: 100%;
+    background-color: #333;
+    color: white;
+    z-index: 11;
+    padding: 10px;
+}
+.mainSide{
+    height: 100%;
+}
+.topBar{
+    width: 100%;
+    background-color: #333;
+    color: whitesmoke;
+    height: 75px;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+}
+.centerName{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.navigation{
+    height: 100%;
+    margin-top: 25px;
+}
+.left_icon{
+    height: 30px;
+}
+.left_topBar .left_icon{
+    color: #ccc;
+    cursor: pointer;
+}
+.left_topBar .left_icon:hover{
+    color: white;
+}
+.left_topBar{
+    width: fit-content;
+    font-size: 30px;
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    margin-left: 15px;
+}
+.left_topBar .breadcrumbs{
+    font-size: 23px;
+    display: flex;
+    align-items: center;
+    margin-left: 25px;
+    color: #bbb;
+}
+.currentBread{
+    color: whitesmoke;
+}
+.breadSeperator{
+    margin-left: 15px;
+    margin-right: 15px;
+}
+.right_topBar{
+    display: flex;
+    width: 35%;
+    justify-content: space-around;
+}
+.right_topBar .searchBarInput{
+    border: 2px solid rgb(30, 41, 59);
+    background-color: #333;
+    height: 45px;
+    font-size: 15px;
+    padding: 12px;
+    color: whitesmoke;
+    background-color: rgb(19, 23, 32);
+    border-radius: 10px;
+    width: 300px;
+    outline: 0;
+}
+.right_topBar .searchBarInput:focus{
+    border: 2px solid #06acdc;
+}
+.right_topBar{
+    display: flex;
+    align-items: center;
+}
+.lightButton{
+    background: #eee;
+    height: 40px;
+    color: #333;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    padding: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    border: 1px solid #333;
+}
+.lightButton:hover{
+    background-color: #333;
+    color: white;
+    border: 1px solid white;
+}
+.lightText{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.avatar{
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    color: black;
+    background-color: darkgray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.avatar svg{ 
+    color: gray;
+    font-size: 30px;
+}
+.inset_bar{
+    width: 75%;
+    height: 2px;
+    border-bottom: 1px inset;
+    margin-top: 10px;
+}
+.centerLogo{
+    display: flex;
+    height: 57px;
+    border-radius: 5px;
+    align-items: center;
+}
+.centerLogo img{
+    height: 80%;
+}
+.topInformation{
+    display: flex;
+    gap: 25px;
+}
+.center_name{    
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    border: 1px solid #06acdc;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #444;
+    cursor: pointer;
+    transition: transform .2s;
+}
+.center_name:hover{
+    background-color: #555;
+}
+.center_name .displayName{
+    font-size: 20px;
+}
+.bottomArea{
+    width: 100%;
+    height: calc(100% - 75px);
+    position: fixed;
+    margin-top: 75px;
+}
+.navigationBar{
+    width: 325px;
+    height: 100%;
+    background-color: #333;
+    position: fixed;
+    padding: 10px;
+    z-index: 1;
+    color: whitesmoke;
+    font-size: 22px;
+}
+.navigationIcon{
+    width: 40px;
+    display: flex;
+    justify-content: center;
+}
+.navigation_item{
+    display: flex;
+    font-size: 25px;
+    margin-top: 15px;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+
+    position: relative;
+    background: linear-gradient(to left, #333 50%, #666 50%) right;
+    background-size: 200%;
+    transition: 0.5s ease-out;
+    margin-left: -10px;
+}
+.activeLink{
+    background: #666;
+}
+.navigation_item:hover{
+    background-color: #666;
+    background-position: left;
+}
+.currentModule{
+    display: flex;
+    margin-top: 10px;
+}
+.currentModule .currentModuleIcon{
+    font-size: 75px;
+}
+.currentModule .currentModuleDescription{
+    margin-left: 15px;
+}
+.currentModule .currentModuleDescription .currentModuleName{  
+      font-weight: bold;
+    color: white;
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+.currentModule .currentModuleDescription .currentModuleTagline{
+    color: #bbb;
+}
+.black_bar{
+    height: 3px;
+    width: 100%;
+    background-color: #333;
+}
+.tileItem{
+    display: flex;
+    border: 2px solid #999;
+    width: 30%;
+    padding: 15px;
+    border-radius: 10px;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+}
+.tileItem .rightTile{
+        font-size: 40px;
+    color: #06acdc;
+    background: #666;
+    padding: 10px;
+    height: 60px;
+    border-radius: 15px;
+}
+.tileItem .leftTile{
+    width: 80%;
+        display: flex;
+    flex-direction: column;
+}
+.tileItem .leftTile .tileName{
+    font-size: 30px;
+    color: #aaa;
+    margin-bottom: 10px;
+}
+.searchIcon{
+    margin-left: -35px;
+}
+.searchIcon svg{
+    position: relative;
+    top: 5px;
+    color: gray;
+}
+.tileNumber{
+    font-size: 30px;
+    color: white;
+}
+.tileUpdate{
+    display: flex;
+    align-items: center;
+}
+.quickTiles{
+    margin-top: 25px;
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 25px;
+}
+.tileStatistic{
+    color: lightgray;
+    margin-left: 160px;
+}
+.paymentTile{
+    font-size: 20px;
+    color: white;
+}
+.paymentTileContainer{
+    display: flex;
+    justify-content: space-between;
+}
+span.bar{
+    color: darkgray;
+}
+.tileItem{
+    cursor: pointer;
+}
+.tileItem:hover{
+    background-color: #666;
+    border: 2px solid black;
+}
+.dashboardContent{
+    display: flex;
+    justify-content: space-around;
+}
+.dashboardItem{
+    border: 2px solid #999;
+    padding: 15px;
+    border-radius: 10px;
+    background-color: #333;
+    color: white;
+    margin-top: 25px;
+}
+.dashboardEvents{
+    width: 75%;
+}
+.dashboardOther{
+    width: 23%;
+}
+.dashboardItem h3{
+    font-size: 25px;
+    text-align: center;
+}
+.eventTable{
+    width: 90%;
+    margin: auto;
+    margin-top: 15px;
+    border-spacing: 0px 10px;
+}
+.eventTable th{
+    font-size: 20px;
+    color: #aaa;
+    text-align: left;
+}
+.eventTable th, .eventTable td{
+    border-bottom: 1px solid darkgray;
+    padding-bottom: 10px;
+}
+span.eventStatus{
+       padding: 5px 10px;
+    border-radius: 25px;
+    font-size: 15px;
+    display: flex
+;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: bold;
+}
+span.eventCurrent{
+
+    background: green;
+}
+.actionContainer{
+    display: flex;
+    justify-content: space-around;
+}
+.eventTable th:last-child{
+    text-align: center;
+}
+.eventPast{
+    background-color: lightcoral;
+}
+.eventFuture{
+    background-color: chocolate;
+}

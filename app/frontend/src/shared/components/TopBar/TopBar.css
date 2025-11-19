@@ -1,0 +1,57 @@
+.topBar{
+    width: 100%;
+    background-color: #333;
+    color: whitesmoke;
+    height: 75px;
+    padding: 10px;
+    display: flex;
+    position: fixed;
+    justify-content: start;
+    z-index: 30513051;
+    top: 0;
+}
+.clientInformation{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    border: 1px solid #06acdc;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #444;
+    cursor: pointer;
+    transition: transform .2s;
+    width: 325px;
+}
+.remainingBar{
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.barLeft{
+        width: fit-content;
+    font-size: 30px;
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    margin-left: 15px;
+}
+.barLeft svg:hover{
+    color: white;
+}
+.barRight{
+    display: flex;
+}
+.lightModeButton{
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-left: 25px;
+}
+.lightModeButton:hover{
+    background-color: #333 !important;
+    color: white !important;
+    border: 1px solid white !important;
+}

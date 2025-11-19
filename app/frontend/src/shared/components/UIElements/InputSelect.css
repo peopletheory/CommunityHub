@@ -1,0 +1,98 @@
+.selectContainer{
+    position: relative;
+}
+.selectOptions{
+    position: absolute;
+    top: 50px;
+    width: 100%;
+}
+select {
+  box-sizing: border-box;
+  width: 85%;
+  display: flex;
+  justify-self: center;
+  height: 10px;
+  margin: 0 0 1em;
+  padding: 1em;
+  border: 1px solid #ccc;
+  background: #333;
+  resize: none;
+  outline: none;
+  font-size: 25px;
+  border-radius: 10px;
+  align-items: center;
+}
+.selectView{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #666;
+}
+.selectIcon{
+    display: flex;   
+     position: absolute;
+    top: 0;
+    right: 50px;
+    top: 2px;
+    font-size: 40px;
+
+}
+.selectInput:hover{
+    background-color: lightgray;
+    border: 1px solid black;
+    cursor: pointer;
+}
+/* MySelectStyles.css */
+.custom-select {
+  background-color: #333;
+  border: 1px solid #ccc;
+  padding: 10px 12px;
+  border-radius: 4px;
+  font-size: 25px;
+  color: #ccc;
+  width: 100%;
+    display: flex;
+    justify-self: center;
+}
+
+.custom-select option {
+  color: #666;
+  background-color: #fff;
+}
+/*
+Source - https://stackoverflow.com/a
+Posted by Yasir Khan, modified by community. See post 'Timeline' for change history
+Retrieved 2025-11-19, License - CC BY-SA 3.0
+*/
+
+.select_box{
+  overflow: hidden;
+  border: 1px solid #000;
+  position: relative;
+      width: 85%;
+    margin: auto;
+
+}
+.select_box:after{
+    width: 0px;
+    height: 0px;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 20px solid lightgray;
+    position: absolute;
+    top: 40%;
+    right: 5px;
+    content: "";
+    z-index: 98;
+ }
+.select_box select{
+  border: 0;
+  position: relative;
+  z-index: 99;
+  background: none;
+  height: 100%;
+  appearance: none; /* Disable the default arrow */
+    -webkit-appearance: none; /* For WebKit-based browsers */
+    -moz-appearance: none; /* For Firefox */
+}

@@ -1,0 +1,85 @@
+.facebook_social{
+    color: #1877F2;
+}
+.linkedin_social{
+    color: #0077B5;
+}
+.pinterest_social{
+    color: #e60023;
+}
+.instagram_social{
+    color: #c13584;
+}
+.tiktok_social{
+    color: #de8c9d;
+}
+.social{
+  width: fit-content;
+  height: fit-content;
+  background-color: whitesmoke;
+  text-align: center;
+  line-height: 80px;
+  margin: 0 10px;
+  display: block;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+  border: 3px solid whitesmoke;
+  z-index: 1;
+  font-size: 40px;
+  padding: 10px;
+  cursor: pointer;
+}
+.social_container{
+    margin-top: 25px;
+}
+.social_container ul{
+    display: flex;
+    list-style: none;
+    justify-content: space-around;
+}
+ul li .social:hover{
+  color: #fff;
+  transform: rotateY(360deg);
+}
+
+ul li .social:before {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #f00;
+  transition: .5s;
+  z-index: 2;
+}
+
+ul li:hover .social:before {
+  top: 0;
+}
+
+ul li .social {
+  position: relative;
+  color: #262626;
+  transition: .5s;
+  z-index: 3;
+}
+
+ul li:nth-child(1):hover .social{
+    background-color: #1877F2;
+}
+ul li:nth-child(2):hover .social{
+    background-color: #0077B5;
+}
+
+ul li:nth-child(3):hover .social{
+    background-color: #e60023;
+}
+
+ul li:nth-child(4):hover .social {
+  background: #c13584;
+}
+ul li:nth-child(5):hover .social {
+  background: #de8c9d;
+}

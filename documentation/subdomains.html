@@ -1,0 +1,1351 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <article
+        class="text-token-text-primary w-full focus:outline-none [--shadow-height:45px] has-data-writing-block:pointer-events-none has-data-writing-block:-mt-(--shadow-height) has-data-writing-block:pt-(--shadow-height) [&amp;:has([data-writing-block])&gt;*]:pointer-events-auto [content-visibility:auto] supports-[content-visibility:auto]:[contain-intrinsic-size:auto_100lvh] scroll-mt-[calc(var(--header-height)+min(200px,max(70px,20svh)))]"
+        tabindex="-1" dir="auto" data-turn-id="97ba6ec0-1e35-4958-9663-5a3d51c3e0f7" data-testid="conversation-turn-2"
+        data-scroll-anchor="true" data-turn="assistant">
+        <h6 class="sr-only">ChatGPT said:</h6>
+        <div
+            class="text-base my-auto mx-auto pb-10 [--thread-content-margin:--spacing(4)] thread-sm:[--thread-content-margin:--spacing(6)] thread-lg:[--thread-content-margin:--spacing(16)] px-(--thread-content-margin)">
+            <div class="[--thread-content-max-width:40rem] thread-lg:[--thread-content-max-width:48rem] mx-auto max-w-(--thread-content-max-width) flex-1 group/turn-messages focus-visible:outline-hidden relative flex w-full min-w-0 flex-col agent-turn"
+                tabindex="-1">
+                <div class="flex max-w-full flex-col grow">
+                    <div class="absolute flex h-8 w-3 origin-center items-center justify-center"
+                        style="opacity: 0; transform: scale(0);">
+                        <div class="bg-token-text-primary h-3 w-3 rounded-full"></div>
+                    </div>
+                    <div class="relative my-1 min-h-6">
+                        <div class="origin-top-start relative flex flex-col gap-2 overflow-x-clip"
+                            style="opacity: 1; transform: none;"><span class="" data-state="closed">
+                                <div class="relative w-full text-start">
+                                    <div class="flex w-full flex-col items-start justify-between text-start flex-row">
+                                        <button class="flex w-full items-center gap-0.5"><span class="font-medium"><span
+                                                    class="flex items-center gap-1 truncate text-start align-middle text-token-text-secondary hover:text-token-text-primary dark:hover:text-token-text-primary dark:text-[var(--interactive-label-tertiary-default)]"
+                                                    style="opacity: 1;">Thought for 12s<svg width="20" height="20"
+                                                        viewBox="0 0 20 20" fill="currentColor"
+                                                        xmlns="http://www.w3.org/2000/svg" data-rtl-flip=""
+                                                        class="icon-xs">
+                                                        <path
+                                                            d="M7.52925 3.7793C7.75652 3.55203 8.10803 3.52383 8.36616 3.69434L8.47065 3.7793L14.2207 9.5293C14.4804 9.789 14.4804 10.211 14.2207 10.4707L8.47065 16.2207C8.21095 16.4804 7.78895 16.4804 7.52925 16.2207C7.26955 15.961 7.26955 15.539 7.52925 15.2793L12.8085 10L7.52925 4.7207L7.44429 4.61621C7.27378 4.35808 7.30198 4.00657 7.52925 3.7793Z">
+                                                        </path>
+                                                    </svg></span></span></button>
+                                    </div>
+                                </div>
+                            </span>
+                            <div class="max-w-[calc(0.8*var(--thread-content-max-width,40rem))]"></div>
+                        </div>
+                    </div>
+                    <div data-message-author-role="assistant" data-message-id="3b6fd7c9-98f3-445e-b2eb-8d8dc08d6f24"
+                        dir="auto"
+                        class="min-h-8 text-message relative flex w-full flex-col items-end gap-2 text-start break-words whitespace-normal [.text-message+&amp;]:mt-1"
+                        data-message-model-slug="gpt-5-t-mini">
+                        <div class="flex w-full flex-col gap-1 empty:hidden first:pt-[1px]">
+                            <div class="markdown prose dark:prose-invert w-full break-words dark markdown-new-styling">
+                                <p data-start="0" data-end="444">Nice — here’s a clear, practical, step-by-step guide
+                                    for
+                                    creating a MERN app (MongoDB, Express, React, Node) and exposing it on a subdomain
+                                    on
+                                    your machine (so you can visit something like <code data-start="189"
+                                        data-end="204">app.localhost</code> and <code data-start="209"
+                                        data-end="224">api.localhost</code>). I’ll give two approaches: <strong
+                                        data-start="253" data-end="278">quick (hosts + ports)</strong> and <strong
+                                        data-start="283" data-end="362">clean (hosts + nginx reverse proxy so you can
+                                        use
+                                        subdomains without ports)</strong>. Follow the steps you want — I include sample
+                                    code and config you can copy/paste.</p>
+                                <hr data-start="446" data-end="449">
+                                <h1 data-start="451" data-end="484">1) Overview (what we'll create)</h1>
+                                <ul data-start="485" data-end="884">
+                                    <li data-start="485" data-end="541">
+                                        <p data-start="487" data-end="541">Backend: Node + Express + Mongoose (runs on
+                                            port
+                                            5000)</p>
+                                    </li>
+                                    <li data-start="542" data-end="598">
+                                        <p data-start="544" data-end="598">Frontend: React (Create React App) (runs on
+                                            port
+                                            3000)</p>
+                                    </li>
+                                    <li data-start="599" data-end="625">
+                                        <p data-start="601" data-end="625">MongoDB: local or Docker</p>
+                                    </li>
+                                    <li data-start="626" data-end="884">
+                                        <p data-start="628" data-end="707">Subdomains (locally): <code data-start="650"
+                                                data-end="665">app.localhost</code> for frontend, <code data-start="680"
+                                                data-end="695">api.localhost</code> for backend</p>
+                                        <ul data-start="710" data-end="884">
+                                            <li data-start="710" data-end="754">
+                                                <p data-start="712" data-end="754">Quick: use <code data-start="723"
+                                                        data-end="730">hosts</code> file + ports (easiest).</p>
+                                            </li>
+                                            <li data-start="757" data-end="884">
+                                                <p data-start="759" data-end="884">Clean: <code data-start="766"
+                                                        data-end="773">hosts</code> file + nginx reverse proxy to
+                                                    forward
+                                                    <code data-start="812" data-end="827">app.localhost</code> → 3000
+                                                    and
+                                                    <code data-start="839" data-end="854">api.localhost</code> → 5000 so
+                                                    you
+                                                    can omit ports.
+                                                </p>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                                <hr data-start="886" data-end="889">
+                                <h1 data-start="891" data-end="903">2) Prereqs</h1>
+                                <p data-start="904" data-end="933">Make sure you have installed:</p>
+                                <ul data-start="934" data-end="1201">
+                                    <li data-start="934" data-end="970">
+                                        <p data-start="936" data-end="970">Node.js (LTS) and npm or pnpm/yarn</p>
+                                    </li>
+                                    <li data-start="971" data-end="987">
+                                        <p data-start="973" data-end="987">Git (optional)</p>
+                                    </li>
+                                    <li data-start="988" data-end="1059">
+                                        <p data-start="990" data-end="1059">MongoDB (locally installed) <strong
+                                                data-start="1018" data-end="1024">or</strong> Docker (recommended if you
+                                            prefer)</p>
+                                    </li>
+                                    <li data-start="1060" data-end="1130">
+                                        <p data-start="1062" data-end="1130">(If doing the nginx approach) nginx
+                                            installed
+                                            and running on your OS</p>
+                                    </li>
+                                    <li data-start="1131" data-end="1201">
+                                        <p data-start="1133" data-end="1201">Admin privileges for editing <code
+                                                data-start="1162" data-end="1169">hosts</code> and for binding port 80
+                                            (nginx)</p>
+                                    </li>
+                                </ul>
+                                <hr data-start="1203" data-end="1206">
+                                <h1 data-start="1208" data-end="1239">3) Create project directories</h1>
+                                <p data-start="1240" data-end="1254">From terminal:</p>
+                                <pre class="overflow-visible!" data-start="1255" data-end="1340">
+                                    <div
+                                        class="contain-inline-size rounded-2xl relative bg-token-sidebar-surface-primary">
+                                        <div
+                                            class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between h-9 bg-token-sidebar-surface-primary select-none rounded-t-2xl">
+                                            bash</div>
+                                        <div class="sticky top-9">
+                                            <div class="absolute end-0 bottom-0 flex h-9 items-center pe-2">
+                                                <div
+                                                    class="bg-token-bg-elevated-secondary text-token-text-secondary flex items-center gap-4 rounded-sm px-2 font-sans text-xs">
+                                                    <button class="flex gap-1 items-center select-none py-1"
+                                                        aria-label="Copy"><svg width="20" height="20"
+                                                            viewBox="0 0 20 20" fill="currentColor"
+                                                            xmlns="http://www.w3.org/2000/svg" class="icon-sm">
+                                                            <path
+                                                                d="M12.668 10.667C12.668 9.95614 12.668 9.46258 12.6367 9.0791C12.6137 8.79732 12.5758 8.60761 12.5244 8.46387L12.4688 8.33399C12.3148 8.03193 12.0803 7.77885 11.793 7.60254L11.666 7.53125C11.508 7.45087 11.2963 7.39395 10.9209 7.36328C10.5374 7.33197 10.0439 7.33203 9.33301 7.33203H6.5C5.78896 7.33203 5.29563 7.33195 4.91211 7.36328C4.63016 7.38632 4.44065 7.42413 4.29688 7.47559L4.16699 7.53125C3.86488 7.68518 3.61186 7.9196 3.43555 8.20703L3.36524 8.33399C3.28478 8.49198 3.22795 8.70352 3.19727 9.0791C3.16595 9.46259 3.16504 9.95611 3.16504 10.667V13.5C3.16504 14.211 3.16593 14.7044 3.19727 15.0879C3.22797 15.4636 3.28473 15.675 3.36524 15.833L3.43555 15.959C3.61186 16.2466 3.86474 16.4807 4.16699 16.6348L4.29688 16.6914C4.44063 16.7428 4.63025 16.7797 4.91211 16.8027C5.29563 16.8341 5.78896 16.835 6.5 16.835H9.33301C10.0439 16.835 10.5374 16.8341 10.9209 16.8027C11.2965 16.772 11.508 16.7152 11.666 16.6348L11.793 16.5645C12.0804 16.3881 12.3148 16.1351 12.4688 15.833L12.5244 15.7031C12.5759 15.5594 12.6137 15.3698 12.6367 15.0879C12.6681 14.7044 12.668 14.211 12.668 13.5V10.667ZM13.998 12.665C14.4528 12.6634 14.8011 12.6602 15.0879 12.6367C15.4635 12.606 15.675 12.5492 15.833 12.4688L15.959 12.3975C16.2466 12.2211 16.4808 11.9682 16.6348 11.666L16.6914 11.5361C16.7428 11.3924 16.7797 11.2026 16.8027 10.9209C16.8341 10.5374 16.835 10.0439 16.835 9.33301V6.5C16.835 5.78896 16.8341 5.29563 16.8027 4.91211C16.7797 4.63025 16.7428 4.44063 16.6914 4.29688L16.6348 4.16699C16.4807 3.86474 16.2466 3.61186 15.959 3.43555L15.833 3.36524C15.675 3.28473 15.4636 3.22797 15.0879 3.19727C14.7044 3.16593 14.211 3.16504 13.5 3.16504H10.667C9.9561 3.16504 9.46259 3.16595 9.0791 3.19727C8.79739 3.22028 8.6076 3.2572 8.46387 3.30859L8.33399 3.36524C8.03176 3.51923 7.77886 3.75343 7.60254 4.04102L7.53125 4.16699C7.4508 4.32498 7.39397 4.53655 7.36328 4.91211C7.33985 5.19893 7.33562 5.54719 7.33399 6.00195H9.33301C10.022 6.00195 10.5791 6.00131 11.0293 6.03809C11.4873 6.07551 11.8937 6.15471 12.2705 6.34668L12.4883 6.46875C12.984 6.7728 13.3878 7.20854 13.6533 7.72949L13.7197 7.87207C13.8642 8.20859 13.9292 8.56974 13.9619 8.9707C13.9987 9.42092 13.998 9.97799 13.998 10.667V12.665ZM18.165 9.33301C18.165 10.022 18.1657 10.5791 18.1289 11.0293C18.0961 11.4302 18.0311 11.7914 17.8867 12.1279L17.8203 12.2705C17.5549 12.7914 17.1509 13.2272 16.6553 13.5313L16.4365 13.6533C16.0599 13.8452 15.6541 13.9245 15.1963 13.9619C14.8593 13.9895 14.4624 13.9935 13.9951 13.9951C13.9935 14.4624 13.9895 14.8593 13.9619 15.1963C13.9292 15.597 13.864 15.9576 13.7197 16.2939L13.6533 16.4365C13.3878 16.9576 12.9841 17.3941 12.4883 17.6982L12.2705 17.8203C11.8937 18.0123 11.4873 18.0915 11.0293 18.1289C10.5791 18.1657 10.022 18.165 9.33301 18.165H6.5C5.81091 18.165 5.25395 18.1657 4.80371 18.1289C4.40306 18.0962 4.04235 18.031 3.70606 17.8867L3.56348 17.8203C3.04244 17.5548 2.60585 17.151 2.30176 16.6553L2.17969 16.4365C1.98788 16.0599 1.90851 15.6541 1.87109 15.1963C1.83431 14.746 1.83496 14.1891 1.83496 13.5V10.667C1.83496 9.978 1.83432 9.42091 1.87109 8.9707C1.90851 8.5127 1.98772 8.10625 2.17969 7.72949L2.30176 7.51172C2.60586 7.0159 3.04236 6.6122 3.56348 6.34668L3.70606 6.28027C4.04237 6.136 4.40303 6.07083 4.80371 6.03809C5.14051 6.01057 5.53708 6.00551 6.00391 6.00391C6.00551 5.53708 6.01057 5.14051 6.03809 4.80371C6.0755 4.34588 6.15483 3.94012 6.34668 3.56348L6.46875 3.34473C6.77282 2.84912 7.20856 2.44514 7.72949 2.17969L7.87207 2.11328C8.20855 1.96886 8.56979 1.90385 8.9707 1.87109C9.42091 1.83432 9.978 1.83496 10.667 1.83496H13.5C14.1891 1.83496 14.746 1.83431 15.1963 1.87109C15.6541 1.90851 16.0599 1.98788 16.4365 2.17969L16.6553 2.30176C17.151 2.60585 17.5548 3.04244 17.8203 3.56348L17.8867 3.70606C18.031 4.04235 18.0962 4.40306 18.1289 4.80371C18.1657 5.25395 18.165 5.81091 18.165 6.5V9.33301Z">
+                                                            </path>
+                                                        </svg>Copy code</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="overflow-y-auto p-4" dir="ltr"><code
+                                                class="whitespace-pre! language-bash"><span><span><span
+                                                            class="hljs-built_in">mkdir</span></span><span>
+                                                        mern-subdomain-local
+                                                    </span><span><span class="hljs-built_in">cd</span></span><span>
+                                                        mern-subdomain-local
+                                                    </span><span><span class="hljs-built_in">mkdir</span></span><span>
+                                                        backend frontend
+                                                    </span></span></code></div>
+                                    </div>
+                                </pre>
+                                <hr data-start="1342" data-end="1345">
+                                <h1 data-start="1347" data-end="1380">4) Backend (Express + Mongoose)</h1>
+                                <ol data-start="1381" data-end="1403">
+                                    <li data-start="1381" data-end="1403">
+                                        <p data-start="1384" data-end="1403">Initialize backend:</p>
+                                    </li>
+                                </ol>
+                                <pre class="overflow-visible!" data-start="1404" data-end="1510">
+                                    <div
+                                        class="contain-inline-size rounded-2xl relative bg-token-sidebar-surface-primary">
+                                        <div
+                                            class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between h-9 bg-token-sidebar-surface-primary select-none rounded-t-2xl">
+                                            bash</div>
+                                        <div class="sticky top-9">
+                                            <div class="absolute end-0 bottom-0 flex h-9 items-center pe-2">
+                                                <div
+                                                    class="bg-token-bg-elevated-secondary text-token-text-secondary flex items-center gap-4 rounded-sm px-2 font-sans text-xs">
+                                                    <button class="flex gap-1 items-center select-none py-1"
+                                                        aria-label="Copy"><svg width="20" height="20"
+                                                            viewBox="0 0 20 20" fill="currentColor"
+                                                            xmlns="http://www.w3.org/2000/svg" class="icon-sm">
+                                                            <path
+                                                                d="M12.668 10.667C12.668 9.95614 12.668 9.46258 12.6367 9.0791C12.6137 8.79732 12.5758 8.60761 12.5244 8.46387L12.4688 8.33399C12.3148 8.03193 12.0803 7.77885 11.793 7.60254L11.666 7.53125C11.508 7.45087 11.2963 7.39395 10.9209 7.36328C10.5374 7.33197 10.0439 7.33203 9.33301 7.33203H6.5C5.78896 7.33203 5.29563 7.33195 4.91211 7.36328C4.63016 7.38632 4.44065 7.42413 4.29688 7.47559L4.16699 7.53125C3.86488 7.68518 3.61186 7.9196 3.43555 8.20703L3.36524 8.33399C3.28478 8.49198 3.22795 8.70352 3.19727 9.0791C3.16595 9.46259 3.16504 9.95611 3.16504 10.667V13.5C3.16504 14.211 3.16593 14.7044 3.19727 15.0879C3.22797 15.4636 3.28473 15.675 3.36524 15.833L3.43555 15.959C3.61186 16.2466 3.86474 16.4807 4.16699 16.6348L4.29688 16.6914C4.44063 16.7428 4.63025 16.7797 4.91211 16.8027C5.29563 16.8341 5.78896 16.835 6.5 16.835H9.33301C10.0439 16.835 10.5374 16.8341 10.9209 16.8027C11.2965 16.772 11.508 16.7152 11.666 16.6348L11.793 16.5645C12.0804 16.3881 12.3148 16.1351 12.4688 15.833L12.5244 15.7031C12.5759 15.5594 12.6137 15.3698 12.6367 15.0879C12.6681 14.7044 12.668 14.211 12.668 13.5V10.667ZM13.998 12.665C14.4528 12.6634 14.8011 12.6602 15.0879 12.6367C15.4635 12.606 15.675 12.5492 15.833 12.4688L15.959 12.3975C16.2466 12.2211 16.4808 11.9682 16.6348 11.666L16.6914 11.5361C16.7428 11.3924 16.7797 11.2026 16.8027 10.9209C16.8341 10.5374 16.835 10.0439 16.835 9.33301V6.5C16.835 5.78896 16.8341 5.29563 16.8027 4.91211C16.7797 4.63025 16.7428 4.44063 16.6914 4.29688L16.6348 4.16699C16.4807 3.86474 16.2466 3.61186 15.959 3.43555L15.833 3.36524C15.675 3.28473 15.4636 3.22797 15.0879 3.19727C14.7044 3.16593 14.211 3.16504 13.5 3.16504H10.667C9.9561 3.16504 9.46259 3.16595 9.0791 3.19727C8.79739 3.22028 8.6076 3.2572 8.46387 3.30859L8.33399 3.36524C8.03176 3.51923 7.77886 3.75343 7.60254 4.04102L7.53125 4.16699C7.4508 4.32498 7.39397 4.53655 7.36328 4.91211C7.33985 5.19893 7.33562 5.54719 7.33399 6.00195H9.33301C10.022 6.00195 10.5791 6.00131 11.0293 6.03809C11.4873 6.07551 11.8937 6.15471 12.2705 6.34668L12.4883 6.46875C12.984 6.7728 13.3878 7.20854 13.6533 7.72949L13.7197 7.87207C13.8642 8.20859 13.9292 8.56974 13.9619 8.9707C13.9987 9.42092 13.998 9.97799 13.998 10.667V12.665ZM18.165 9.33301C18.165 10.022 18.1657 10.5791 18.1289 11.0293C18.0961 11.4302 18.0311 11.7914 17.8867 12.1279L17.8203 12.2705C17.5549 12.7914 17.1509 13.2272 16.6553 13.5313L16.4365 13.6533C16.0599 13.8452 15.6541 13.9245 15.1963 13.9619C14.8593 13.9895 14.4624 13.9935 13.9951 13.9951C13.9935 14.4624 13.9895 14.8593 13.9619 15.1963C13.9292 15.597 13.864 15.9576 13.7197 16.2939L13.6533 16.4365C13.3878 16.9576 12.9841 17.3941 12.4883 17.6982L12.2705 17.8203C11.8937 18.0123 11.4873 18.0915 11.0293 18.1289C10.5791 18.1657 10.022 18.165 9.33301 18.165H6.5C5.81091 18.165 5.25395 18.1657 4.80371 18.1289C4.40306 18.0962 4.04235 18.031 3.70606 17.8867L3.56348 17.8203C3.04244 17.5548 2.60585 17.151 2.30176 16.6553L2.17969 16.4365C1.98788 16.0599 1.90851 15.6541 1.87109 15.1963C1.83431 14.746 1.83496 14.1891 1.83496 13.5V10.667C1.83496 9.978 1.83432 9.42091 1.87109 8.9707C1.90851 8.5127 1.98772 8.10625 2.17969 7.72949L2.30176 7.51172C2.60586 7.0159 3.04236 6.6122 3.56348 6.34668L3.70606 6.28027C4.04237 6.136 4.40303 6.07083 4.80371 6.03809C5.14051 6.01057 5.53708 6.00551 6.00391 6.00391C6.00551 5.53708 6.01057 5.14051 6.03809 4.80371C6.0755 4.34588 6.15483 3.94012 6.34668 3.56348L6.46875 3.34473C6.77282 2.84912 7.20856 2.44514 7.72949 2.17969L7.87207 2.11328C8.20855 1.96886 8.56979 1.90385 8.9707 1.87109C9.42091 1.83432 9.978 1.83496 10.667 1.83496H13.5C14.1891 1.83496 14.746 1.83431 15.1963 1.87109C15.6541 1.90851 16.0599 1.98788 16.4365 2.17969L16.6553 2.30176C17.151 2.60585 17.5548 3.04244 17.8203 3.56348L17.8867 3.70606C18.031 4.04235 18.0962 4.40306 18.1289 4.80371C18.1657 5.25395 18.165 5.81091 18.165 6.5V9.33301Z">
+                                                            </path>
+                                                        </svg>Copy code</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="overflow-y-auto p-4" dir="ltr"><code
+                                                class="whitespace-pre! language-bash"><span><span><span
+                                                            class="hljs-built_in">cd</span></span><span> backend
+                                                        npm init -y
+                                                        npm install express mongoose cors dotenv
+                                                        npm install --save-dev nodemon
+                                                    </span></span></code></div>
+                                    </div>
+                                </pre>
+                                <ol start="2" data-start="1512" data-end="1550">
+                                    <li data-start="1512" data-end="1550">
+                                        <p data-start="1515" data-end="1550">Create <code data-start="1522"
+                                                data-end="1533">server.js</code> (or <code data-start="1538"
+                                                data-end="1548">index.js</code>):</p>
+                                    </li>
+                                </ol>
+                                <pre class="overflow-visible!" data-start="1551" data-end="2745">
+                                    <div
+                                        class="contain-inline-size rounded-2xl relative bg-token-sidebar-surface-primary">
+                                        <div
+                                            class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between h-9 bg-token-sidebar-surface-primary select-none rounded-t-2xl">
+                                            js</div>
+                                        <div class="sticky top-9">
+                                            <div class="absolute end-0 bottom-0 flex h-9 items-center pe-2">
+                                                <div
+                                                    class="bg-token-bg-elevated-secondary text-token-text-secondary flex items-center gap-4 rounded-sm px-2 font-sans text-xs">
+                                                    <button class="flex gap-1 items-center select-none py-1"
+                                                        aria-label="Copy"><svg width="20" height="20"
+                                                            viewBox="0 0 20 20" fill="currentColor"
+                                                            xmlns="http://www.w3.org/2000/svg" class="icon-sm">
+                                                            <path
+                                                                d="M12.668 10.667C12.668 9.95614 12.668 9.46258 12.6367 9.0791C12.6137 8.79732 12.5758 8.60761 12.5244 8.46387L12.4688 8.33399C12.3148 8.03193 12.0803 7.77885 11.793 7.60254L11.666 7.53125C11.508 7.45087 11.2963 7.39395 10.9209 7.36328C10.5374 7.33197 10.0439 7.33203 9.33301 7.33203H6.5C5.78896 7.33203 5.29563 7.33195 4.91211 7.36328C4.63016 7.38632 4.44065 7.42413 4.29688 7.47559L4.16699 7.53125C3.86488 7.68518 3.61186 7.9196 3.43555 8.20703L3.36524 8.33399C3.28478 8.49198 3.22795 8.70352 3.19727 9.0791C3.16595 9.46259 3.16504 9.95611 3.16504 10.667V13.5C3.16504 14.211 3.16593 14.7044 3.19727 15.0879C3.22797 15.4636 3.28473 15.675 3.36524 15.833L3.43555 15.959C3.61186 16.2466 3.86474 16.4807 4.16699 16.6348L4.29688 16.6914C4.44063 16.7428 4.63025 16.7797 4.91211 16.8027C5.29563 16.8341 5.78896 16.835 6.5 16.835H9.33301C10.0439 16.835 10.5374 16.8341 10.9209 16.8027C11.2965 16.772 11.508 16.7152 11.666 16.6348L11.793 16.5645C12.0804 16.3881 12.3148 16.1351 12.4688 15.833L12.5244 15.7031C12.5759 15.5594 12.6137 15.3698 12.6367 15.0879C12.6681 14.7044 12.668 14.211 12.668 13.5V10.667ZM13.998 12.665C14.4528 12.6634 14.8011 12.6602 15.0879 12.6367C15.4635 12.606 15.675 12.5492 15.833 12.4688L15.959 12.3975C16.2466 12.2211 16.4808 11.9682 16.6348 11.666L16.6914 11.5361C16.7428 11.3924 16.7797 11.2026 16.8027 10.9209C16.8341 10.5374 16.835 10.0439 16.835 9.33301V6.5C16.835 5.78896 16.8341 5.29563 16.8027 4.91211C16.7797 4.63025 16.7428 4.44063 16.6914 4.29688L16.6348 4.16699C16.4807 3.86474 16.2466 3.61186 15.959 3.43555L15.833 3.36524C15.675 3.28473 15.4636 3.22797 15.0879 3.19727C14.7044 3.16593 14.211 3.16504 13.5 3.16504H10.667C9.9561 3.16504 9.46259 3.16595 9.0791 3.19727C8.79739 3.22028 8.6076 3.2572 8.46387 3.30859L8.33399 3.36524C8.03176 3.51923 7.77886 3.75343 7.60254 4.04102L7.53125 4.16699C7.4508 4.32498 7.39397 4.53655 7.36328 4.91211C7.33985 5.19893 7.33562 5.54719 7.33399 6.00195H9.33301C10.022 6.00195 10.5791 6.00131 11.0293 6.03809C11.4873 6.07551 11.8937 6.15471 12.2705 6.34668L12.4883 6.46875C12.984 6.7728 13.3878 7.20854 13.6533 7.72949L13.7197 7.87207C13.8642 8.20859 13.9292 8.56974 13.9619 8.9707C13.9987 9.42092 13.998 9.97799 13.998 10.667V12.665ZM18.165 9.33301C18.165 10.022 18.1657 10.5791 18.1289 11.0293C18.0961 11.4302 18.0311 11.7914 17.8867 12.1279L17.8203 12.2705C17.5549 12.7914 17.1509 13.2272 16.6553 13.5313L16.4365 13.6533C16.0599 13.8452 15.6541 13.9245 15.1963 13.9619C14.8593 13.9895 14.4624 13.9935 13.9951 13.9951C13.9935 14.4624 13.9895 14.8593 13.9619 15.1963C13.9292 15.597 13.864 15.9576 13.7197 16.2939L13.6533 16.4365C13.3878 16.9576 12.9841 17.3941 12.4883 17.6982L12.2705 17.8203C11.8937 18.0123 11.4873 18.0915 11.0293 18.1289C10.5791 18.1657 10.022 18.165 9.33301 18.165H6.5C5.81091 18.165 5.25395 18.1657 4.80371 18.1289C4.40306 18.0962 4.04235 18.031 3.70606 17.8867L3.56348 17.8203C3.04244 17.5548 2.60585 17.151 2.30176 16.6553L2.17969 16.4365C1.98788 16.0599 1.90851 15.6541 1.87109 15.1963C1.83431 14.746 1.83496 14.1891 1.83496 13.5V10.667C1.83496 9.978 1.83432 9.42091 1.87109 8.9707C1.90851 8.5127 1.98772 8.10625 2.17969 7.72949L2.30176 7.51172C2.60586 7.0159 3.04236 6.6122 3.56348 6.34668L3.70606 6.28027C4.04237 6.136 4.40303 6.07083 4.80371 6.03809C5.14051 6.01057 5.53708 6.00551 6.00391 6.00391C6.00551 5.53708 6.01057 5.14051 6.03809 4.80371C6.0755 4.34588 6.15483 3.94012 6.34668 3.56348L6.46875 3.34473C6.77282 2.84912 7.20856 2.44514 7.72949 2.17969L7.87207 2.11328C8.20855 1.96886 8.56979 1.90385 8.9707 1.87109C9.42091 1.83432 9.978 1.83496 10.667 1.83496H13.5C14.1891 1.83496 14.746 1.83431 15.1963 1.87109C15.6541 1.90851 16.0599 1.98788 16.4365 2.17969L16.6553 2.30176C17.151 2.60585 17.5548 3.04244 17.8203 3.56348L17.8867 3.70606C18.031 4.04235 18.0962 4.40306 18.1289 4.80371C18.1657 5.25395 18.165 5.81091 18.165 6.5V9.33301Z">
+                                                            </path>
+                                                        </svg>Copy code</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="overflow-y-auto p-4" dir="ltr"><code
+                                                class="whitespace-pre! language-js"><span><span><span
+                                                            class="hljs-comment">//
+                                                            backend/server.js</span></span><span>
+                                                    </span><span><span
+                                                            class="hljs-built_in">require</span></span><span>(</span><span><span
+                                                            class="hljs-string">'dotenv'</span></span><span>).</span><span><span
+                                                            class="hljs-title function_">config</span></span><span>();
+                                                    </span><span><span class="hljs-keyword">const</span></span><span>
+                                                        express = </span><span><span
+                                                            class="hljs-built_in">require</span></span><span>(</span><span><span
+                                                            class="hljs-string">'express'</span></span><span>);
+                                                    </span><span><span class="hljs-keyword">const</span></span><span>
+                                                        mongoose = </span><span><span
+                                                            class="hljs-built_in">require</span></span><span>(</span><span><span
+                                                            class="hljs-string">'mongoose'</span></span><span>);
+                                                    </span><span><span class="hljs-keyword">const</span></span><span>
+                                                        cors =
+                                                    </span><span><span
+                                                            class="hljs-built_in">require</span></span><span>(</span><span><span
+                                                            class="hljs-string">'cors'</span></span><span>);
+
+                                                    </span><span><span class="hljs-keyword">const</span></span><span>
+                                                        app =
+                                                    </span><span><span
+                                                            class="hljs-title function_">express</span></span><span>();
+                                                        app.</span><span><span
+                                                            class="hljs-title function_">use</span></span><span>(express.</span><span><span
+                                                            class="hljs-title function_">json</span></span><span>());
+
+                                                    </span><span><span class="hljs-comment">// Allow requests from
+                                                            frontend
+                                                            subdomain</span></span><span>
+                                                    </span><span><span class="hljs-keyword">const</span></span><span>
+                                                        allowedOrigin = process.</span><span><span
+                                                            class="hljs-property">env</span></span><span>.</span><span><span
+                                                            class="hljs-property">CLIENT_ORIGIN</span></span><span> ||
+                                                    </span><span><span
+                                                            class="hljs-string">'http://app.localhost'</span></span><span>;
+                                                        app.</span><span><span
+                                                            class="hljs-title function_">use</span></span><span>(</span><span><span
+                                                            class="hljs-title function_">cors</span></span><span>({
+                                                    </span><span><span class="hljs-attr">origin</span></span><span>:
+                                                        allowedOrigin, </span><span><span
+                                                            class="hljs-attr">credentials</span></span><span>:
+                                                    </span><span><span class="hljs-literal">true</span></span><span>
+                                                        }));
+
+                                                    </span><span><span class="hljs-comment">// simple test
+                                                            route</span></span><span>
+                                                        app.</span><span><span
+                                                            class="hljs-title function_">get</span></span><span>(</span><span><span
+                                                            class="hljs-string">'/api/ping'</span></span><span>,
+                                                    </span><span><span class="hljs-function">(<span
+                                                                class="hljs-params">req,
+                                                                res</span></span></span><span>) =&gt;
+                                                        res.</span><span><span
+                                                            class="hljs-title function_">json</span></span><span>({
+                                                    </span><span><span class="hljs-attr">ok</span></span><span>:
+                                                    </span><span><span class="hljs-literal">true</span></span><span>,
+                                                    </span><span><span class="hljs-attr">from</span></span><span>:
+                                                    </span><span><span
+                                                            class="hljs-string">'api.localhost'</span></span><span> }));
+
+                                                    </span><span><span class="hljs-comment">// Example Mongoose model
+                                                            (optional)</span></span><span>
+                                                    </span><span><span class="hljs-keyword">const</span></span><span>
+                                                    </span><span><span
+                                                            class="hljs-title class_">CatSchema</span></span><span> =
+                                                    </span><span><span class="hljs-keyword">new</span></span><span>
+                                                        mongoose.</span><span><span
+                                                            class="hljs-title class_">Schema</span></span><span>({
+                                                    </span><span><span class="hljs-attr">name</span></span><span>:
+                                                    </span><span><span
+                                                            class="hljs-title class_">String</span></span><span>
+                                                        });
+                                                    </span><span><span class="hljs-keyword">const</span></span><span>
+                                                    </span><span><span class="hljs-title class_">Cat</span></span><span>
+                                                        =
+                                                        mongoose.</span><span><span
+                                                            class="hljs-title function_">model</span></span><span>(</span><span><span
+                                                            class="hljs-string">'Cat'</span></span><span>,
+                                                    </span><span><span
+                                                            class="hljs-title class_">CatSchema</span></span><span>);
+
+                                                        app.</span><span><span
+                                                            class="hljs-title function_">post</span></span><span>(</span><span><span
+                                                            class="hljs-string">'/api/cats'</span></span><span>,
+                                                    </span><span><span class="hljs-keyword">async</span></span><span>
+                                                        (req,
+                                                        res) =&gt; {
+                                                    </span><span><span class="hljs-keyword">const</span></span><span>
+                                                        cat =
+                                                    </span><span><span class="hljs-keyword">await</span></span><span>
+                                                    </span><span><span
+                                                            class="hljs-title class_">Cat</span></span><span>.</span><span><span
+                                                            class="hljs-title function_">create</span></span><span>({
+                                                    </span><span><span class="hljs-attr">name</span></span><span>:
+                                                        req.</span><span><span
+                                                            class="hljs-property">body</span></span><span>.</span><span><span
+                                                            class="hljs-property">name</span></span><span> });
+                                                        res.</span><span><span
+                                                            class="hljs-title function_">json</span></span><span>(cat);
+                                                        });
+                                                        app.</span><span><span
+                                                            class="hljs-title function_">get</span></span><span>(</span><span><span
+                                                            class="hljs-string">'/api/cats'</span></span><span>,
+                                                    </span><span><span class="hljs-keyword">async</span></span><span>
+                                                        (req,
+                                                        res) =&gt; {
+                                                        res.</span><span><span
+                                                            class="hljs-title function_">json</span></span><span>(</span><span><span
+                                                            class="hljs-keyword">await</span></span><span>
+                                                    </span><span><span
+                                                            class="hljs-title class_">Cat</span></span><span>.</span><span><span
+                                                            class="hljs-title function_">find</span></span><span>());
+                                                        });
+
+                                                    </span><span><span class="hljs-comment">// start
+                                                            server</span></span><span>
+                                                    </span><span><span class="hljs-keyword">const</span></span><span>
+                                                    </span><span><span
+                                                            class="hljs-variable constant_">PORT</span></span><span> =
+                                                        process.</span><span><span
+                                                            class="hljs-property">env</span></span><span>.</span><span><span
+                                                            class="hljs-property">PORT</span></span><span> ||
+                                                    </span><span><span class="hljs-number">5000</span></span><span>;
+                                                        mongoose.</span><span><span
+                                                            class="hljs-title function_">connect</span></span><span>(process.</span><span><span
+                                                            class="hljs-property">env</span></span><span>.</span><span><span
+                                                            class="hljs-property">MONGO_URI</span></span><span> ||
+                                                    </span><span><span
+                                                            class="hljs-string">'mongodb://localhost:27017/mern_subdomain_local'</span></span><span>,
+                                                        {
+                                                    </span><span><span
+                                                            class="hljs-attr">useNewUrlParser</span></span><span>:
+                                                    </span><span><span class="hljs-literal">true</span></span><span>,
+                                                    </span><span><span
+                                                            class="hljs-attr">useUnifiedTopology</span></span><span>:
+                                                    </span><span><span class="hljs-literal">true</span></span><span>
+                                                        }).</span><span><span
+                                                            class="hljs-title function_">then</span></span><span>(</span><span><span
+                                                            class="hljs-function">() =&gt;</span></span><span> {
+                                                        app.</span><span><span
+                                                            class="hljs-title function_">listen</span></span><span>(</span><span><span
+                                                            class="hljs-variable constant_">PORT</span></span><span>,
+                                                    </span><span><span class="hljs-function">()
+                                                            =&gt;</span></span><span>
+                                                    </span><span><span
+                                                            class="hljs-variable language_">console</span></span><span>.</span><span><span
+                                                            class="hljs-title function_">log</span></span><span>(</span><span><span
+                                                            class="hljs-string">`API listening on port <span
+                                                                class="hljs-subst">${PORT}</span></span></span><span>`));
+                                                        }).</span><span><span
+                                                            class="hljs-title function_">catch</span></span><span>(</span><span><span
+                                                            class="hljs-function"><span
+                                                                class="hljs-params">err</span></span></span><span> =&gt;
+                                                        {
+                                                    </span><span><span
+                                                            class="hljs-variable language_">console</span></span><span>.</span><span><span
+                                                            class="hljs-title function_">error</span></span><span>(</span><span><span
+                                                            class="hljs-string">'Mongo connection
+                                                            error'</span></span><span>, err);
+                                                        });
+                                                    </span></span></code></div>
+                                    </div>
+                                </pre>
+                                <ol start="3" data-start="2747" data-end="2783">
+                                    <li data-start="2747" data-end="2783">
+                                        <p data-start="2750" data-end="2783">Create <code data-start="2757"
+                                                data-end="2763">.env</code> file in <code data-start="2772"
+                                                data-end="2782">backend/</code>:</p>
+                                    </li>
+                                </ol>
+                                <pre class="overflow-visible!" data-start="2784" data-end="2893">
+                                    <div
+                                        class="contain-inline-size rounded-2xl relative bg-token-sidebar-surface-primary">
+                                        <div
+                                            class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between h-9 bg-token-sidebar-surface-primary select-none rounded-t-2xl">
+                                            ini</div>
+                                        <div class="sticky top-9">
+                                            <div class="absolute end-0 bottom-0 flex h-9 items-center pe-2">
+                                                <div
+                                                    class="bg-token-bg-elevated-secondary text-token-text-secondary flex items-center gap-4 rounded-sm px-2 font-sans text-xs">
+                                                    <button class="flex gap-1 items-center select-none py-1"
+                                                        aria-label="Copy"><svg width="20" height="20"
+                                                            viewBox="0 0 20 20" fill="currentColor"
+                                                            xmlns="http://www.w3.org/2000/svg" class="icon-sm">
+                                                            <path
+                                                                d="M12.668 10.667C12.668 9.95614 12.668 9.46258 12.6367 9.0791C12.6137 8.79732 12.5758 8.60761 12.5244 8.46387L12.4688 8.33399C12.3148 8.03193 12.0803 7.77885 11.793 7.60254L11.666 7.53125C11.508 7.45087 11.2963 7.39395 10.9209 7.36328C10.5374 7.33197 10.0439 7.33203 9.33301 7.33203H6.5C5.78896 7.33203 5.29563 7.33195 4.91211 7.36328C4.63016 7.38632 4.44065 7.42413 4.29688 7.47559L4.16699 7.53125C3.86488 7.68518 3.61186 7.9196 3.43555 8.20703L3.36524 8.33399C3.28478 8.49198 3.22795 8.70352 3.19727 9.0791C3.16595 9.46259 3.16504 9.95611 3.16504 10.667V13.5C3.16504 14.211 3.16593 14.7044 3.19727 15.0879C3.22797 15.4636 3.28473 15.675 3.36524 15.833L3.43555 15.959C3.61186 16.2466 3.86474 16.4807 4.16699 16.6348L4.29688 16.6914C4.44063 16.7428 4.63025 16.7797 4.91211 16.8027C5.29563 16.8341 5.78896 16.835 6.5 16.835H9.33301C10.0439 16.835 10.5374 16.8341 10.9209 16.8027C11.2965 16.772 11.508 16.7152 11.666 16.6348L11.793 16.5645C12.0804 16.3881 12.3148 16.1351 12.4688 15.833L12.5244 15.7031C12.5759 15.5594 12.6137 15.3698 12.6367 15.0879C12.6681 14.7044 12.668 14.211 12.668 13.5V10.667ZM13.998 12.665C14.4528 12.6634 14.8011 12.6602 15.0879 12.6367C15.4635 12.606 15.675 12.5492 15.833 12.4688L15.959 12.3975C16.2466 12.2211 16.4808 11.9682 16.6348 11.666L16.6914 11.5361C16.7428 11.3924 16.7797 11.2026 16.8027 10.9209C16.8341 10.5374 16.835 10.0439 16.835 9.33301V6.5C16.835 5.78896 16.8341 5.29563 16.8027 4.91211C16.7797 4.63025 16.7428 4.44063 16.6914 4.29688L16.6348 4.16699C16.4807 3.86474 16.2466 3.61186 15.959 3.43555L15.833 3.36524C15.675 3.28473 15.4636 3.22797 15.0879 3.19727C14.7044 3.16593 14.211 3.16504 13.5 3.16504H10.667C9.9561 3.16504 9.46259 3.16595 9.0791 3.19727C8.79739 3.22028 8.6076 3.2572 8.46387 3.30859L8.33399 3.36524C8.03176 3.51923 7.77886 3.75343 7.60254 4.04102L7.53125 4.16699C7.4508 4.32498 7.39397 4.53655 7.36328 4.91211C7.33985 5.19893 7.33562 5.54719 7.33399 6.00195H9.33301C10.022 6.00195 10.5791 6.00131 11.0293 6.03809C11.4873 6.07551 11.8937 6.15471 12.2705 6.34668L12.4883 6.46875C12.984 6.7728 13.3878 7.20854 13.6533 7.72949L13.7197 7.87207C13.8642 8.20859 13.9292 8.56974 13.9619 8.9707C13.9987 9.42092 13.998 9.97799 13.998 10.667V12.665ZM18.165 9.33301C18.165 10.022 18.1657 10.5791 18.1289 11.0293C18.0961 11.4302 18.0311 11.7914 17.8867 12.1279L17.8203 12.2705C17.5549 12.7914 17.1509 13.2272 16.6553 13.5313L16.4365 13.6533C16.0599 13.8452 15.6541 13.9245 15.1963 13.9619C14.8593 13.9895 14.4624 13.9935 13.9951 13.9951C13.9935 14.4624 13.9895 14.8593 13.9619 15.1963C13.9292 15.597 13.864 15.9576 13.7197 16.2939L13.6533 16.4365C13.3878 16.9576 12.9841 17.3941 12.4883 17.6982L12.2705 17.8203C11.8937 18.0123 11.4873 18.0915 11.0293 18.1289C10.5791 18.1657 10.022 18.165 9.33301 18.165H6.5C5.81091 18.165 5.25395 18.1657 4.80371 18.1289C4.40306 18.0962 4.04235 18.031 3.70606 17.8867L3.56348 17.8203C3.04244 17.5548 2.60585 17.151 2.30176 16.6553L2.17969 16.4365C1.98788 16.0599 1.90851 15.6541 1.87109 15.1963C1.83431 14.746 1.83496 14.1891 1.83496 13.5V10.667C1.83496 9.978 1.83432 9.42091 1.87109 8.9707C1.90851 8.5127 1.98772 8.10625 2.17969 7.72949L2.30176 7.51172C2.60586 7.0159 3.04236 6.6122 3.56348 6.34668L3.70606 6.28027C4.04237 6.136 4.40303 6.07083 4.80371 6.03809C5.14051 6.01057 5.53708 6.00551 6.00391 6.00391C6.00551 5.53708 6.01057 5.14051 6.03809 4.80371C6.0755 4.34588 6.15483 3.94012 6.34668 3.56348L6.46875 3.34473C6.77282 2.84912 7.20856 2.44514 7.72949 2.17969L7.87207 2.11328C8.20855 1.96886 8.56979 1.90385 8.9707 1.87109C9.42091 1.83432 9.978 1.83496 10.667 1.83496H13.5C14.1891 1.83496 14.746 1.83431 15.1963 1.87109C15.6541 1.90851 16.0599 1.98788 16.4365 2.17969L16.6553 2.30176C17.151 2.60585 17.5548 3.04244 17.8203 3.56348L17.8867 3.70606C18.031 4.04235 18.0962 4.40306 18.1289 4.80371C18.1657 5.25395 18.165 5.81091 18.165 6.5V9.33301Z">
+                                                            </path>
+                                                        </svg>Copy code</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="overflow-y-auto p-4" dir="ltr"><code
+                                                class="whitespace-pre!"><span><span><span
+                                                            class="hljs-attr">PORT</span></span><span>=</span><span><span
+                                                            class="hljs-number">5000</span></span><span>
+                                                    </span><span><span
+                                                            class="hljs-attr">MONGO_URI</span></span><span>=mongodb://localhost:</span><span><span
+                                                            class="hljs-number">27017</span></span><span>/mern_subdomain_local
+                                                    </span><span><span
+                                                            class="hljs-attr">CLIENT_ORIGIN</span></span><span>=http://app.localhost
+                                                    </span></span></code></div>
+                                    </div>
+                                </pre>
+                                <ol start="4" data-start="2895" data-end="2936">
+                                    <li data-start="2895" data-end="2936">
+                                        <p data-start="2898" data-end="2936">Add scripts to <code data-start="2913"
+                                                data-end="2935">backend/package.json</code>:</p>
+                                    </li>
+                                </ol>
+                                <pre class="overflow-visible!" data-start="2937" data-end="3021">
+                                    <div
+                                        class="contain-inline-size rounded-2xl relative bg-token-sidebar-surface-primary">
+                                        <div
+                                            class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between h-9 bg-token-sidebar-surface-primary select-none rounded-t-2xl">
+                                            json</div>
+                                        <div class="sticky top-9">
+                                            <div class="absolute end-0 bottom-0 flex h-9 items-center pe-2">
+                                                <div
+                                                    class="bg-token-bg-elevated-secondary text-token-text-secondary flex items-center gap-4 rounded-sm px-2 font-sans text-xs">
+                                                    <button class="flex gap-1 items-center select-none py-1"
+                                                        aria-label="Copy"><svg width="20" height="20"
+                                                            viewBox="0 0 20 20" fill="currentColor"
+                                                            xmlns="http://www.w3.org/2000/svg" class="icon-sm">
+                                                            <path
+                                                                d="M12.668 10.667C12.668 9.95614 12.668 9.46258 12.6367 9.0791C12.6137 8.79732 12.5758 8.60761 12.5244 8.46387L12.4688 8.33399C12.3148 8.03193 12.0803 7.77885 11.793 7.60254L11.666 7.53125C11.508 7.45087 11.2963 7.39395 10.9209 7.36328C10.5374 7.33197 10.0439 7.33203 9.33301 7.33203H6.5C5.78896 7.33203 5.29563 7.33195 4.91211 7.36328C4.63016 7.38632 4.44065 7.42413 4.29688 7.47559L4.16699 7.53125C3.86488 7.68518 3.61186 7.9196 3.43555 8.20703L3.36524 8.33399C3.28478 8.49198 3.22795 8.70352 3.19727 9.0791C3.16595 9.46259 3.16504 9.95611 3.16504 10.667V13.5C3.16504 14.211 3.16593 14.7044 3.19727 15.0879C3.22797 15.4636 3.28473 15.675 3.36524 15.833L3.43555 15.959C3.61186 16.2466 3.86474 16.4807 4.16699 16.6348L4.29688 16.6914C4.44063 16.7428 4.63025 16.7797 4.91211 16.8027C5.29563 16.8341 5.78896 16.835 6.5 16.835H9.33301C10.0439 16.835 10.5374 16.8341 10.9209 16.8027C11.2965 16.772 11.508 16.7152 11.666 16.6348L11.793 16.5645C12.0804 16.3881 12.3148 16.1351 12.4688 15.833L12.5244 15.7031C12.5759 15.5594 12.6137 15.3698 12.6367 15.0879C12.6681 14.7044 12.668 14.211 12.668 13.5V10.667ZM13.998 12.665C14.4528 12.6634 14.8011 12.6602 15.0879 12.6367C15.4635 12.606 15.675 12.5492 15.833 12.4688L15.959 12.3975C16.2466 12.2211 16.4808 11.9682 16.6348 11.666L16.6914 11.5361C16.7428 11.3924 16.7797 11.2026 16.8027 10.9209C16.8341 10.5374 16.835 10.0439 16.835 9.33301V6.5C16.835 5.78896 16.8341 5.29563 16.8027 4.91211C16.7797 4.63025 16.7428 4.44063 16.6914 4.29688L16.6348 4.16699C16.4807 3.86474 16.2466 3.61186 15.959 3.43555L15.833 3.36524C15.675 3.28473 15.4636 3.22797 15.0879 3.19727C14.7044 3.16593 14.211 3.16504 13.5 3.16504H10.667C9.9561 3.16504 9.46259 3.16595 9.0791 3.19727C8.79739 3.22028 8.6076 3.2572 8.46387 3.30859L8.33399 3.36524C8.03176 3.51923 7.77886 3.75343 7.60254 4.04102L7.53125 4.16699C7.4508 4.32498 7.39397 4.53655 7.36328 4.91211C7.33985 5.19893 7.33562 5.54719 7.33399 6.00195H9.33301C10.022 6.00195 10.5791 6.00131 11.0293 6.03809C11.4873 6.07551 11.8937 6.15471 12.2705 6.34668L12.4883 6.46875C12.984 6.7728 13.3878 7.20854 13.6533 7.72949L13.7197 7.87207C13.8642 8.20859 13.9292 8.56974 13.9619 8.9707C13.9987 9.42092 13.998 9.97799 13.998 10.667V12.665ZM18.165 9.33301C18.165 10.022 18.1657 10.5791 18.1289 11.0293C18.0961 11.4302 18.0311 11.7914 17.8867 12.1279L17.8203 12.2705C17.5549 12.7914 17.1509 13.2272 16.6553 13.5313L16.4365 13.6533C16.0599 13.8452 15.6541 13.9245 15.1963 13.9619C14.8593 13.9895 14.4624 13.9935 13.9951 13.9951C13.9935 14.4624 13.9895 14.8593 13.9619 15.1963C13.9292 15.597 13.864 15.9576 13.7197 16.2939L13.6533 16.4365C13.3878 16.9576 12.9841 17.3941 12.4883 17.6982L12.2705 17.8203C11.8937 18.0123 11.4873 18.0915 11.0293 18.1289C10.5791 18.1657 10.022 18.165 9.33301 18.165H6.5C5.81091 18.165 5.25395 18.1657 4.80371 18.1289C4.40306 18.0962 4.04235 18.031 3.70606 17.8867L3.56348 17.8203C3.04244 17.5548 2.60585 17.151 2.30176 16.6553L2.17969 16.4365C1.98788 16.0599 1.90851 15.6541 1.87109 15.1963C1.83431 14.746 1.83496 14.1891 1.83496 13.5V10.667C1.83496 9.978 1.83432 9.42091 1.87109 8.9707C1.90851 8.5127 1.98772 8.10625 2.17969 7.72949L2.30176 7.51172C2.60586 7.0159 3.04236 6.6122 3.56348 6.34668L3.70606 6.28027C4.04237 6.136 4.40303 6.07083 4.80371 6.03809C5.14051 6.01057 5.53708 6.00551 6.00391 6.00391C6.00551 5.53708 6.01057 5.14051 6.03809 4.80371C6.0755 4.34588 6.15483 3.94012 6.34668 3.56348L6.46875 3.34473C6.77282 2.84912 7.20856 2.44514 7.72949 2.17969L7.87207 2.11328C8.20855 1.96886 8.56979 1.90385 8.9707 1.87109C9.42091 1.83432 9.978 1.83496 10.667 1.83496H13.5C14.1891 1.83496 14.746 1.83431 15.1963 1.87109C15.6541 1.90851 16.0599 1.98788 16.4365 2.17969L16.6553 2.30176C17.151 2.60585 17.5548 3.04244 17.8203 3.56348L17.8867 3.70606C18.031 4.04235 18.0962 4.40306 18.1289 4.80371C18.1657 5.25395 18.165 5.81091 18.165 6.5V9.33301Z">
+                                                            </path>
+                                                        </svg>Copy code</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="overflow-y-auto p-4" dir="ltr"><code
+                                                class="whitespace-pre! language-json"><span><span><span
+                                                            class="hljs-attr">"scripts"</span></span><span><span
+                                                            class="hljs-punctuation">:</span></span><span>
+                                                    </span><span><span class="hljs-punctuation">{</span></span><span>
+                                                    </span><span><span
+                                                            class="hljs-attr">"start"</span></span><span><span
+                                                            class="hljs-punctuation">:</span></span><span>
+                                                    </span><span><span class="hljs-string">"node
+                                                            server.js"</span></span><span><span
+                                                            class="hljs-punctuation">,</span></span><span>
+                                                    </span><span><span class="hljs-attr">"dev"</span></span><span><span
+                                                            class="hljs-punctuation">:</span></span><span>
+                                                    </span><span><span class="hljs-string">"nodemon
+                                                            server.js"</span></span><span>
+                                                    </span><span><span class="hljs-punctuation">}</span></span><span>
+                                                    </span></span></code></div>
+                                    </div>
+                                </pre>
+                                <hr data-start="3023" data-end="3026">
+                                <h1 data-start="3028" data-end="3049">5) Frontend (React)</h1>
+                                <ol data-start="3050" data-end="3071">
+                                    <li data-start="3050" data-end="3071">
+                                        <p data-start="3053" data-end="3071">From project root:</p>
+                                    </li>
+                                </ol>
+                                <pre class="overflow-visible!" data-start="3072" data-end="3193">
+                                    <div
+                                        class="contain-inline-size rounded-2xl relative bg-token-sidebar-surface-primary">
+                                        <div
+                                            class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between h-9 bg-token-sidebar-surface-primary select-none rounded-t-2xl">
+                                            bash</div>
+                                        <div class="sticky top-9">
+                                            <div class="absolute end-0 bottom-0 flex h-9 items-center pe-2">
+                                                <div
+                                                    class="bg-token-bg-elevated-secondary text-token-text-secondary flex items-center gap-4 rounded-sm px-2 font-sans text-xs">
+                                                    <button class="flex gap-1 items-center select-none py-1"
+                                                        aria-label="Copy"><svg width="20" height="20"
+                                                            viewBox="0 0 20 20" fill="currentColor"
+                                                            xmlns="http://www.w3.org/2000/svg" class="icon-sm">
+                                                            <path
+                                                                d="M12.668 10.667C12.668 9.95614 12.668 9.46258 12.6367 9.0791C12.6137 8.79732 12.5758 8.60761 12.5244 8.46387L12.4688 8.33399C12.3148 8.03193 12.0803 7.77885 11.793 7.60254L11.666 7.53125C11.508 7.45087 11.2963 7.39395 10.9209 7.36328C10.5374 7.33197 10.0439 7.33203 9.33301 7.33203H6.5C5.78896 7.33203 5.29563 7.33195 4.91211 7.36328C4.63016 7.38632 4.44065 7.42413 4.29688 7.47559L4.16699 7.53125C3.86488 7.68518 3.61186 7.9196 3.43555 8.20703L3.36524 8.33399C3.28478 8.49198 3.22795 8.70352 3.19727 9.0791C3.16595 9.46259 3.16504 9.95611 3.16504 10.667V13.5C3.16504 14.211 3.16593 14.7044 3.19727 15.0879C3.22797 15.4636 3.28473 15.675 3.36524 15.833L3.43555 15.959C3.61186 16.2466 3.86474 16.4807 4.16699 16.6348L4.29688 16.6914C4.44063 16.7428 4.63025 16.7797 4.91211 16.8027C5.29563 16.8341 5.78896 16.835 6.5 16.835H9.33301C10.0439 16.835 10.5374 16.8341 10.9209 16.8027C11.2965 16.772 11.508 16.7152 11.666 16.6348L11.793 16.5645C12.0804 16.3881 12.3148 16.1351 12.4688 15.833L12.5244 15.7031C12.5759 15.5594 12.6137 15.3698 12.6367 15.0879C12.6681 14.7044 12.668 14.211 12.668 13.5V10.667ZM13.998 12.665C14.4528 12.6634 14.8011 12.6602 15.0879 12.6367C15.4635 12.606 15.675 12.5492 15.833 12.4688L15.959 12.3975C16.2466 12.2211 16.4808 11.9682 16.6348 11.666L16.6914 11.5361C16.7428 11.3924 16.7797 11.2026 16.8027 10.9209C16.8341 10.5374 16.835 10.0439 16.835 9.33301V6.5C16.835 5.78896 16.8341 5.29563 16.8027 4.91211C16.7797 4.63025 16.7428 4.44063 16.6914 4.29688L16.6348 4.16699C16.4807 3.86474 16.2466 3.61186 15.959 3.43555L15.833 3.36524C15.675 3.28473 15.4636 3.22797 15.0879 3.19727C14.7044 3.16593 14.211 3.16504 13.5 3.16504H10.667C9.9561 3.16504 9.46259 3.16595 9.0791 3.19727C8.79739 3.22028 8.6076 3.2572 8.46387 3.30859L8.33399 3.36524C8.03176 3.51923 7.77886 3.75343 7.60254 4.04102L7.53125 4.16699C7.4508 4.32498 7.39397 4.53655 7.36328 4.91211C7.33985 5.19893 7.33562 5.54719 7.33399 6.00195H9.33301C10.022 6.00195 10.5791 6.00131 11.0293 6.03809C11.4873 6.07551 11.8937 6.15471 12.2705 6.34668L12.4883 6.46875C12.984 6.7728 13.3878 7.20854 13.6533 7.72949L13.7197 7.87207C13.8642 8.20859 13.9292 8.56974 13.9619 8.9707C13.9987 9.42092 13.998 9.97799 13.998 10.667V12.665ZM18.165 9.33301C18.165 10.022 18.1657 10.5791 18.1289 11.0293C18.0961 11.4302 18.0311 11.7914 17.8867 12.1279L17.8203 12.2705C17.5549 12.7914 17.1509 13.2272 16.6553 13.5313L16.4365 13.6533C16.0599 13.8452 15.6541 13.9245 15.1963 13.9619C14.8593 13.9895 14.4624 13.9935 13.9951 13.9951C13.9935 14.4624 13.9895 14.8593 13.9619 15.1963C13.9292 15.597 13.864 15.9576 13.7197 16.2939L13.6533 16.4365C13.3878 16.9576 12.9841 17.3941 12.4883 17.6982L12.2705 17.8203C11.8937 18.0123 11.4873 18.0915 11.0293 18.1289C10.5791 18.1657 10.022 18.165 9.33301 18.165H6.5C5.81091 18.165 5.25395 18.1657 4.80371 18.1289C4.40306 18.0962 4.04235 18.031 3.70606 17.8867L3.56348 17.8203C3.04244 17.5548 2.60585 17.151 2.30176 16.6553L2.17969 16.4365C1.98788 16.0599 1.90851 15.6541 1.87109 15.1963C1.83431 14.746 1.83496 14.1891 1.83496 13.5V10.667C1.83496 9.978 1.83432 9.42091 1.87109 8.9707C1.90851 8.5127 1.98772 8.10625 2.17969 7.72949L2.30176 7.51172C2.60586 7.0159 3.04236 6.6122 3.56348 6.34668L3.70606 6.28027C4.04237 6.136 4.40303 6.07083 4.80371 6.03809C5.14051 6.01057 5.53708 6.00551 6.00391 6.00391C6.00551 5.53708 6.01057 5.14051 6.03809 4.80371C6.0755 4.34588 6.15483 3.94012 6.34668 3.56348L6.46875 3.34473C6.77282 2.84912 7.20856 2.44514 7.72949 2.17969L7.87207 2.11328C8.20855 1.96886 8.56979 1.90385 8.9707 1.87109C9.42091 1.83432 9.978 1.83496 10.667 1.83496H13.5C14.1891 1.83496 14.746 1.83431 15.1963 1.87109C15.6541 1.90851 16.0599 1.98788 16.4365 2.17969L16.6553 2.30176C17.151 2.60585 17.5548 3.04244 17.8203 3.56348L17.8867 3.70606C18.031 4.04235 18.0962 4.40306 18.1289 4.80371C18.1657 5.25395 18.165 5.81091 18.165 6.5V9.33301Z">
+                                                            </path>
+                                                        </svg>Copy code</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="overflow-y-auto p-4" dir="ltr"><code
+                                                class="whitespace-pre! language-bash"><span><span><span
+                                                            class="hljs-built_in">cd</span></span><span> ../frontend
+                                                        npx create-react-app . </span><span><span class="hljs-comment">#
+                                                            or
+                                                            use `npm init vite@latest` if you prefer
+                                                            Vite</span></span><span>
+                                                        npm install axios
+                                                    </span></span></code></div>
+                                    </div>
+                                </pre>
+                                <ol start="2" data-start="3195" data-end="3253">
+                                    <li data-start="3195" data-end="3253">
+                                        <p data-start="3198" data-end="3253">In <code data-start="3201"
+                                                data-end="3222">frontend/src/App.js</code>, add a sample call to the
+                                            API:
+                                        </p>
+                                    </li>
+                                </ol>
+                                <pre class="overflow-visible!" data-start="3254" data-end="3885">
+                                    <div
+                                        class="contain-inline-size rounded-2xl relative bg-token-sidebar-surface-primary">
+                                        <div
+                                            class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between h-9 bg-token-sidebar-surface-primary select-none rounded-t-2xl">
+                                            jsx</div>
+                                        <div class="sticky top-9">
+                                            <div class="absolute end-0 bottom-0 flex h-9 items-center pe-2">
+                                                <div
+                                                    class="bg-token-bg-elevated-secondary text-token-text-secondary flex items-center gap-4 rounded-sm px-2 font-sans text-xs">
+                                                    <button class="flex gap-1 items-center select-none py-1"
+                                                        aria-label="Copy"><svg width="20" height="20"
+                                                            viewBox="0 0 20 20" fill="currentColor"
+                                                            xmlns="http://www.w3.org/2000/svg" class="icon-sm">
+                                                            <path
+                                                                d="M12.668 10.667C12.668 9.95614 12.668 9.46258 12.6367 9.0791C12.6137 8.79732 12.5758 8.60761 12.5244 8.46387L12.4688 8.33399C12.3148 8.03193 12.0803 7.77885 11.793 7.60254L11.666 7.53125C11.508 7.45087 11.2963 7.39395 10.9209 7.36328C10.5374 7.33197 10.0439 7.33203 9.33301 7.33203H6.5C5.78896 7.33203 5.29563 7.33195 4.91211 7.36328C4.63016 7.38632 4.44065 7.42413 4.29688 7.47559L4.16699 7.53125C3.86488 7.68518 3.61186 7.9196 3.43555 8.20703L3.36524 8.33399C3.28478 8.49198 3.22795 8.70352 3.19727 9.0791C3.16595 9.46259 3.16504 9.95611 3.16504 10.667V13.5C3.16504 14.211 3.16593 14.7044 3.19727 15.0879C3.22797 15.4636 3.28473 15.675 3.36524 15.833L3.43555 15.959C3.61186 16.2466 3.86474 16.4807 4.16699 16.6348L4.29688 16.6914C4.44063 16.7428 4.63025 16.7797 4.91211 16.8027C5.29563 16.8341 5.78896 16.835 6.5 16.835H9.33301C10.0439 16.835 10.5374 16.8341 10.9209 16.8027C11.2965 16.772 11.508 16.7152 11.666 16.6348L11.793 16.5645C12.0804 16.3881 12.3148 16.1351 12.4688 15.833L12.5244 15.7031C12.5759 15.5594 12.6137 15.3698 12.6367 15.0879C12.6681 14.7044 12.668 14.211 12.668 13.5V10.667ZM13.998 12.665C14.4528 12.6634 14.8011 12.6602 15.0879 12.6367C15.4635 12.606 15.675 12.5492 15.833 12.4688L15.959 12.3975C16.2466 12.2211 16.4808 11.9682 16.6348 11.666L16.6914 11.5361C16.7428 11.3924 16.7797 11.2026 16.8027 10.9209C16.8341 10.5374 16.835 10.0439 16.835 9.33301V6.5C16.835 5.78896 16.8341 5.29563 16.8027 4.91211C16.7797 4.63025 16.7428 4.44063 16.6914 4.29688L16.6348 4.16699C16.4807 3.86474 16.2466 3.61186 15.959 3.43555L15.833 3.36524C15.675 3.28473 15.4636 3.22797 15.0879 3.19727C14.7044 3.16593 14.211 3.16504 13.5 3.16504H10.667C9.9561 3.16504 9.46259 3.16595 9.0791 3.19727C8.79739 3.22028 8.6076 3.2572 8.46387 3.30859L8.33399 3.36524C8.03176 3.51923 7.77886 3.75343 7.60254 4.04102L7.53125 4.16699C7.4508 4.32498 7.39397 4.53655 7.36328 4.91211C7.33985 5.19893 7.33562 5.54719 7.33399 6.00195H9.33301C10.022 6.00195 10.5791 6.00131 11.0293 6.03809C11.4873 6.07551 11.8937 6.15471 12.2705 6.34668L12.4883 6.46875C12.984 6.7728 13.3878 7.20854 13.6533 7.72949L13.7197 7.87207C13.8642 8.20859 13.9292 8.56974 13.9619 8.9707C13.9987 9.42092 13.998 9.97799 13.998 10.667V12.665ZM18.165 9.33301C18.165 10.022 18.1657 10.5791 18.1289 11.0293C18.0961 11.4302 18.0311 11.7914 17.8867 12.1279L17.8203 12.2705C17.5549 12.7914 17.1509 13.2272 16.6553 13.5313L16.4365 13.6533C16.0599 13.8452 15.6541 13.9245 15.1963 13.9619C14.8593 13.9895 14.4624 13.9935 13.9951 13.9951C13.9935 14.4624 13.9895 14.8593 13.9619 15.1963C13.9292 15.597 13.864 15.9576 13.7197 16.2939L13.6533 16.4365C13.3878 16.9576 12.9841 17.3941 12.4883 17.6982L12.2705 17.8203C11.8937 18.0123 11.4873 18.0915 11.0293 18.1289C10.5791 18.1657 10.022 18.165 9.33301 18.165H6.5C5.81091 18.165 5.25395 18.1657 4.80371 18.1289C4.40306 18.0962 4.04235 18.031 3.70606 17.8867L3.56348 17.8203C3.04244 17.5548 2.60585 17.151 2.30176 16.6553L2.17969 16.4365C1.98788 16.0599 1.90851 15.6541 1.87109 15.1963C1.83431 14.746 1.83496 14.1891 1.83496 13.5V10.667C1.83496 9.978 1.83432 9.42091 1.87109 8.9707C1.90851 8.5127 1.98772 8.10625 2.17969 7.72949L2.30176 7.51172C2.60586 7.0159 3.04236 6.6122 3.56348 6.34668L3.70606 6.28027C4.04237 6.136 4.40303 6.07083 4.80371 6.03809C5.14051 6.01057 5.53708 6.00551 6.00391 6.00391C6.00551 5.53708 6.01057 5.14051 6.03809 4.80371C6.0755 4.34588 6.15483 3.94012 6.34668 3.56348L6.46875 3.34473C6.77282 2.84912 7.20856 2.44514 7.72949 2.17969L7.87207 2.11328C8.20855 1.96886 8.56979 1.90385 8.9707 1.87109C9.42091 1.83432 9.978 1.83496 10.667 1.83496H13.5C14.1891 1.83496 14.746 1.83431 15.1963 1.87109C15.6541 1.90851 16.0599 1.98788 16.4365 2.17969L16.6553 2.30176C17.151 2.60585 17.5548 3.04244 17.8203 3.56348L17.8867 3.70606C18.031 4.04235 18.0962 4.40306 18.1289 4.80371C18.1657 5.25395 18.165 5.81091 18.165 6.5V9.33301Z">
+                                                            </path>
+                                                        </svg>Copy code</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="overflow-y-auto p-4" dir="ltr"><code
+                                                class="whitespace-pre! language-jsx"><span><span><span
+                                                            class="hljs-keyword">import</span></span><span>
+                                                    </span><span><span
+                                                            class="hljs-title class_">React</span></span><span>,
+                                                        {useEffect, useState} </span><span><span
+                                                            class="hljs-keyword">from</span></span><span>
+                                                    </span><span><span class="hljs-string">'react'</span></span><span>;
+                                                    </span><span><span class="hljs-keyword">import</span></span><span>
+                                                        axios
+                                                    </span><span><span class="hljs-keyword">from</span></span><span>
+                                                    </span><span><span class="hljs-string">'axios'</span></span><span>;
+
+                                                    </span><span><span class="hljs-keyword">function</span></span><span>
+                                                    </span><span><span
+                                                            class="hljs-title function_">App</span></span><span>(</span><span><span
+                                                            class="hljs-params"></span></span><span>){
+                                                    </span><span><span class="hljs-keyword">const</span></span><span>
+                                                        [msg,
+                                                        setMsg] = </span><span><span
+                                                            class="hljs-title function_">useState</span></span><span>(</span><span><span
+                                                            class="hljs-literal">null</span></span><span>);
+                                                    </span><span><span class="hljs-keyword">const</span></span><span>
+                                                        [cats,
+                                                        setCats] = </span><span><span
+                                                            class="hljs-title function_">useState</span></span><span>([]);
+
+                                                    </span><span><span
+                                                            class="hljs-title function_">useEffect</span></span><span>(</span><span><span
+                                                            class="hljs-function">()=&gt;</span></span><span>{
+                                                        axios.</span><span><span
+                                                            class="hljs-title function_">get</span></span><span>(</span><span><span
+                                                            class="hljs-string">'http://api.localhost/api/ping'</span></span><span>,
+                                                        { </span><span><span
+                                                            class="hljs-attr">withCredentials</span></span><span>:
+                                                    </span><span><span class="hljs-literal">true</span></span><span> })
+                                                        .</span><span><span
+                                                            class="hljs-title function_">then</span></span><span>(</span><span><span
+                                                            class="hljs-function"><span
+                                                                class="hljs-params">r</span></span></span><span> =&gt;
+                                                    </span><span><span
+                                                            class="hljs-title function_">setMsg</span></span><span>(r.</span><span><span
+                                                            class="hljs-property">data</span></span><span>));
+                                                        axios.</span><span><span
+                                                            class="hljs-title function_">get</span></span><span>(</span><span><span
+                                                            class="hljs-string">'http://api.localhost/api/cats'</span></span><span>).</span><span><span
+                                                            class="hljs-title function_">then</span></span><span>(</span><span><span
+                                                            class="hljs-function"><span
+                                                                class="hljs-params">r</span></span></span><span> =&gt;
+                                                    </span><span><span
+                                                            class="hljs-title function_">setCats</span></span><span>(r.</span><span><span
+                                                            class="hljs-property">data</span></span><span>));
+                                                        }, []);
+
+                                                    </span><span><span class="hljs-keyword">return</span></span><span> (
+                                                    </span><span><span class="language-xml"><span
+                                                                class="hljs-tag">&lt;<span
+                                                                    class="hljs-name">div</span></span></span></span><span>
+                                                    </span><span><span
+                                                            class="hljs-attr">style</span></span><span>=</span><span><span
+                                                            class="hljs-string">{{padding:20}}</span></span><span>&gt;
+                                                    </span><span><span class="hljs-tag">&lt;<span
+                                                                class="hljs-name">h1</span></span></span><span>&gt;App
+                                                        on
+                                                        app.localhost</span><span><span class="hljs-tag">&lt;/<span
+                                                                class="hljs-name">h1</span></span></span><span>&gt;
+                                                    </span><span><span class="hljs-tag">&lt;<span
+                                                                class="hljs-name">pre</span></span></span><span>&gt;{JSON.stringify(msg,
+                                                        null, 2)}</span><span><span class="hljs-tag">&lt;/<span
+                                                                class="hljs-name">pre</span></span></span><span>&gt;
+                                                    </span><span><span class="hljs-tag">&lt;<span
+                                                                class="hljs-name">h2</span></span></span><span>&gt;Cats</span><span><span
+                                                            class="hljs-tag">&lt;/<span
+                                                                class="hljs-name">h2</span></span></span><span>&gt;
+                                                    </span><span><span class="hljs-tag">&lt;<span
+                                                                class="hljs-name">pre</span></span></span><span>&gt;{JSON.stringify(cats,
+                                                        null, 2)}</span><span><span class="hljs-tag">&lt;/<span
+                                                                class="hljs-name">pre</span></span></span><span>&gt;
+                                                    </span><span><span class="hljs-tag">&lt;/<span
+                                                                class="hljs-name">div</span></span></span><span>&gt;
+                                                        );
+                                                        }
+
+                                                    </span><span><span class="hljs-keyword">export</span></span><span>
+                                                    </span><span><span class="hljs-keyword">default</span></span><span>
+                                                    </span><span><span
+                                                            class="hljs-title class_">App</span></span><span>;
+                                                    </span></span></code></div>
+                                    </div>
+                                </pre>
+                                <ol start="3" data-start="3887" data-end="4166">
+                                    <li data-start="3887" data-end="4166">
+                                        <p data-start="3890" data-end="4166">Optionally, set proxy in development (not
+                                            necessary if you use full host routing). With Create React App you can set
+                                            <code data-start="4007" data-end="4017">homepage</code> or <code
+                                                data-start="4021" data-end="4028">proxy</code>, but we’re using explicit
+                                            <code data-start="4055" data-end="4070">api.localhost</code> calls so skip
+                                            proxy.
+                                            If you want the dev server to consider your custom host, start React with:
+                                        </p>
+                                    </li>
+                                </ol>
+                                <pre class="overflow-visible!" data-start="4167" data-end="4217">
+                                    <div
+                                        class="contain-inline-size rounded-2xl relative bg-token-sidebar-surface-primary">
+                                        <div
+                                            class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between h-9 bg-token-sidebar-surface-primary select-none rounded-t-2xl">
+                                            bash</div>
+                                        <div class="sticky top-9">
+                                            <div class="absolute end-0 bottom-0 flex h-9 items-center pe-2">
+                                                <div
+                                                    class="bg-token-bg-elevated-secondary text-token-text-secondary flex items-center gap-4 rounded-sm px-2 font-sans text-xs">
+                                                    <button class="flex gap-1 items-center select-none py-1"
+                                                        aria-label="Copy"><svg width="20" height="20"
+                                                            viewBox="0 0 20 20" fill="currentColor"
+                                                            xmlns="http://www.w3.org/2000/svg" class="icon-sm">
+                                                            <path
+                                                                d="M12.668 10.667C12.668 9.95614 12.668 9.46258 12.6367 9.0791C12.6137 8.79732 12.5758 8.60761 12.5244 8.46387L12.4688 8.33399C12.3148 8.03193 12.0803 7.77885 11.793 7.60254L11.666 7.53125C11.508 7.45087 11.2963 7.39395 10.9209 7.36328C10.5374 7.33197 10.0439 7.33203 9.33301 7.33203H6.5C5.78896 7.33203 5.29563 7.33195 4.91211 7.36328C4.63016 7.38632 4.44065 7.42413 4.29688 7.47559L4.16699 7.53125C3.86488 7.68518 3.61186 7.9196 3.43555 8.20703L3.36524 8.33399C3.28478 8.49198 3.22795 8.70352 3.19727 9.0791C3.16595 9.46259 3.16504 9.95611 3.16504 10.667V13.5C3.16504 14.211 3.16593 14.7044 3.19727 15.0879C3.22797 15.4636 3.28473 15.675 3.36524 15.833L3.43555 15.959C3.61186 16.2466 3.86474 16.4807 4.16699 16.6348L4.29688 16.6914C4.44063 16.7428 4.63025 16.7797 4.91211 16.8027C5.29563 16.8341 5.78896 16.835 6.5 16.835H9.33301C10.0439 16.835 10.5374 16.8341 10.9209 16.8027C11.2965 16.772 11.508 16.7152 11.666 16.6348L11.793 16.5645C12.0804 16.3881 12.3148 16.1351 12.4688 15.833L12.5244 15.7031C12.5759 15.5594 12.6137 15.3698 12.6367 15.0879C12.6681 14.7044 12.668 14.211 12.668 13.5V10.667ZM13.998 12.665C14.4528 12.6634 14.8011 12.6602 15.0879 12.6367C15.4635 12.606 15.675 12.5492 15.833 12.4688L15.959 12.3975C16.2466 12.2211 16.4808 11.9682 16.6348 11.666L16.6914 11.5361C16.7428 11.3924 16.7797 11.2026 16.8027 10.9209C16.8341 10.5374 16.835 10.0439 16.835 9.33301V6.5C16.835 5.78896 16.8341 5.29563 16.8027 4.91211C16.7797 4.63025 16.7428 4.44063 16.6914 4.29688L16.6348 4.16699C16.4807 3.86474 16.2466 3.61186 15.959 3.43555L15.833 3.36524C15.675 3.28473 15.4636 3.22797 15.0879 3.19727C14.7044 3.16593 14.211 3.16504 13.5 3.16504H10.667C9.9561 3.16504 9.46259 3.16595 9.0791 3.19727C8.79739 3.22028 8.6076 3.2572 8.46387 3.30859L8.33399 3.36524C8.03176 3.51923 7.77886 3.75343 7.60254 4.04102L7.53125 4.16699C7.4508 4.32498 7.39397 4.53655 7.36328 4.91211C7.33985 5.19893 7.33562 5.54719 7.33399 6.00195H9.33301C10.022 6.00195 10.5791 6.00131 11.0293 6.03809C11.4873 6.07551 11.8937 6.15471 12.2705 6.34668L12.4883 6.46875C12.984 6.7728 13.3878 7.20854 13.6533 7.72949L13.7197 7.87207C13.8642 8.20859 13.9292 8.56974 13.9619 8.9707C13.9987 9.42092 13.998 9.97799 13.998 10.667V12.665ZM18.165 9.33301C18.165 10.022 18.1657 10.5791 18.1289 11.0293C18.0961 11.4302 18.0311 11.7914 17.8867 12.1279L17.8203 12.2705C17.5549 12.7914 17.1509 13.2272 16.6553 13.5313L16.4365 13.6533C16.0599 13.8452 15.6541 13.9245 15.1963 13.9619C14.8593 13.9895 14.4624 13.9935 13.9951 13.9951C13.9935 14.4624 13.9895 14.8593 13.9619 15.1963C13.9292 15.597 13.864 15.9576 13.7197 16.2939L13.6533 16.4365C13.3878 16.9576 12.9841 17.3941 12.4883 17.6982L12.2705 17.8203C11.8937 18.0123 11.4873 18.0915 11.0293 18.1289C10.5791 18.1657 10.022 18.165 9.33301 18.165H6.5C5.81091 18.165 5.25395 18.1657 4.80371 18.1289C4.40306 18.0962 4.04235 18.031 3.70606 17.8867L3.56348 17.8203C3.04244 17.5548 2.60585 17.151 2.30176 16.6553L2.17969 16.4365C1.98788 16.0599 1.90851 15.6541 1.87109 15.1963C1.83431 14.746 1.83496 14.1891 1.83496 13.5V10.667C1.83496 9.978 1.83432 9.42091 1.87109 8.9707C1.90851 8.5127 1.98772 8.10625 2.17969 7.72949L2.30176 7.51172C2.60586 7.0159 3.04236 6.6122 3.56348 6.34668L3.70606 6.28027C4.04237 6.136 4.40303 6.07083 4.80371 6.03809C5.14051 6.01057 5.53708 6.00551 6.00391 6.00391C6.00551 5.53708 6.01057 5.14051 6.03809 4.80371C6.0755 4.34588 6.15483 3.94012 6.34668 3.56348L6.46875 3.34473C6.77282 2.84912 7.20856 2.44514 7.72949 2.17969L7.87207 2.11328C8.20855 1.96886 8.56979 1.90385 8.9707 1.87109C9.42091 1.83432 9.978 1.83496 10.667 1.83496H13.5C14.1891 1.83496 14.746 1.83431 15.1963 1.87109C15.6541 1.90851 16.0599 1.98788 16.4365 2.17969L16.6553 2.30176C17.151 2.60585 17.5548 3.04244 17.8203 3.56348L17.8867 3.70606C18.031 4.04235 18.0962 4.40306 18.1289 4.80371C18.1657 5.25395 18.165 5.81091 18.165 6.5V9.33301Z">
+                                                            </path>
+                                                        </svg>Copy code</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="overflow-y-auto p-4" dir="ltr"><code
+                                                class="whitespace-pre! language-bash"><span><span>HOST=app.localhost
+                                                        PORT=3000 npm start
+                                                    </span></span></code></div>
+                                    </div>
+                                </pre>
+                                <p data-start="4218" data-end="4294">(Windows PowerShell: <code data-start="4239"
+                                        data-end="4293">$env:HOST='app.localhost'; $env:PORT=3000; npm start</code>)</p>
+                                <hr data-start="4296" data-end="4299">
+                                <h1 data-start="4301" data-end="4355">6) Edit your hosts file (map subdomain -&gt;
+                                    localhost)</h1>
+                                <p data-start="4356" data-end="4438">You must add entries so your machine resolves <code
+                                        data-start="4402" data-end="4417">app.localhost</code> and <code
+                                        data-start="4422" data-end="4437">api.localhost</code>.</p>
+                                <ul data-start="4440" data-end="4487">
+                                    <li data-start="4440" data-end="4487">
+                                        <p data-start="4442" data-end="4487"><strong data-start="4442"
+                                                data-end="4459">macOS
+                                                / Linux</strong>: edit <code data-start="4466"
+                                                data-end="4478">/etc/hosts</code> as root:</p>
+                                    </li>
+                                </ul>
+                                <pre class="overflow-visible!" data-start="4488" data-end="4549">
+                                    <div
+                                        class="contain-inline-size rounded-2xl relative bg-token-sidebar-surface-primary">
+                                        <div
+                                            class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between h-9 bg-token-sidebar-surface-primary select-none rounded-t-2xl">
+                                        </div>
+                                        <div class="sticky top-9">
+                                            <div class="absolute end-0 bottom-0 flex h-9 items-center pe-2">
+                                                <div
+                                                    class="bg-token-bg-elevated-secondary text-token-text-secondary flex items-center gap-4 rounded-sm px-2 font-sans text-xs">
+                                                    <button class="flex gap-1 items-center select-none py-1"
+                                                        aria-label="Copy"><svg width="20" height="20"
+                                                            viewBox="0 0 20 20" fill="currentColor"
+                                                            xmlns="http://www.w3.org/2000/svg" class="icon-sm">
+                                                            <path
+                                                                d="M12.668 10.667C12.668 9.95614 12.668 9.46258 12.6367 9.0791C12.6137 8.79732 12.5758 8.60761 12.5244 8.46387L12.4688 8.33399C12.3148 8.03193 12.0803 7.77885 11.793 7.60254L11.666 7.53125C11.508 7.45087 11.2963 7.39395 10.9209 7.36328C10.5374 7.33197 10.0439 7.33203 9.33301 7.33203H6.5C5.78896 7.33203 5.29563 7.33195 4.91211 7.36328C4.63016 7.38632 4.44065 7.42413 4.29688 7.47559L4.16699 7.53125C3.86488 7.68518 3.61186 7.9196 3.43555 8.20703L3.36524 8.33399C3.28478 8.49198 3.22795 8.70352 3.19727 9.0791C3.16595 9.46259 3.16504 9.95611 3.16504 10.667V13.5C3.16504 14.211 3.16593 14.7044 3.19727 15.0879C3.22797 15.4636 3.28473 15.675 3.36524 15.833L3.43555 15.959C3.61186 16.2466 3.86474 16.4807 4.16699 16.6348L4.29688 16.6914C4.44063 16.7428 4.63025 16.7797 4.91211 16.8027C5.29563 16.8341 5.78896 16.835 6.5 16.835H9.33301C10.0439 16.835 10.5374 16.8341 10.9209 16.8027C11.2965 16.772 11.508 16.7152 11.666 16.6348L11.793 16.5645C12.0804 16.3881 12.3148 16.1351 12.4688 15.833L12.5244 15.7031C12.5759 15.5594 12.6137 15.3698 12.6367 15.0879C12.6681 14.7044 12.668 14.211 12.668 13.5V10.667ZM13.998 12.665C14.4528 12.6634 14.8011 12.6602 15.0879 12.6367C15.4635 12.606 15.675 12.5492 15.833 12.4688L15.959 12.3975C16.2466 12.2211 16.4808 11.9682 16.6348 11.666L16.6914 11.5361C16.7428 11.3924 16.7797 11.2026 16.8027 10.9209C16.8341 10.5374 16.835 10.0439 16.835 9.33301V6.5C16.835 5.78896 16.8341 5.29563 16.8027 4.91211C16.7797 4.63025 16.7428 4.44063 16.6914 4.29688L16.6348 4.16699C16.4807 3.86474 16.2466 3.61186 15.959 3.43555L15.833 3.36524C15.675 3.28473 15.4636 3.22797 15.0879 3.19727C14.7044 3.16593 14.211 3.16504 13.5 3.16504H10.667C9.9561 3.16504 9.46259 3.16595 9.0791 3.19727C8.79739 3.22028 8.6076 3.2572 8.46387 3.30859L8.33399 3.36524C8.03176 3.51923 7.77886 3.75343 7.60254 4.04102L7.53125 4.16699C7.4508 4.32498 7.39397 4.53655 7.36328 4.91211C7.33985 5.19893 7.33562 5.54719 7.33399 6.00195H9.33301C10.022 6.00195 10.5791 6.00131 11.0293 6.03809C11.4873 6.07551 11.8937 6.15471 12.2705 6.34668L12.4883 6.46875C12.984 6.7728 13.3878 7.20854 13.6533 7.72949L13.7197 7.87207C13.8642 8.20859 13.9292 8.56974 13.9619 8.9707C13.9987 9.42092 13.998 9.97799 13.998 10.667V12.665ZM18.165 9.33301C18.165 10.022 18.1657 10.5791 18.1289 11.0293C18.0961 11.4302 18.0311 11.7914 17.8867 12.1279L17.8203 12.2705C17.5549 12.7914 17.1509 13.2272 16.6553 13.5313L16.4365 13.6533C16.0599 13.8452 15.6541 13.9245 15.1963 13.9619C14.8593 13.9895 14.4624 13.9935 13.9951 13.9951C13.9935 14.4624 13.9895 14.8593 13.9619 15.1963C13.9292 15.597 13.864 15.9576 13.7197 16.2939L13.6533 16.4365C13.3878 16.9576 12.9841 17.3941 12.4883 17.6982L12.2705 17.8203C11.8937 18.0123 11.4873 18.0915 11.0293 18.1289C10.5791 18.1657 10.022 18.165 9.33301 18.165H6.5C5.81091 18.165 5.25395 18.1657 4.80371 18.1289C4.40306 18.0962 4.04235 18.031 3.70606 17.8867L3.56348 17.8203C3.04244 17.5548 2.60585 17.151 2.30176 16.6553L2.17969 16.4365C1.98788 16.0599 1.90851 15.6541 1.87109 15.1963C1.83431 14.746 1.83496 14.1891 1.83496 13.5V10.667C1.83496 9.978 1.83432 9.42091 1.87109 8.9707C1.90851 8.5127 1.98772 8.10625 2.17969 7.72949L2.30176 7.51172C2.60586 7.0159 3.04236 6.6122 3.56348 6.34668L3.70606 6.28027C4.04237 6.136 4.40303 6.07083 4.80371 6.03809C5.14051 6.01057 5.53708 6.00551 6.00391 6.00391C6.00551 5.53708 6.01057 5.14051 6.03809 4.80371C6.0755 4.34588 6.15483 3.94012 6.34668 3.56348L6.46875 3.34473C6.77282 2.84912 7.20856 2.44514 7.72949 2.17969L7.87207 2.11328C8.20855 1.96886 8.56979 1.90385 8.9707 1.87109C9.42091 1.83432 9.978 1.83496 10.667 1.83496H13.5C14.1891 1.83496 14.746 1.83431 15.1963 1.87109C15.6541 1.90851 16.0599 1.98788 16.4365 2.17969L16.6553 2.30176C17.151 2.60585 17.5548 3.04244 17.8203 3.56348L17.8867 3.70606C18.031 4.04235 18.0962 4.40306 18.1289 4.80371C18.1657 5.25395 18.165 5.81091 18.165 6.5V9.33301Z">
+                                                            </path>
+                                                        </svg>Copy code</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="overflow-y-auto p-4" dir="ltr"><code
+                                                class="whitespace-pre!"><span><span>127.0.0.1 app.localhost
+                                                        127.0.0.1 api.localhost
+                                                    </span></span></code></div>
+                                    </div>
+                                </pre>
+                                <ul data-start="4551" data-end="4647">
+                                    <li data-start="4551" data-end="4647">
+                                        <p data-start="4553" data-end="4647"><strong data-start="4553"
+                                                data-end="4564">Windows</strong>: edit <code data-start="4571"
+                                                data-end="4610">C:\Windows\System32\drivers\etc\hosts</code> as
+                                            Administrator and add same lines.</p>
+                                    </li>
+                                </ul>
+                                <p data-start="4649" data-end="4659">Save file.</p>
+                                <p data-start="4661" data-end="4833">Note: <code data-start="4667"
+                                        data-end="4680">*.localhost</code> sometimes is special in some environments. If
+                                    you
+                                    see unexpected browser behavior, use <code data-start="4768"
+                                        data-end="4778">app.test</code> / <code data-start="4781"
+                                        data-end="4791">api.test</code> or <code data-start="4795"
+                                        data-end="4806">app.local</code> instead; same steps apply.</p>
+                                <hr data-start="4835" data-end="4838">
+                                <h1 data-start="4840" data-end="4899">7) Quick approach — access subdomain with ports
+                                    (fastest)</h1>
+                                <ul data-start="4900" data-end="4916">
+                                    <li data-start="4900" data-end="4916">
+                                        <p data-start="4902" data-end="4916">Start backend:</p>
+                                    </li>
+                                </ul>
+                                <pre class="overflow-visible!" data-start="4917" data-end="4977">
+                                    <div
+                                        class="contain-inline-size rounded-2xl relative bg-token-sidebar-surface-primary">
+                                        <div
+                                            class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between h-9 bg-token-sidebar-surface-primary select-none rounded-t-2xl">
+                                            bash</div>
+                                        <div class="sticky top-9">
+                                            <div class="absolute end-0 bottom-0 flex h-9 items-center pe-2">
+                                                <div
+                                                    class="bg-token-bg-elevated-secondary text-token-text-secondary flex items-center gap-4 rounded-sm px-2 font-sans text-xs">
+                                                    <button class="flex gap-1 items-center select-none py-1"
+                                                        aria-label="Copy"><svg width="20" height="20"
+                                                            viewBox="0 0 20 20" fill="currentColor"
+                                                            xmlns="http://www.w3.org/2000/svg" class="icon-sm">
+                                                            <path
+                                                                d="M12.668 10.667C12.668 9.95614 12.668 9.46258 12.6367 9.0791C12.6137 8.79732 12.5758 8.60761 12.5244 8.46387L12.4688 8.33399C12.3148 8.03193 12.0803 7.77885 11.793 7.60254L11.666 7.53125C11.508 7.45087 11.2963 7.39395 10.9209 7.36328C10.5374 7.33197 10.0439 7.33203 9.33301 7.33203H6.5C5.78896 7.33203 5.29563 7.33195 4.91211 7.36328C4.63016 7.38632 4.44065 7.42413 4.29688 7.47559L4.16699 7.53125C3.86488 7.68518 3.61186 7.9196 3.43555 8.20703L3.36524 8.33399C3.28478 8.49198 3.22795 8.70352 3.19727 9.0791C3.16595 9.46259 3.16504 9.95611 3.16504 10.667V13.5C3.16504 14.211 3.16593 14.7044 3.19727 15.0879C3.22797 15.4636 3.28473 15.675 3.36524 15.833L3.43555 15.959C3.61186 16.2466 3.86474 16.4807 4.16699 16.6348L4.29688 16.6914C4.44063 16.7428 4.63025 16.7797 4.91211 16.8027C5.29563 16.8341 5.78896 16.835 6.5 16.835H9.33301C10.0439 16.835 10.5374 16.8341 10.9209 16.8027C11.2965 16.772 11.508 16.7152 11.666 16.6348L11.793 16.5645C12.0804 16.3881 12.3148 16.1351 12.4688 15.833L12.5244 15.7031C12.5759 15.5594 12.6137 15.3698 12.6367 15.0879C12.6681 14.7044 12.668 14.211 12.668 13.5V10.667ZM13.998 12.665C14.4528 12.6634 14.8011 12.6602 15.0879 12.6367C15.4635 12.606 15.675 12.5492 15.833 12.4688L15.959 12.3975C16.2466 12.2211 16.4808 11.9682 16.6348 11.666L16.6914 11.5361C16.7428 11.3924 16.7797 11.2026 16.8027 10.9209C16.8341 10.5374 16.835 10.0439 16.835 9.33301V6.5C16.835 5.78896 16.8341 5.29563 16.8027 4.91211C16.7797 4.63025 16.7428 4.44063 16.6914 4.29688L16.6348 4.16699C16.4807 3.86474 16.2466 3.61186 15.959 3.43555L15.833 3.36524C15.675 3.28473 15.4636 3.22797 15.0879 3.19727C14.7044 3.16593 14.211 3.16504 13.5 3.16504H10.667C9.9561 3.16504 9.46259 3.16595 9.0791 3.19727C8.79739 3.22028 8.6076 3.2572 8.46387 3.30859L8.33399 3.36524C8.03176 3.51923 7.77886 3.75343 7.60254 4.04102L7.53125 4.16699C7.4508 4.32498 7.39397 4.53655 7.36328 4.91211C7.33985 5.19893 7.33562 5.54719 7.33399 6.00195H9.33301C10.022 6.00195 10.5791 6.00131 11.0293 6.03809C11.4873 6.07551 11.8937 6.15471 12.2705 6.34668L12.4883 6.46875C12.984 6.7728 13.3878 7.20854 13.6533 7.72949L13.7197 7.87207C13.8642 8.20859 13.9292 8.56974 13.9619 8.9707C13.9987 9.42092 13.998 9.97799 13.998 10.667V12.665ZM18.165 9.33301C18.165 10.022 18.1657 10.5791 18.1289 11.0293C18.0961 11.4302 18.0311 11.7914 17.8867 12.1279L17.8203 12.2705C17.5549 12.7914 17.1509 13.2272 16.6553 13.5313L16.4365 13.6533C16.0599 13.8452 15.6541 13.9245 15.1963 13.9619C14.8593 13.9895 14.4624 13.9935 13.9951 13.9951C13.9935 14.4624 13.9895 14.8593 13.9619 15.1963C13.9292 15.597 13.864 15.9576 13.7197 16.2939L13.6533 16.4365C13.3878 16.9576 12.9841 17.3941 12.4883 17.6982L12.2705 17.8203C11.8937 18.0123 11.4873 18.0915 11.0293 18.1289C10.5791 18.1657 10.022 18.165 9.33301 18.165H6.5C5.81091 18.165 5.25395 18.1657 4.80371 18.1289C4.40306 18.0962 4.04235 18.031 3.70606 17.8867L3.56348 17.8203C3.04244 17.5548 2.60585 17.151 2.30176 16.6553L2.17969 16.4365C1.98788 16.0599 1.90851 15.6541 1.87109 15.1963C1.83431 14.746 1.83496 14.1891 1.83496 13.5V10.667C1.83496 9.978 1.83432 9.42091 1.87109 8.9707C1.90851 8.5127 1.98772 8.10625 2.17969 7.72949L2.30176 7.51172C2.60586 7.0159 3.04236 6.6122 3.56348 6.34668L3.70606 6.28027C4.04237 6.136 4.40303 6.07083 4.80371 6.03809C5.14051 6.01057 5.53708 6.00551 6.00391 6.00391C6.00551 5.53708 6.01057 5.14051 6.03809 4.80371C6.0755 4.34588 6.15483 3.94012 6.34668 3.56348L6.46875 3.34473C6.77282 2.84912 7.20856 2.44514 7.72949 2.17969L7.87207 2.11328C8.20855 1.96886 8.56979 1.90385 8.9707 1.87109C9.42091 1.83432 9.978 1.83496 10.667 1.83496H13.5C14.1891 1.83496 14.746 1.83431 15.1963 1.87109C15.6541 1.90851 16.0599 1.98788 16.4365 2.17969L16.6553 2.30176C17.151 2.60585 17.5548 3.04244 17.8203 3.56348L17.8867 3.70606C18.031 4.04235 18.0962 4.40306 18.1289 4.80371C18.1657 5.25395 18.165 5.81091 18.165 6.5V9.33301Z">
+                                                            </path>
+                                                        </svg>Copy code</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="overflow-y-auto p-4" dir="ltr"><code
+                                                class="whitespace-pre! language-bash"><span><span><span
+                                                            class="hljs-comment"># in backend</span></span><span>
+                                                        npm run dev </span><span><span class="hljs-comment"># runs on
+                                                            port
+                                                            5000</span></span><span>
+                                                    </span></span></code></div>
+                                    </div>
+                                </pre>
+                                <ul data-start="4978" data-end="4995">
+                                    <li data-start="4978" data-end="4995">
+                                        <p data-start="4980" data-end="4995">Start frontend:</p>
+                                    </li>
+                                </ul>
+                                <pre class="overflow-visible!" data-start="4996" data-end="5060">
+                                    <div
+                                        class="contain-inline-size rounded-2xl relative bg-token-sidebar-surface-primary">
+                                        <div
+                                            class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between h-9 bg-token-sidebar-surface-primary select-none rounded-t-2xl">
+                                            bash</div>
+                                        <div class="sticky top-9">
+                                            <div class="absolute end-0 bottom-0 flex h-9 items-center pe-2">
+                                                <div
+                                                    class="bg-token-bg-elevated-secondary text-token-text-secondary flex items-center gap-4 rounded-sm px-2 font-sans text-xs">
+                                                    <button class="flex gap-1 items-center select-none py-1"
+                                                        aria-label="Copy"><svg width="20" height="20"
+                                                            viewBox="0 0 20 20" fill="currentColor"
+                                                            xmlns="http://www.w3.org/2000/svg" class="icon-sm">
+                                                            <path
+                                                                d="M12.668 10.667C12.668 9.95614 12.668 9.46258 12.6367 9.0791C12.6137 8.79732 12.5758 8.60761 12.5244 8.46387L12.4688 8.33399C12.3148 8.03193 12.0803 7.77885 11.793 7.60254L11.666 7.53125C11.508 7.45087 11.2963 7.39395 10.9209 7.36328C10.5374 7.33197 10.0439 7.33203 9.33301 7.33203H6.5C5.78896 7.33203 5.29563 7.33195 4.91211 7.36328C4.63016 7.38632 4.44065 7.42413 4.29688 7.47559L4.16699 7.53125C3.86488 7.68518 3.61186 7.9196 3.43555 8.20703L3.36524 8.33399C3.28478 8.49198 3.22795 8.70352 3.19727 9.0791C3.16595 9.46259 3.16504 9.95611 3.16504 10.667V13.5C3.16504 14.211 3.16593 14.7044 3.19727 15.0879C3.22797 15.4636 3.28473 15.675 3.36524 15.833L3.43555 15.959C3.61186 16.2466 3.86474 16.4807 4.16699 16.6348L4.29688 16.6914C4.44063 16.7428 4.63025 16.7797 4.91211 16.8027C5.29563 16.8341 5.78896 16.835 6.5 16.835H9.33301C10.0439 16.835 10.5374 16.8341 10.9209 16.8027C11.2965 16.772 11.508 16.7152 11.666 16.6348L11.793 16.5645C12.0804 16.3881 12.3148 16.1351 12.4688 15.833L12.5244 15.7031C12.5759 15.5594 12.6137 15.3698 12.6367 15.0879C12.6681 14.7044 12.668 14.211 12.668 13.5V10.667ZM13.998 12.665C14.4528 12.6634 14.8011 12.6602 15.0879 12.6367C15.4635 12.606 15.675 12.5492 15.833 12.4688L15.959 12.3975C16.2466 12.2211 16.4808 11.9682 16.6348 11.666L16.6914 11.5361C16.7428 11.3924 16.7797 11.2026 16.8027 10.9209C16.8341 10.5374 16.835 10.0439 16.835 9.33301V6.5C16.835 5.78896 16.8341 5.29563 16.8027 4.91211C16.7797 4.63025 16.7428 4.44063 16.6914 4.29688L16.6348 4.16699C16.4807 3.86474 16.2466 3.61186 15.959 3.43555L15.833 3.36524C15.675 3.28473 15.4636 3.22797 15.0879 3.19727C14.7044 3.16593 14.211 3.16504 13.5 3.16504H10.667C9.9561 3.16504 9.46259 3.16595 9.0791 3.19727C8.79739 3.22028 8.6076 3.2572 8.46387 3.30859L8.33399 3.36524C8.03176 3.51923 7.77886 3.75343 7.60254 4.04102L7.53125 4.16699C7.4508 4.32498 7.39397 4.53655 7.36328 4.91211C7.33985 5.19893 7.33562 5.54719 7.33399 6.00195H9.33301C10.022 6.00195 10.5791 6.00131 11.0293 6.03809C11.4873 6.07551 11.8937 6.15471 12.2705 6.34668L12.4883 6.46875C12.984 6.7728 13.3878 7.20854 13.6533 7.72949L13.7197 7.87207C13.8642 8.20859 13.9292 8.56974 13.9619 8.9707C13.9987 9.42092 13.998 9.97799 13.998 10.667V12.665ZM18.165 9.33301C18.165 10.022 18.1657 10.5791 18.1289 11.0293C18.0961 11.4302 18.0311 11.7914 17.8867 12.1279L17.8203 12.2705C17.5549 12.7914 17.1509 13.2272 16.6553 13.5313L16.4365 13.6533C16.0599 13.8452 15.6541 13.9245 15.1963 13.9619C14.8593 13.9895 14.4624 13.9935 13.9951 13.9951C13.9935 14.4624 13.9895 14.8593 13.9619 15.1963C13.9292 15.597 13.864 15.9576 13.7197 16.2939L13.6533 16.4365C13.3878 16.9576 12.9841 17.3941 12.4883 17.6982L12.2705 17.8203C11.8937 18.0123 11.4873 18.0915 11.0293 18.1289C10.5791 18.1657 10.022 18.165 9.33301 18.165H6.5C5.81091 18.165 5.25395 18.1657 4.80371 18.1289C4.40306 18.0962 4.04235 18.031 3.70606 17.8867L3.56348 17.8203C3.04244 17.5548 2.60585 17.151 2.30176 16.6553L2.17969 16.4365C1.98788 16.0599 1.90851 15.6541 1.87109 15.1963C1.83431 14.746 1.83496 14.1891 1.83496 13.5V10.667C1.83496 9.978 1.83432 9.42091 1.87109 8.9707C1.90851 8.5127 1.98772 8.10625 2.17969 7.72949L2.30176 7.51172C2.60586 7.0159 3.04236 6.6122 3.56348 6.34668L3.70606 6.28027C4.04237 6.136 4.40303 6.07083 4.80371 6.03809C5.14051 6.01057 5.53708 6.00551 6.00391 6.00391C6.00551 5.53708 6.01057 5.14051 6.03809 4.80371C6.0755 4.34588 6.15483 3.94012 6.34668 3.56348L6.46875 3.34473C6.77282 2.84912 7.20856 2.44514 7.72949 2.17969L7.87207 2.11328C8.20855 1.96886 8.56979 1.90385 8.9707 1.87109C9.42091 1.83432 9.978 1.83496 10.667 1.83496H13.5C14.1891 1.83496 14.746 1.83431 15.1963 1.87109C15.6541 1.90851 16.0599 1.98788 16.4365 2.17969L16.6553 2.30176C17.151 2.60585 17.5548 3.04244 17.8203 3.56348L17.8867 3.70606C18.031 4.04235 18.0962 4.40306 18.1289 4.80371C18.1657 5.25395 18.165 5.81091 18.165 6.5V9.33301Z">
+                                                            </path>
+                                                        </svg>Copy code</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="overflow-y-auto p-4" dir="ltr"><code
+                                                class="whitespace-pre! language-bash"><span><span><span
+                                                            class="hljs-comment"># in frontend</span></span><span>
+                                                        HOST=app.localhost PORT=3000 npm start
+                                                    </span></span></code></div>
+                                    </div>
+                                </pre>
+                                <p data-start="5061" data-end="5070">Now open:</p>
+                                <ul data-start="5071" data-end="5154">
+                                    <li data-start="5071" data-end="5110">
+                                        <p data-start="5073" data-end="5110">Frontend: <code data-start="5083"
+                                                data-end="5110">http://app.localhost:3000</code></p>
+                                    </li>
+                                    <li data-start="5111" data-end="5154">
+                                        <p data-start="5113" data-end="5154">API: <code data-start="5118"
+                                                data-end="5154">http://api.localhost:5000/api/ping</code></p>
+                                    </li>
+                                </ul>
+                                <p data-start="5156" data-end="5238">This is fastest and usually enough for development.
+                                    But
+                                    it shows ports in the URL.</p>
+                                <hr data-start="5240" data-end="5243">
+                                <h1 data-start="5245" data-end="5304">8) Clean approach — nginx reverse proxy (no ports
+                                    in
+                                    URL)</h1>
+                                <p data-start="5305" data-end="5456">This forwards <code data-start="5319"
+                                        data-end="5341">http://app.localhost</code> → <code data-start="5344"
+                                        data-end="5360">localhost:3000</code> and <code data-start="5365"
+                                        data-end="5387">http://api.localhost</code> → <code data-start="5390"
+                                        data-end="5406">localhost:5000</code>. Requires nginx running and listening on
+                                    port
+                                    80.</p>
+                                <ol data-start="5458" data-end="5589">
+                                    <li data-start="5458" data-end="5492">
+                                        <p data-start="5461" data-end="5492">Install nginx (if not already).</p>
+                                    </li>
+                                    <li data-start="5494" data-end="5589">
+                                        <p data-start="5497" data-end="5589">Create nginx site configuration (example
+                                            for
+                                            linux <code data-start="5548"
+                                                data-end="5587">/etc/nginx/sites-available/mern_local</code>):</p>
+                                    </li>
+                                </ol>
+                                <pre class="overflow-visible!" data-start="5590" data-end="6210">
+                                    <div
+                                        class="contain-inline-size rounded-2xl relative bg-token-sidebar-surface-primary">
+                                        <div
+                                            class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between h-9 bg-token-sidebar-surface-primary select-none rounded-t-2xl">
+                                            nginx</div>
+                                        <div class="sticky top-9">
+                                            <div class="absolute end-0 bottom-0 flex h-9 items-center pe-2">
+                                                <div
+                                                    class="bg-token-bg-elevated-secondary text-token-text-secondary flex items-center gap-4 rounded-sm px-2 font-sans text-xs">
+                                                    <button class="flex gap-1 items-center select-none py-1"
+                                                        aria-label="Copy"><svg width="20" height="20"
+                                                            viewBox="0 0 20 20" fill="currentColor"
+                                                            xmlns="http://www.w3.org/2000/svg" class="icon-sm">
+                                                            <path
+                                                                d="M12.668 10.667C12.668 9.95614 12.668 9.46258 12.6367 9.0791C12.6137 8.79732 12.5758 8.60761 12.5244 8.46387L12.4688 8.33399C12.3148 8.03193 12.0803 7.77885 11.793 7.60254L11.666 7.53125C11.508 7.45087 11.2963 7.39395 10.9209 7.36328C10.5374 7.33197 10.0439 7.33203 9.33301 7.33203H6.5C5.78896 7.33203 5.29563 7.33195 4.91211 7.36328C4.63016 7.38632 4.44065 7.42413 4.29688 7.47559L4.16699 7.53125C3.86488 7.68518 3.61186 7.9196 3.43555 8.20703L3.36524 8.33399C3.28478 8.49198 3.22795 8.70352 3.19727 9.0791C3.16595 9.46259 3.16504 9.95611 3.16504 10.667V13.5C3.16504 14.211 3.16593 14.7044 3.19727 15.0879C3.22797 15.4636 3.28473 15.675 3.36524 15.833L3.43555 15.959C3.61186 16.2466 3.86474 16.4807 4.16699 16.6348L4.29688 16.6914C4.44063 16.7428 4.63025 16.7797 4.91211 16.8027C5.29563 16.8341 5.78896 16.835 6.5 16.835H9.33301C10.0439 16.835 10.5374 16.8341 10.9209 16.8027C11.2965 16.772 11.508 16.7152 11.666 16.6348L11.793 16.5645C12.0804 16.3881 12.3148 16.1351 12.4688 15.833L12.5244 15.7031C12.5759 15.5594 12.6137 15.3698 12.6367 15.0879C12.6681 14.7044 12.668 14.211 12.668 13.5V10.667ZM13.998 12.665C14.4528 12.6634 14.8011 12.6602 15.0879 12.6367C15.4635 12.606 15.675 12.5492 15.833 12.4688L15.959 12.3975C16.2466 12.2211 16.4808 11.9682 16.6348 11.666L16.6914 11.5361C16.7428 11.3924 16.7797 11.2026 16.8027 10.9209C16.8341 10.5374 16.835 10.0439 16.835 9.33301V6.5C16.835 5.78896 16.8341 5.29563 16.8027 4.91211C16.7797 4.63025 16.7428 4.44063 16.6914 4.29688L16.6348 4.16699C16.4807 3.86474 16.2466 3.61186 15.959 3.43555L15.833 3.36524C15.675 3.28473 15.4636 3.22797 15.0879 3.19727C14.7044 3.16593 14.211 3.16504 13.5 3.16504H10.667C9.9561 3.16504 9.46259 3.16595 9.0791 3.19727C8.79739 3.22028 8.6076 3.2572 8.46387 3.30859L8.33399 3.36524C8.03176 3.51923 7.77886 3.75343 7.60254 4.04102L7.53125 4.16699C7.4508 4.32498 7.39397 4.53655 7.36328 4.91211C7.33985 5.19893 7.33562 5.54719 7.33399 6.00195H9.33301C10.022 6.00195 10.5791 6.00131 11.0293 6.03809C11.4873 6.07551 11.8937 6.15471 12.2705 6.34668L12.4883 6.46875C12.984 6.7728 13.3878 7.20854 13.6533 7.72949L13.7197 7.87207C13.8642 8.20859 13.9292 8.56974 13.9619 8.9707C13.9987 9.42092 13.998 9.97799 13.998 10.667V12.665ZM18.165 9.33301C18.165 10.022 18.1657 10.5791 18.1289 11.0293C18.0961 11.4302 18.0311 11.7914 17.8867 12.1279L17.8203 12.2705C17.5549 12.7914 17.1509 13.2272 16.6553 13.5313L16.4365 13.6533C16.0599 13.8452 15.6541 13.9245 15.1963 13.9619C14.8593 13.9895 14.4624 13.9935 13.9951 13.9951C13.9935 14.4624 13.9895 14.8593 13.9619 15.1963C13.9292 15.597 13.864 15.9576 13.7197 16.2939L13.6533 16.4365C13.3878 16.9576 12.9841 17.3941 12.4883 17.6982L12.2705 17.8203C11.8937 18.0123 11.4873 18.0915 11.0293 18.1289C10.5791 18.1657 10.022 18.165 9.33301 18.165H6.5C5.81091 18.165 5.25395 18.1657 4.80371 18.1289C4.40306 18.0962 4.04235 18.031 3.70606 17.8867L3.56348 17.8203C3.04244 17.5548 2.60585 17.151 2.30176 16.6553L2.17969 16.4365C1.98788 16.0599 1.90851 15.6541 1.87109 15.1963C1.83431 14.746 1.83496 14.1891 1.83496 13.5V10.667C1.83496 9.978 1.83432 9.42091 1.87109 8.9707C1.90851 8.5127 1.98772 8.10625 2.17969 7.72949L2.30176 7.51172C2.60586 7.0159 3.04236 6.6122 3.56348 6.34668L3.70606 6.28027C4.04237 6.136 4.40303 6.07083 4.80371 6.03809C5.14051 6.01057 5.53708 6.00551 6.00391 6.00391C6.00551 5.53708 6.01057 5.14051 6.03809 4.80371C6.0755 4.34588 6.15483 3.94012 6.34668 3.56348L6.46875 3.34473C6.77282 2.84912 7.20856 2.44514 7.72949 2.17969L7.87207 2.11328C8.20855 1.96886 8.56979 1.90385 8.9707 1.87109C9.42091 1.83432 9.978 1.83496 10.667 1.83496H13.5C14.1891 1.83496 14.746 1.83431 15.1963 1.87109C15.6541 1.90851 16.0599 1.98788 16.4365 2.17969L16.6553 2.30176C17.151 2.60585 17.5548 3.04244 17.8203 3.56348L17.8867 3.70606C18.031 4.04235 18.0962 4.40306 18.1289 4.80371C18.1657 5.25395 18.165 5.81091 18.165 6.5V9.33301Z">
+                                                            </path>
+                                                        </svg>Copy code</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="overflow-y-auto p-4" dir="ltr"><code
+                                                class="whitespace-pre! language-nginx"><span><span><span
+                                                            class="hljs-section">server</span></span><span> {
+                                                    </span><span><span class="hljs-attribute">listen</span></span><span>
+                                                    </span><span><span class="hljs-number">80</span></span><span>;
+                                                    </span><span><span
+                                                            class="hljs-attribute">server_name</span></span><span>
+                                                        app.localhost;
+
+                                                    </span><span><span class="hljs-section">location</span></span><span>
+                                                        / {
+                                                    </span><span><span
+                                                            class="hljs-attribute">proxy_pass</span></span><span>
+                                                        http://127.0.0.1:3000;
+                                                    </span><span><span
+                                                            class="hljs-attribute">proxy_set_header</span></span><span>
+                                                        Host
+                                                    </span><span><span class="hljs-variable">$host</span></span><span>;
+                                                    </span><span><span
+                                                            class="hljs-attribute">proxy_set_header</span></span><span>
+                                                        X-Real-IP </span><span><span
+                                                            class="hljs-variable">$remote_addr</span></span><span>;
+                                                    </span><span><span
+                                                            class="hljs-attribute">proxy_set_header</span></span><span>
+                                                        X-Forwarded-For </span><span><span
+                                                            class="hljs-variable">$proxy_add_x_forwarded_for</span></span><span>;
+                                                        }
+                                                        }
+
+                                                    </span><span><span class="hljs-section">server</span></span><span> {
+                                                    </span><span><span class="hljs-attribute">listen</span></span><span>
+                                                    </span><span><span class="hljs-number">80</span></span><span>;
+                                                    </span><span><span
+                                                            class="hljs-attribute">server_name</span></span><span>
+                                                        api.localhost;
+
+                                                    </span><span><span class="hljs-section">location</span></span><span>
+                                                        / {
+                                                    </span><span><span
+                                                            class="hljs-attribute">proxy_pass</span></span><span>
+                                                        http://127.0.0.1:5000;
+                                                    </span><span><span
+                                                            class="hljs-attribute">proxy_http_version</span></span><span>
+                                                    </span><span><span
+                                                            class="hljs-number">1</span></span><span>.</span><span><span
+                                                            class="hljs-number">1</span></span><span>;
+                                                    </span><span><span
+                                                            class="hljs-attribute">proxy_set_header</span></span><span>
+                                                        Upgrade </span><span><span
+                                                            class="hljs-variable">$http_upgrade</span></span><span>;
+                                                    </span><span><span
+                                                            class="hljs-attribute">proxy_set_header</span></span><span>
+                                                        Connection </span><span><span
+                                                            class="hljs-string">'upgrade'</span></span><span>;
+                                                    </span><span><span
+                                                            class="hljs-attribute">proxy_set_header</span></span><span>
+                                                        Host
+                                                    </span><span><span class="hljs-variable">$host</span></span><span>;
+                                                    </span><span><span
+                                                            class="hljs-attribute">proxy_cache_bypass</span></span><span>
+                                                    </span><span><span
+                                                            class="hljs-variable">$http_upgrade</span></span><span>;
+                                                        }
+                                                        }
+                                                    </span></span></code></div>
+                                    </div>
+                                </pre>
+                                <p data-start="6212" data-end="6230">Enable it (Linux):</p>
+                                <pre class="overflow-visible!" data-start="6231" data-end="6376">
+                                    <div
+                                        class="contain-inline-size rounded-2xl relative bg-token-sidebar-surface-primary">
+                                        <div
+                                            class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between h-9 bg-token-sidebar-surface-primary select-none rounded-t-2xl">
+                                            bash</div>
+                                        <div class="sticky top-9">
+                                            <div class="absolute end-0 bottom-0 flex h-9 items-center pe-2">
+                                                <div
+                                                    class="bg-token-bg-elevated-secondary text-token-text-secondary flex items-center gap-4 rounded-sm px-2 font-sans text-xs">
+                                                    <button class="flex gap-1 items-center select-none py-1"
+                                                        aria-label="Copy"><svg width="20" height="20"
+                                                            viewBox="0 0 20 20" fill="currentColor"
+                                                            xmlns="http://www.w3.org/2000/svg" class="icon-sm">
+                                                            <path
+                                                                d="M12.668 10.667C12.668 9.95614 12.668 9.46258 12.6367 9.0791C12.6137 8.79732 12.5758 8.60761 12.5244 8.46387L12.4688 8.33399C12.3148 8.03193 12.0803 7.77885 11.793 7.60254L11.666 7.53125C11.508 7.45087 11.2963 7.39395 10.9209 7.36328C10.5374 7.33197 10.0439 7.33203 9.33301 7.33203H6.5C5.78896 7.33203 5.29563 7.33195 4.91211 7.36328C4.63016 7.38632 4.44065 7.42413 4.29688 7.47559L4.16699 7.53125C3.86488 7.68518 3.61186 7.9196 3.43555 8.20703L3.36524 8.33399C3.28478 8.49198 3.22795 8.70352 3.19727 9.0791C3.16595 9.46259 3.16504 9.95611 3.16504 10.667V13.5C3.16504 14.211 3.16593 14.7044 3.19727 15.0879C3.22797 15.4636 3.28473 15.675 3.36524 15.833L3.43555 15.959C3.61186 16.2466 3.86474 16.4807 4.16699 16.6348L4.29688 16.6914C4.44063 16.7428 4.63025 16.7797 4.91211 16.8027C5.29563 16.8341 5.78896 16.835 6.5 16.835H9.33301C10.0439 16.835 10.5374 16.8341 10.9209 16.8027C11.2965 16.772 11.508 16.7152 11.666 16.6348L11.793 16.5645C12.0804 16.3881 12.3148 16.1351 12.4688 15.833L12.5244 15.7031C12.5759 15.5594 12.6137 15.3698 12.6367 15.0879C12.6681 14.7044 12.668 14.211 12.668 13.5V10.667ZM13.998 12.665C14.4528 12.6634 14.8011 12.6602 15.0879 12.6367C15.4635 12.606 15.675 12.5492 15.833 12.4688L15.959 12.3975C16.2466 12.2211 16.4808 11.9682 16.6348 11.666L16.6914 11.5361C16.7428 11.3924 16.7797 11.2026 16.8027 10.9209C16.8341 10.5374 16.835 10.0439 16.835 9.33301V6.5C16.835 5.78896 16.8341 5.29563 16.8027 4.91211C16.7797 4.63025 16.7428 4.44063 16.6914 4.29688L16.6348 4.16699C16.4807 3.86474 16.2466 3.61186 15.959 3.43555L15.833 3.36524C15.675 3.28473 15.4636 3.22797 15.0879 3.19727C14.7044 3.16593 14.211 3.16504 13.5 3.16504H10.667C9.9561 3.16504 9.46259 3.16595 9.0791 3.19727C8.79739 3.22028 8.6076 3.2572 8.46387 3.30859L8.33399 3.36524C8.03176 3.51923 7.77886 3.75343 7.60254 4.04102L7.53125 4.16699C7.4508 4.32498 7.39397 4.53655 7.36328 4.91211C7.33985 5.19893 7.33562 5.54719 7.33399 6.00195H9.33301C10.022 6.00195 10.5791 6.00131 11.0293 6.03809C11.4873 6.07551 11.8937 6.15471 12.2705 6.34668L12.4883 6.46875C12.984 6.7728 13.3878 7.20854 13.6533 7.72949L13.7197 7.87207C13.8642 8.20859 13.9292 8.56974 13.9619 8.9707C13.9987 9.42092 13.998 9.97799 13.998 10.667V12.665ZM18.165 9.33301C18.165 10.022 18.1657 10.5791 18.1289 11.0293C18.0961 11.4302 18.0311 11.7914 17.8867 12.1279L17.8203 12.2705C17.5549 12.7914 17.1509 13.2272 16.6553 13.5313L16.4365 13.6533C16.0599 13.8452 15.6541 13.9245 15.1963 13.9619C14.8593 13.9895 14.4624 13.9935 13.9951 13.9951C13.9935 14.4624 13.9895 14.8593 13.9619 15.1963C13.9292 15.597 13.864 15.9576 13.7197 16.2939L13.6533 16.4365C13.3878 16.9576 12.9841 17.3941 12.4883 17.6982L12.2705 17.8203C11.8937 18.0123 11.4873 18.0915 11.0293 18.1289C10.5791 18.1657 10.022 18.165 9.33301 18.165H6.5C5.81091 18.165 5.25395 18.1657 4.80371 18.1289C4.40306 18.0962 4.04235 18.031 3.70606 17.8867L3.56348 17.8203C3.04244 17.5548 2.60585 17.151 2.30176 16.6553L2.17969 16.4365C1.98788 16.0599 1.90851 15.6541 1.87109 15.1963C1.83431 14.746 1.83496 14.1891 1.83496 13.5V10.667C1.83496 9.978 1.83432 9.42091 1.87109 8.9707C1.90851 8.5127 1.98772 8.10625 2.17969 7.72949L2.30176 7.51172C2.60586 7.0159 3.04236 6.6122 3.56348 6.34668L3.70606 6.28027C4.04237 6.136 4.40303 6.07083 4.80371 6.03809C5.14051 6.01057 5.53708 6.00551 6.00391 6.00391C6.00551 5.53708 6.01057 5.14051 6.03809 4.80371C6.0755 4.34588 6.15483 3.94012 6.34668 3.56348L6.46875 3.34473C6.77282 2.84912 7.20856 2.44514 7.72949 2.17969L7.87207 2.11328C8.20855 1.96886 8.56979 1.90385 8.9707 1.87109C9.42091 1.83432 9.978 1.83496 10.667 1.83496H13.5C14.1891 1.83496 14.746 1.83431 15.1963 1.87109C15.6541 1.90851 16.0599 1.98788 16.4365 2.17969L16.6553 2.30176C17.151 2.60585 17.5548 3.04244 17.8203 3.56348L17.8867 3.70606C18.031 4.04235 18.0962 4.40306 18.1289 4.80371C18.1657 5.25395 18.165 5.81091 18.165 6.5V9.33301Z">
+                                                            </path>
+                                                        </svg>Copy code</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="overflow-y-auto p-4" dir="ltr"><code
+                                                class="whitespace-pre! language-bash"><span><span>sudo
+                                                    </span><span><span class="hljs-built_in">ln</span></span><span> -s
+                                                        /etc/nginx/sites-available/mern_local /etc/nginx/sites-enabled/
+                                                        sudo nginx -t </span><span><span class="hljs-comment"># test
+                                                            config</span></span><span>
+                                                        sudo systemctl reload nginx
+                                                    </span></span></code></div>
+                                    </div>
+                                </pre>
+                                <ol start="3" data-start="6378" data-end="6449">
+                                    <li data-start="6378" data-end="6449">
+                                        <p data-start="6381" data-end="6449">Start your backend and frontend (on ports
+                                            5000
+                                            and 3000). Now visit:</p>
+                                    </li>
+                                </ol>
+                                <ul data-start="6450" data-end="6550">
+                                    <li data-start="6450" data-end="6496">
+                                        <p data-start="6452" data-end="6496"><code data-start="6452"
+                                                data-end="6474">http://app.localhost</code> → React app (no port)</p>
+                                    </li>
+                                    <li data-start="6497" data-end="6550">
+                                        <p data-start="6499" data-end="6550"><code data-start="6499"
+                                                data-end="6530">http://api.localhost/api/ping</code> → backend (no port)
+                                        </p>
+                                    </li>
+                                </ul>
+                                <p data-start="6552" data-end="6693">If nginx is bound to port 80 and something else
+                                    uses
+                                    that port, stop that or change to another port and adjust hosts mapping and browser
+                                    URL.
+                                </p>
+                                <hr data-start="6695" data-end="6698">
+                                <h1 data-start="6700" data-end="6730">9) MongoDB (local or Docker)</h1>
+                                <p data-start="6731" data-end="6807"><strong data-start="6731"
+                                        data-end="6740">Local</strong>: start MongoDB service (<code data-start="6765"
+                                        data-end="6773">mongod</code>) and match <code data-start="6785"
+                                        data-end="6796">MONGO_URI</code> in <code data-start="6800"
+                                        data-end="6806">.env</code>.</p>
+                                <p data-start="6809" data-end="6828"><strong data-start="6809"
+                                        data-end="6819">Docker</strong> (quick):</p>
+                                <pre class="overflow-visible!" data-start="6829" data-end="7005">
+                                    <div
+                                        class="contain-inline-size rounded-2xl relative bg-token-sidebar-surface-primary">
+                                        <div
+                                            class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between h-9 bg-token-sidebar-surface-primary select-none rounded-t-2xl">
+                                            yaml</div>
+                                        <div class="sticky top-9">
+                                            <div class="absolute end-0 bottom-0 flex h-9 items-center pe-2">
+                                                <div
+                                                    class="bg-token-bg-elevated-secondary text-token-text-secondary flex items-center gap-4 rounded-sm px-2 font-sans text-xs">
+                                                    <button class="flex gap-1 items-center select-none py-1"
+                                                        aria-label="Copy"><svg width="20" height="20"
+                                                            viewBox="0 0 20 20" fill="currentColor"
+                                                            xmlns="http://www.w3.org/2000/svg" class="icon-sm">
+                                                            <path
+                                                                d="M12.668 10.667C12.668 9.95614 12.668 9.46258 12.6367 9.0791C12.6137 8.79732 12.5758 8.60761 12.5244 8.46387L12.4688 8.33399C12.3148 8.03193 12.0803 7.77885 11.793 7.60254L11.666 7.53125C11.508 7.45087 11.2963 7.39395 10.9209 7.36328C10.5374 7.33197 10.0439 7.33203 9.33301 7.33203H6.5C5.78896 7.33203 5.29563 7.33195 4.91211 7.36328C4.63016 7.38632 4.44065 7.42413 4.29688 7.47559L4.16699 7.53125C3.86488 7.68518 3.61186 7.9196 3.43555 8.20703L3.36524 8.33399C3.28478 8.49198 3.22795 8.70352 3.19727 9.0791C3.16595 9.46259 3.16504 9.95611 3.16504 10.667V13.5C3.16504 14.211 3.16593 14.7044 3.19727 15.0879C3.22797 15.4636 3.28473 15.675 3.36524 15.833L3.43555 15.959C3.61186 16.2466 3.86474 16.4807 4.16699 16.6348L4.29688 16.6914C4.44063 16.7428 4.63025 16.7797 4.91211 16.8027C5.29563 16.8341 5.78896 16.835 6.5 16.835H9.33301C10.0439 16.835 10.5374 16.8341 10.9209 16.8027C11.2965 16.772 11.508 16.7152 11.666 16.6348L11.793 16.5645C12.0804 16.3881 12.3148 16.1351 12.4688 15.833L12.5244 15.7031C12.5759 15.5594 12.6137 15.3698 12.6367 15.0879C12.6681 14.7044 12.668 14.211 12.668 13.5V10.667ZM13.998 12.665C14.4528 12.6634 14.8011 12.6602 15.0879 12.6367C15.4635 12.606 15.675 12.5492 15.833 12.4688L15.959 12.3975C16.2466 12.2211 16.4808 11.9682 16.6348 11.666L16.6914 11.5361C16.7428 11.3924 16.7797 11.2026 16.8027 10.9209C16.8341 10.5374 16.835 10.0439 16.835 9.33301V6.5C16.835 5.78896 16.8341 5.29563 16.8027 4.91211C16.7797 4.63025 16.7428 4.44063 16.6914 4.29688L16.6348 4.16699C16.4807 3.86474 16.2466 3.61186 15.959 3.43555L15.833 3.36524C15.675 3.28473 15.4636 3.22797 15.0879 3.19727C14.7044 3.16593 14.211 3.16504 13.5 3.16504H10.667C9.9561 3.16504 9.46259 3.16595 9.0791 3.19727C8.79739 3.22028 8.6076 3.2572 8.46387 3.30859L8.33399 3.36524C8.03176 3.51923 7.77886 3.75343 7.60254 4.04102L7.53125 4.16699C7.4508 4.32498 7.39397 4.53655 7.36328 4.91211C7.33985 5.19893 7.33562 5.54719 7.33399 6.00195H9.33301C10.022 6.00195 10.5791 6.00131 11.0293 6.03809C11.4873 6.07551 11.8937 6.15471 12.2705 6.34668L12.4883 6.46875C12.984 6.7728 13.3878 7.20854 13.6533 7.72949L13.7197 7.87207C13.8642 8.20859 13.9292 8.56974 13.9619 8.9707C13.9987 9.42092 13.998 9.97799 13.998 10.667V12.665ZM18.165 9.33301C18.165 10.022 18.1657 10.5791 18.1289 11.0293C18.0961 11.4302 18.0311 11.7914 17.8867 12.1279L17.8203 12.2705C17.5549 12.7914 17.1509 13.2272 16.6553 13.5313L16.4365 13.6533C16.0599 13.8452 15.6541 13.9245 15.1963 13.9619C14.8593 13.9895 14.4624 13.9935 13.9951 13.9951C13.9935 14.4624 13.9895 14.8593 13.9619 15.1963C13.9292 15.597 13.864 15.9576 13.7197 16.2939L13.6533 16.4365C13.3878 16.9576 12.9841 17.3941 12.4883 17.6982L12.2705 17.8203C11.8937 18.0123 11.4873 18.0915 11.0293 18.1289C10.5791 18.1657 10.022 18.165 9.33301 18.165H6.5C5.81091 18.165 5.25395 18.1657 4.80371 18.1289C4.40306 18.0962 4.04235 18.031 3.70606 17.8867L3.56348 17.8203C3.04244 17.5548 2.60585 17.151 2.30176 16.6553L2.17969 16.4365C1.98788 16.0599 1.90851 15.6541 1.87109 15.1963C1.83431 14.746 1.83496 14.1891 1.83496 13.5V10.667C1.83496 9.978 1.83432 9.42091 1.87109 8.9707C1.90851 8.5127 1.98772 8.10625 2.17969 7.72949L2.30176 7.51172C2.60586 7.0159 3.04236 6.6122 3.56348 6.34668L3.70606 6.28027C4.04237 6.136 4.40303 6.07083 4.80371 6.03809C5.14051 6.01057 5.53708 6.00551 6.00391 6.00391C6.00551 5.53708 6.01057 5.14051 6.03809 4.80371C6.0755 4.34588 6.15483 3.94012 6.34668 3.56348L6.46875 3.34473C6.77282 2.84912 7.20856 2.44514 7.72949 2.17969L7.87207 2.11328C8.20855 1.96886 8.56979 1.90385 8.9707 1.87109C9.42091 1.83432 9.978 1.83496 10.667 1.83496H13.5C14.1891 1.83496 14.746 1.83431 15.1963 1.87109C15.6541 1.90851 16.0599 1.98788 16.4365 2.17969L16.6553 2.30176C17.151 2.60585 17.5548 3.04244 17.8203 3.56348L17.8867 3.70606C18.031 4.04235 18.0962 4.40306 18.1289 4.80371C18.1657 5.25395 18.165 5.81091 18.165 6.5V9.33301Z">
+                                                            </path>
+                                                        </svg>Copy code</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="overflow-y-auto p-4" dir="ltr"><code
+                                                class="whitespace-pre! language-yaml"><span><span><span
+                                                            class="hljs-comment">#
+                                                            docker-compose.yml</span></span><span>
+                                                    </span><span><span class="hljs-attr">version:</span></span><span>
+                                                    </span><span><span class="hljs-string">'3'</span></span><span>
+                                                    </span><span><span class="hljs-attr">services:</span></span><span>
+                                                    </span><span><span class="hljs-attr">mongo:</span></span><span>
+                                                    </span><span><span class="hljs-attr">image:</span></span><span>
+                                                    </span><span><span class="hljs-string">mongo:6</span></span><span>
+                                                    </span><span><span class="hljs-attr">restart:</span></span><span>
+                                                    </span><span><span class="hljs-string">always</span></span><span>
+                                                    </span><span><span class="hljs-attr">volumes:</span></span><span>
+                                                    </span><span><span class="hljs-bullet">-</span></span><span>
+                                                    </span><span><span
+                                                            class="hljs-string">./data/db:/data/db</span></span><span>
+                                                    </span><span><span class="hljs-attr">ports:</span></span><span>
+                                                    </span><span><span class="hljs-bullet">-</span></span><span>
+                                                    </span><span><span
+                                                            class="hljs-string">"27017:27017"</span></span><span>
+                                                    </span></span></code></div>
+                                    </div>
+                                </pre>
+                                <p data-start="7006" data-end="7012">Start:</p>
+                                <pre class="overflow-visible!" data-start="7013" data-end="7045">
+                                    <div
+                                        class="contain-inline-size rounded-2xl relative bg-token-sidebar-surface-primary">
+                                        <div
+                                            class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between h-9 bg-token-sidebar-surface-primary select-none rounded-t-2xl">
+                                            bash</div>
+                                        <div class="sticky top-9">
+                                            <div class="absolute end-0 bottom-0 flex h-9 items-center pe-2">
+                                                <div
+                                                    class="bg-token-bg-elevated-secondary text-token-text-secondary flex items-center gap-4 rounded-sm px-2 font-sans text-xs">
+                                                    <button class="flex gap-1 items-center select-none py-1"
+                                                        aria-label="Copy"><svg width="20" height="20"
+                                                            viewBox="0 0 20 20" fill="currentColor"
+                                                            xmlns="http://www.w3.org/2000/svg" class="icon-sm">
+                                                            <path
+                                                                d="M12.668 10.667C12.668 9.95614 12.668 9.46258 12.6367 9.0791C12.6137 8.79732 12.5758 8.60761 12.5244 8.46387L12.4688 8.33399C12.3148 8.03193 12.0803 7.77885 11.793 7.60254L11.666 7.53125C11.508 7.45087 11.2963 7.39395 10.9209 7.36328C10.5374 7.33197 10.0439 7.33203 9.33301 7.33203H6.5C5.78896 7.33203 5.29563 7.33195 4.91211 7.36328C4.63016 7.38632 4.44065 7.42413 4.29688 7.47559L4.16699 7.53125C3.86488 7.68518 3.61186 7.9196 3.43555 8.20703L3.36524 8.33399C3.28478 8.49198 3.22795 8.70352 3.19727 9.0791C3.16595 9.46259 3.16504 9.95611 3.16504 10.667V13.5C3.16504 14.211 3.16593 14.7044 3.19727 15.0879C3.22797 15.4636 3.28473 15.675 3.36524 15.833L3.43555 15.959C3.61186 16.2466 3.86474 16.4807 4.16699 16.6348L4.29688 16.6914C4.44063 16.7428 4.63025 16.7797 4.91211 16.8027C5.29563 16.8341 5.78896 16.835 6.5 16.835H9.33301C10.0439 16.835 10.5374 16.8341 10.9209 16.8027C11.2965 16.772 11.508 16.7152 11.666 16.6348L11.793 16.5645C12.0804 16.3881 12.3148 16.1351 12.4688 15.833L12.5244 15.7031C12.5759 15.5594 12.6137 15.3698 12.6367 15.0879C12.6681 14.7044 12.668 14.211 12.668 13.5V10.667ZM13.998 12.665C14.4528 12.6634 14.8011 12.6602 15.0879 12.6367C15.4635 12.606 15.675 12.5492 15.833 12.4688L15.959 12.3975C16.2466 12.2211 16.4808 11.9682 16.6348 11.666L16.6914 11.5361C16.7428 11.3924 16.7797 11.2026 16.8027 10.9209C16.8341 10.5374 16.835 10.0439 16.835 9.33301V6.5C16.835 5.78896 16.8341 5.29563 16.8027 4.91211C16.7797 4.63025 16.7428 4.44063 16.6914 4.29688L16.6348 4.16699C16.4807 3.86474 16.2466 3.61186 15.959 3.43555L15.833 3.36524C15.675 3.28473 15.4636 3.22797 15.0879 3.19727C14.7044 3.16593 14.211 3.16504 13.5 3.16504H10.667C9.9561 3.16504 9.46259 3.16595 9.0791 3.19727C8.79739 3.22028 8.6076 3.2572 8.46387 3.30859L8.33399 3.36524C8.03176 3.51923 7.77886 3.75343 7.60254 4.04102L7.53125 4.16699C7.4508 4.32498 7.39397 4.53655 7.36328 4.91211C7.33985 5.19893 7.33562 5.54719 7.33399 6.00195H9.33301C10.022 6.00195 10.5791 6.00131 11.0293 6.03809C11.4873 6.07551 11.8937 6.15471 12.2705 6.34668L12.4883 6.46875C12.984 6.7728 13.3878 7.20854 13.6533 7.72949L13.7197 7.87207C13.8642 8.20859 13.9292 8.56974 13.9619 8.9707C13.9987 9.42092 13.998 9.97799 13.998 10.667V12.665ZM18.165 9.33301C18.165 10.022 18.1657 10.5791 18.1289 11.0293C18.0961 11.4302 18.0311 11.7914 17.8867 12.1279L17.8203 12.2705C17.5549 12.7914 17.1509 13.2272 16.6553 13.5313L16.4365 13.6533C16.0599 13.8452 15.6541 13.9245 15.1963 13.9619C14.8593 13.9895 14.4624 13.9935 13.9951 13.9951C13.9935 14.4624 13.9895 14.8593 13.9619 15.1963C13.9292 15.597 13.864 15.9576 13.7197 16.2939L13.6533 16.4365C13.3878 16.9576 12.9841 17.3941 12.4883 17.6982L12.2705 17.8203C11.8937 18.0123 11.4873 18.0915 11.0293 18.1289C10.5791 18.1657 10.022 18.165 9.33301 18.165H6.5C5.81091 18.165 5.25395 18.1657 4.80371 18.1289C4.40306 18.0962 4.04235 18.031 3.70606 17.8867L3.56348 17.8203C3.04244 17.5548 2.60585 17.151 2.30176 16.6553L2.17969 16.4365C1.98788 16.0599 1.90851 15.6541 1.87109 15.1963C1.83431 14.746 1.83496 14.1891 1.83496 13.5V10.667C1.83496 9.978 1.83432 9.42091 1.87109 8.9707C1.90851 8.5127 1.98772 8.10625 2.17969 7.72949L2.30176 7.51172C2.60586 7.0159 3.04236 6.6122 3.56348 6.34668L3.70606 6.28027C4.04237 6.136 4.40303 6.07083 4.80371 6.03809C5.14051 6.01057 5.53708 6.00551 6.00391 6.00391C6.00551 5.53708 6.01057 5.14051 6.03809 4.80371C6.0755 4.34588 6.15483 3.94012 6.34668 3.56348L6.46875 3.34473C6.77282 2.84912 7.20856 2.44514 7.72949 2.17969L7.87207 2.11328C8.20855 1.96886 8.56979 1.90385 8.9707 1.87109C9.42091 1.83432 9.978 1.83496 10.667 1.83496H13.5C14.1891 1.83496 14.746 1.83431 15.1963 1.87109C15.6541 1.90851 16.0599 1.98788 16.4365 2.17969L16.6553 2.30176C17.151 2.60585 17.5548 3.04244 17.8203 3.56348L17.8867 3.70606C18.031 4.04235 18.0962 4.40306 18.1289 4.80371C18.1657 5.25395 18.165 5.81091 18.165 6.5V9.33301Z">
+                                                            </path>
+                                                        </svg>Copy code</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="overflow-y-auto p-4" dir="ltr"><code
+                                                class="whitespace-pre! language-bash"><span><span>docker-compose up -d
+                                                    </span></span></code></div>
+                                    </div>
+                                </pre>
+                                <hr data-start="7047" data-end="7050">
+                                <h1 data-start="7052" data-end="7081">10) Useful dev improvements</h1>
+                                <ul data-start="7082" data-end="7650">
+                                    <li data-start="7082" data-end="7188">
+                                        <p data-start="7084" data-end="7188">Use <code data-start="7088"
+                                                data-end="7102">concurrently</code> (or <code data-start="7107"
+                                                data-end="7120">npm-run-all</code>) in root <code data-start="7130"
+                                                data-end="7144">package.json</code> to run frontend &amp; backend with
+                                            one
+                                            command.</p>
+                                    </li>
+                                    <li data-start="7189" data-end="7344">
+                                        <p data-start="7191" data-end="7344">Add CORS config and cookie/session config
+                                            if
+                                            you plan to use authentication across subdomain (you may need to set <code
+                                                data-start="7305" data-end="7315">sameSite</code> and cookie domain
+                                            properly).</p>
+                                    </li>
+                                    <li data-start="7345" data-end="7489">
+                                        <p data-start="7347" data-end="7489">For HTTPS locally, use <code
+                                                data-start="7370" data-end="7378">mkcert</code> to generate trusted
+                                            certs and configure nginx
+                                            to listen on 443 (optional, needed for OAuth or secure cookies).</p>
+                                    </li>
+                                    <li data-start="7490" data-end="7650">
+                                        <p data-start="7492" data-end="7650">If you want <code data-start="7504"
+                                                data-end="7519">app.localhost</code> to set cookies for <code
+                                                data-start="7539" data-end="7550">localhost</code> domain across
+                                            subdomains,
+                                            you will need to configure cookie <code data-start="7611"
+                                                data-end="7619">domain</code> properly and likely use HTTPS.</p>
+                                    </li>
+                                </ul>
+                                <hr data-start="7652" data-end="7655">
+                                <h1 data-start="7657" data-end="7708">11) Example root <code data-start="7676"
+                                        data-end="7690">package.json</code> script (optional)</h1>
+                                <pre class="overflow-visible!" data-start="7709" data-end="7916">
+                                    <div
+                                        class="contain-inline-size rounded-2xl relative bg-token-sidebar-surface-primary">
+                                        <div
+                                            class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between h-9 bg-token-sidebar-surface-primary select-none rounded-t-2xl">
+                                            json</div>
+                                        <div class="sticky top-9">
+                                            <div class="absolute end-0 bottom-0 flex h-9 items-center pe-2">
+                                                <div
+                                                    class="bg-token-bg-elevated-secondary text-token-text-secondary flex items-center gap-4 rounded-sm px-2 font-sans text-xs">
+                                                    <button class="flex gap-1 items-center select-none py-1"
+                                                        aria-label="Copy"><svg width="20" height="20"
+                                                            viewBox="0 0 20 20" fill="currentColor"
+                                                            xmlns="http://www.w3.org/2000/svg" class="icon-sm">
+                                                            <path
+                                                                d="M12.668 10.667C12.668 9.95614 12.668 9.46258 12.6367 9.0791C12.6137 8.79732 12.5758 8.60761 12.5244 8.46387L12.4688 8.33399C12.3148 8.03193 12.0803 7.77885 11.793 7.60254L11.666 7.53125C11.508 7.45087 11.2963 7.39395 10.9209 7.36328C10.5374 7.33197 10.0439 7.33203 9.33301 7.33203H6.5C5.78896 7.33203 5.29563 7.33195 4.91211 7.36328C4.63016 7.38632 4.44065 7.42413 4.29688 7.47559L4.16699 7.53125C3.86488 7.68518 3.61186 7.9196 3.43555 8.20703L3.36524 8.33399C3.28478 8.49198 3.22795 8.70352 3.19727 9.0791C3.16595 9.46259 3.16504 9.95611 3.16504 10.667V13.5C3.16504 14.211 3.16593 14.7044 3.19727 15.0879C3.22797 15.4636 3.28473 15.675 3.36524 15.833L3.43555 15.959C3.61186 16.2466 3.86474 16.4807 4.16699 16.6348L4.29688 16.6914C4.44063 16.7428 4.63025 16.7797 4.91211 16.8027C5.29563 16.8341 5.78896 16.835 6.5 16.835H9.33301C10.0439 16.835 10.5374 16.8341 10.9209 16.8027C11.2965 16.772 11.508 16.7152 11.666 16.6348L11.793 16.5645C12.0804 16.3881 12.3148 16.1351 12.4688 15.833L12.5244 15.7031C12.5759 15.5594 12.6137 15.3698 12.6367 15.0879C12.6681 14.7044 12.668 14.211 12.668 13.5V10.667ZM13.998 12.665C14.4528 12.6634 14.8011 12.6602 15.0879 12.6367C15.4635 12.606 15.675 12.5492 15.833 12.4688L15.959 12.3975C16.2466 12.2211 16.4808 11.9682 16.6348 11.666L16.6914 11.5361C16.7428 11.3924 16.7797 11.2026 16.8027 10.9209C16.8341 10.5374 16.835 10.0439 16.835 9.33301V6.5C16.835 5.78896 16.8341 5.29563 16.8027 4.91211C16.7797 4.63025 16.7428 4.44063 16.6914 4.29688L16.6348 4.16699C16.4807 3.86474 16.2466 3.61186 15.959 3.43555L15.833 3.36524C15.675 3.28473 15.4636 3.22797 15.0879 3.19727C14.7044 3.16593 14.211 3.16504 13.5 3.16504H10.667C9.9561 3.16504 9.46259 3.16595 9.0791 3.19727C8.79739 3.22028 8.6076 3.2572 8.46387 3.30859L8.33399 3.36524C8.03176 3.51923 7.77886 3.75343 7.60254 4.04102L7.53125 4.16699C7.4508 4.32498 7.39397 4.53655 7.36328 4.91211C7.33985 5.19893 7.33562 5.54719 7.33399 6.00195H9.33301C10.022 6.00195 10.5791 6.00131 11.0293 6.03809C11.4873 6.07551 11.8937 6.15471 12.2705 6.34668L12.4883 6.46875C12.984 6.7728 13.3878 7.20854 13.6533 7.72949L13.7197 7.87207C13.8642 8.20859 13.9292 8.56974 13.9619 8.9707C13.9987 9.42092 13.998 9.97799 13.998 10.667V12.665ZM18.165 9.33301C18.165 10.022 18.1657 10.5791 18.1289 11.0293C18.0961 11.4302 18.0311 11.7914 17.8867 12.1279L17.8203 12.2705C17.5549 12.7914 17.1509 13.2272 16.6553 13.5313L16.4365 13.6533C16.0599 13.8452 15.6541 13.9245 15.1963 13.9619C14.8593 13.9895 14.4624 13.9935 13.9951 13.9951C13.9935 14.4624 13.9895 14.8593 13.9619 15.1963C13.9292 15.597 13.864 15.9576 13.7197 16.2939L13.6533 16.4365C13.3878 16.9576 12.9841 17.3941 12.4883 17.6982L12.2705 17.8203C11.8937 18.0123 11.4873 18.0915 11.0293 18.1289C10.5791 18.1657 10.022 18.165 9.33301 18.165H6.5C5.81091 18.165 5.25395 18.1657 4.80371 18.1289C4.40306 18.0962 4.04235 18.031 3.70606 17.8867L3.56348 17.8203C3.04244 17.5548 2.60585 17.151 2.30176 16.6553L2.17969 16.4365C1.98788 16.0599 1.90851 15.6541 1.87109 15.1963C1.83431 14.746 1.83496 14.1891 1.83496 13.5V10.667C1.83496 9.978 1.83432 9.42091 1.87109 8.9707C1.90851 8.5127 1.98772 8.10625 2.17969 7.72949L2.30176 7.51172C2.60586 7.0159 3.04236 6.6122 3.56348 6.34668L3.70606 6.28027C4.04237 6.136 4.40303 6.07083 4.80371 6.03809C5.14051 6.01057 5.53708 6.00551 6.00391 6.00391C6.00551 5.53708 6.01057 5.14051 6.03809 4.80371C6.0755 4.34588 6.15483 3.94012 6.34668 3.56348L6.46875 3.34473C6.77282 2.84912 7.20856 2.44514 7.72949 2.17969L7.87207 2.11328C8.20855 1.96886 8.56979 1.90385 8.9707 1.87109C9.42091 1.83432 9.978 1.83496 10.667 1.83496H13.5C14.1891 1.83496 14.746 1.83431 15.1963 1.87109C15.6541 1.90851 16.0599 1.98788 16.4365 2.17969L16.6553 2.30176C17.151 2.60585 17.5548 3.04244 17.8203 3.56348L17.8867 3.70606C18.031 4.04235 18.0962 4.40306 18.1289 4.80371C18.1657 5.25395 18.165 5.81091 18.165 6.5V9.33301Z">
+                                                            </path>
+                                                        </svg>Copy code</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="overflow-y-auto p-4" dir="ltr"><code
+                                                class="whitespace-pre! language-json"><span><span><span
+                                                            class="hljs-punctuation">{</span></span><span>
+                                                    </span><span><span
+                                                            class="hljs-attr">"scripts"</span></span><span><span
+                                                            class="hljs-punctuation">:</span></span><span>
+                                                    </span><span><span class="hljs-punctuation">{</span></span><span>
+                                                    </span><span><span
+                                                            class="hljs-attr">"start"</span></span><span><span
+                                                            class="hljs-punctuation">:</span></span><span>
+                                                    </span><span><span class="hljs-string">"concurrently \"cd backend
+                                                            &amp;&amp; npm run dev\" \"cd frontend &amp;&amp;
+                                                            HOST=app.localhost PORT=3000 npm
+                                                            start\""</span></span><span>
+                                                    </span><span><span
+                                                            class="hljs-punctuation">}</span></span><span><span
+                                                            class="hljs-punctuation">,</span></span><span>
+                                                    </span><span><span
+                                                            class="hljs-attr">"devDependencies"</span></span><span><span
+                                                            class="hljs-punctuation">:</span></span><span>
+                                                    </span><span><span class="hljs-punctuation">{</span></span><span>
+                                                    </span><span><span
+                                                            class="hljs-attr">"concurrently"</span></span><span><span
+                                                            class="hljs-punctuation">:</span></span><span>
+                                                    </span><span><span class="hljs-string">"^7.0.0"</span></span><span>
+                                                    </span><span><span class="hljs-punctuation">}</span></span><span>
+                                                    </span><span><span class="hljs-punctuation">}</span></span><span>
+                                                    </span></span></code></div>
+                                    </div>
+                                </pre>
+                                <p data-start="7917" data-end="7985">Install concurrently in root: <code
+                                        data-start="7947" data-end="7984">npm install --save-dev concurrently</code>.
+                                </p>
+                                <hr data-start="7987" data-end="7990">
+                                <h1 data-start="7992" data-end="8023">12) Troubleshooting checklist</h1>
+                                <ul data-start="8024" data-end="8631">
+                                    <li data-start="8024" data-end="8197">
+                                        <p data-start="8026" data-end="8197">Hosts file changes require DNS cache flush
+                                            or
+                                            browser restart. On macOS: <code data-start="8099" data-end="8162">sudo
+                                                dscacheutil -flushcache; sudo killall -HUP mDNSResponder</code>. On
+                                            Windows:
+                                            <code data-start="8176" data-end="8196">ipconfig /flushdns</code>.
+                                        </p>
+                                    </li>
+                                    <li data-start="8198" data-end="8299">
+                                        <p data-start="8200" data-end="8299">If React dev server refuses to bind to
+                                            <code data-start="8239" data-end="8254">app.localhost</code>, set <code
+                                                data-start="8260" data-end="8280">HOST=app.localhost</code> env when
+                                            starting.</p>
+                                    </li>
+                                    <li data-start="8300" data-end="8387">
+                                        <p data-start="8302" data-end="8387">Confirm Express CORS <code
+                                                data-start="8323" data-end="8331">origin</code> exactly matches scheme +
+                                            host (<code data-start="8363" data-end="8385">http://app.localhost</code>).
+                                        </p>
+                                    </li>
+                                    <li data-start="8388" data-end="8490">
+                                        <p data-start="8390" data-end="8490">If port 80 is in use, either stop that
+                                            service
+                                            or use nginx on another port and include port in URL.</p>
+                                    </li>
+                                    <li data-start="8491" data-end="8631">
+                                        <p data-start="8493" data-end="8631">If cookies not shared, ensure <code
+                                                data-start="8523" data-end="8547">credentials: 'include'</code> and
+                                            server
+                                            sets <code data-start="8564"
+                                                data-end="8604">Access-Control-Allow-Credentials:
+                                                true</code> and cookie domain correct.</p>
+                                    </li>
+                                </ul>
+                                <hr data-start="8633" data-end="8636">
+                                <h1 data-start="8638" data-end="8691">13) Minimal end-to-end quick checklist
+                                    (copy/paste)
+                                </h1>
+                                <ol data-start="8692" data-end="8711">
+                                    <li data-start="8692" data-end="8711">
+                                        <p data-start="8695" data-end="8711">Edit hosts file:</p>
+                                    </li>
+                                </ol>
+                                <pre class="overflow-visible!" data-start="8712" data-end="8767">
+                                    <div
+                                        class="contain-inline-size rounded-2xl relative bg-token-sidebar-surface-primary">
+                                        <div
+                                            class="flex items-center text-token-text-secondary px-4 py-2 text-xs font-sans justify-between h-9 bg-token-sidebar-surface-primary select-none rounded-t-2xl">
+                                        </div>
+                                        <div class="sticky top-9">
+                                            <div class="absolute end-0 bottom-0 flex h-9 items-center pe-2">
+                                                <div
+                                                    class="bg-token-bg-elevated-secondary text-token-text-secondary flex items-center gap-4 rounded-sm px-2 font-sans text-xs">
+                                                    <button class="flex gap-1 items-center select-none py-1"
+                                                        aria-label="Copy"><svg width="20" height="20"
+                                                            viewBox="0 0 20 20" fill="currentColor"
+                                                            xmlns="http://www.w3.org/2000/svg" class="icon-sm">
+                                                            <path
+                                                                d="M12.668 10.667C12.668 9.95614 12.668 9.46258 12.6367 9.0791C12.6137 8.79732 12.5758 8.60761 12.5244 8.46387L12.4688 8.33399C12.3148 8.03193 12.0803 7.77885 11.793 7.60254L11.666 7.53125C11.508 7.45087 11.2963 7.39395 10.9209 7.36328C10.5374 7.33197 10.0439 7.33203 9.33301 7.33203H6.5C5.78896 7.33203 5.29563 7.33195 4.91211 7.36328C4.63016 7.38632 4.44065 7.42413 4.29688 7.47559L4.16699 7.53125C3.86488 7.68518 3.61186 7.9196 3.43555 8.20703L3.36524 8.33399C3.28478 8.49198 3.22795 8.70352 3.19727 9.0791C3.16595 9.46259 3.16504 9.95611 3.16504 10.667V13.5C3.16504 14.211 3.16593 14.7044 3.19727 15.0879C3.22797 15.4636 3.28473 15.675 3.36524 15.833L3.43555 15.959C3.61186 16.2466 3.86474 16.4807 4.16699 16.6348L4.29688 16.6914C4.44063 16.7428 4.63025 16.7797 4.91211 16.8027C5.29563 16.8341 5.78896 16.835 6.5 16.835H9.33301C10.0439 16.835 10.5374 16.8341 10.9209 16.8027C11.2965 16.772 11.508 16.7152 11.666 16.6348L11.793 16.5645C12.0804 16.3881 12.3148 16.1351 12.4688 15.833L12.5244 15.7031C12.5759 15.5594 12.6137 15.3698 12.6367 15.0879C12.6681 14.7044 12.668 14.211 12.668 13.5V10.667ZM13.998 12.665C14.4528 12.6634 14.8011 12.6602 15.0879 12.6367C15.4635 12.606 15.675 12.5492 15.833 12.4688L15.959 12.3975C16.2466 12.2211 16.4808 11.9682 16.6348 11.666L16.6914 11.5361C16.7428 11.3924 16.7797 11.2026 16.8027 10.9209C16.8341 10.5374 16.835 10.0439 16.835 9.33301V6.5C16.835 5.78896 16.8341 5.29563 16.8027 4.91211C16.7797 4.63025 16.7428 4.44063 16.6914 4.29688L16.6348 4.16699C16.4807 3.86474 16.2466 3.61186 15.959 3.43555L15.833 3.36524C15.675 3.28473 15.4636 3.22797 15.0879 3.19727C14.7044 3.16593 14.211 3.16504 13.5 3.16504H10.667C9.9561 3.16504 9.46259 3.16595 9.0791 3.19727C8.79739 3.22028 8.6076 3.2572 8.46387 3.30859L8.33399 3.36524C8.03176 3.51923 7.77886 3.75343 7.60254 4.04102L7.53125 4.16699C7.4508 4.32498 7.39397 4.53655 7.36328 4.91211C7.33985 5.19893 7.33562 5.54719 7.33399 6.00195H9.33301C10.022 6.00195 10.5791 6.00131 11.0293 6.03809C11.4873 6.07551 11.8937 6.15471 12.2705 6.34668L12.4883 6.46875C12.984 6.7728 13.3878 7.20854 13.6533 7.72949L13.7197 7.87207C13.8642 8.20859 13.9292 8.56974 13.9619 8.9707C13.9987 9.42092 13.998 9.97799 13.998 10.667V12.665ZM18.165 9.33301C18.165 10.022 18.1657 10.5791 18.1289 11.0293C18.0961 11.4302 18.0311 11.7914 17.8867 12.1279L17.8203 12.2705C17.5549 12.7914 17.1509 13.2272 16.6553 13.5313L16.4365 13.6533C16.0599 13.8452 15.6541 13.9245 15.1963 13.9619C14.8593 13.9895 14.4624 13.9935 13.9951 13.9951C13.9935 14.4624 13.9895 14.8593 13.9619 15.1963C13.9292 15.597 13.864 15.9576 13.7197 16.2939L13.6533 16.4365C13.3878 16.9576 12.9841 17.3941 12.4883 17.6982L12.2705 17.8203C11.8937 18.0123 11.4873 18.0915 11.0293 18.1289C10.5791 18.1657 10.022 18.165 9.33301 18.165H6.5C5.81091 18.165 5.25395 18.1657 4.80371 18.1289C4.40306 18.0962 4.04235 18.031 3.70606 17.8867L3.56348 17.8203C3.04244 17.5548 2.60585 17.151 2.30176 16.6553L2.17969 16.4365C1.98788 16.0599 1.90851 15.6541 1.87109 15.1963C1.83431 14.746 1.83496 14.1891 1.83496 13.5V10.667C1.83496 9.978 1.83432 9.42091 1.87109 8.9707C1.90851 8.5127 1.98772 8.10625 2.17969 7.72949L2.30176 7.51172C2.60586 7.0159 3.04236 6.6122 3.56348 6.34668L3.70606 6.28027C4.04237 6.136 4.40303 6.07083 4.80371 6.03809C5.14051 6.01057 5.53708 6.00551 6.00391 6.00391C6.00551 5.53708 6.01057 5.14051 6.03809 4.80371C6.0755 4.34588 6.15483 3.94012 6.34668 3.56348L6.46875 3.34473C6.77282 2.84912 7.20856 2.44514 7.72949 2.17969L7.87207 2.11328C8.20855 1.96886 8.56979 1.90385 8.9707 1.87109C9.42091 1.83432 9.978 1.83496 10.667 1.83496H13.5C14.1891 1.83496 14.746 1.83431 15.1963 1.87109C15.6541 1.90851 16.0599 1.98788 16.4365 2.17969L16.6553 2.30176C17.151 2.60585 17.5548 3.04244 17.8203 3.56348L17.8867 3.70606C18.031 4.04235 18.0962 4.40306 18.1289 4.80371C18.1657 5.25395 18.165 5.81091 18.165 6.5V9.33301Z">
+                                                            </path>
+                                                        </svg>Copy code</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="overflow-y-auto p-4" dir="ltr"><code
+                                                class="whitespace-pre!"><span><span>127.0.0.1 app.localhost
+                                                        127.0.0.1 api.localhost
+                                                    </span></span></code></div>
+                                    </div>
+                                </pre>
+                                <ol start="2" data-start="8768" data-end="8954">
+                                    <li data-start="8768" data-end="8785">
+                                        <p data-start="8771" data-end="8785">Start MongoDB.</p>
+                                    </li>
+                                    <li data-start="8786" data-end="8831">
+                                        <p data-start="8789" data-end="8831">Start backend: <code data-start="8804"
+                                                data-end="8831">cd backend &amp;&amp; npm run dev</code></p>
+                                    </li>
+                                    <li data-start="8832" data-end="8906">
+                                        <p data-start="8835" data-end="8906">Start frontend: <code data-start="8851"
+                                                data-end="8906">cd frontend &amp;&amp; HOST=app.localhost PORT=3000 npm
+                                                start</code></p>
+                                    </li>
+                                    <li data-start="8907" data-end="8954">
+                                        <p data-start="8910" data-end="8954">Open <code data-start="8915"
+                                                data-end="8942">http://app.localhost:3000</code> in browser.</p>
+                                    </li>
+                                </ol>
+                                <p data-start="8956" data-end="9049">If you want subdomain without ports, set up nginx
+                                    per
+                                    step 8 and open <code data-start="9026" data-end="9048">http://app.localhost</code>.
+                                </p>
+                                <hr data-start="9051" data-end="9054">
+                                <p data-start="9056" data-end="9075">If you want, I can:</p>
+                                <ul data-start="9076" data-end="9293">
+                                    <li data-start="9076" data-end="9151">
+                                        <p data-start="9078" data-end="9151">generate full starter repo files (backend
+                                            and
+                                            frontend) you can download,</p>
+                                    </li>
+                                    <li data-start="9152" data-end="9239">
+                                        <p data-start="9154" data-end="9239">give a <code data-start="9161"
+                                                data-end="9181">docker-compose.yml</code> that runs MongoDB, backend,
+                                            frontend, and nginx together,</p>
+                                    </li>
+                                    <li data-start="9240" data-end="9293">
+                                        <p data-start="9242" data-end="9293">or provide nginx + mkcert config for HTTPS
+                                            locally.</p>
+                                    </li>
+                                </ul>
+                                <p data-start="9295" data-end="9382" data-is-last-node="" data-is-only-node="">Which of
+                                    those (repo, docker-compose, or HTTPS setup) would you like me to deliver now?</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="z-0 flex min-h-[46px] justify-start">
+                    <div class="touch:-me-2 touch:-ms-3.5 -ms-2.5 -me-1 flex items-center gap-y-4 p-1 select-none flex-wrap touch:w-[calc(100%+--spacing(3.5))] -mt-1 w-[calc(100%+--spacing(2.5))] duration-[1.5s] focus-within:transition-none hover:transition-none touch:pointer-events-auto pointer-events-none [mask-image:linear-gradient(to_right,black_33%,transparent_66%)] [mask-size:300%_100%] [mask-position:100%_0%] motion-safe:transition-[mask-position] group-hover/turn-messages:pointer-events-auto group-hover/turn-messages:[mask-position:0_0] group-focus-within/turn-messages:pointer-events-auto group-focus-within/turn-messages:[mask-position:0_0] has-data-[state=open]:pointer-events-auto has-data-[state=open]:[mask-position:0_0]"
+                        style="mask-position: 0% 0%;"><button
+                            class="text-token-text-secondary hover:bg-token-bg-secondary rounded-lg" aria-label="Copy"
+                            aria-pressed="false" data-testid="copy-turn-action-button" data-state="closed"><span
+                                class="flex items-center justify-center touch:w-10 h-8 w-8"><svg width="20" height="20"
+                                    viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
+                                    class="icon">
+                                    <path
+                                        d="M12.668 10.667C12.668 9.95614 12.668 9.46258 12.6367 9.0791C12.6137 8.79732 12.5758 8.60761 12.5244 8.46387L12.4688 8.33399C12.3148 8.03193 12.0803 7.77885 11.793 7.60254L11.666 7.53125C11.508 7.45087 11.2963 7.39395 10.9209 7.36328C10.5374 7.33197 10.0439 7.33203 9.33301 7.33203H6.5C5.78896 7.33203 5.29563 7.33195 4.91211 7.36328C4.63016 7.38632 4.44065 7.42413 4.29688 7.47559L4.16699 7.53125C3.86488 7.68518 3.61186 7.9196 3.43555 8.20703L3.36524 8.33399C3.28478 8.49198 3.22795 8.70352 3.19727 9.0791C3.16595 9.46259 3.16504 9.95611 3.16504 10.667V13.5C3.16504 14.211 3.16593 14.7044 3.19727 15.0879C3.22797 15.4636 3.28473 15.675 3.36524 15.833L3.43555 15.959C3.61186 16.2466 3.86474 16.4807 4.16699 16.6348L4.29688 16.6914C4.44063 16.7428 4.63025 16.7797 4.91211 16.8027C5.29563 16.8341 5.78896 16.835 6.5 16.835H9.33301C10.0439 16.835 10.5374 16.8341 10.9209 16.8027C11.2965 16.772 11.508 16.7152 11.666 16.6348L11.793 16.5645C12.0804 16.3881 12.3148 16.1351 12.4688 15.833L12.5244 15.7031C12.5759 15.5594 12.6137 15.3698 12.6367 15.0879C12.6681 14.7044 12.668 14.211 12.668 13.5V10.667ZM13.998 12.665C14.4528 12.6634 14.8011 12.6602 15.0879 12.6367C15.4635 12.606 15.675 12.5492 15.833 12.4688L15.959 12.3975C16.2466 12.2211 16.4808 11.9682 16.6348 11.666L16.6914 11.5361C16.7428 11.3924 16.7797 11.2026 16.8027 10.9209C16.8341 10.5374 16.835 10.0439 16.835 9.33301V6.5C16.835 5.78896 16.8341 5.29563 16.8027 4.91211C16.7797 4.63025 16.7428 4.44063 16.6914 4.29688L16.6348 4.16699C16.4807 3.86474 16.2466 3.61186 15.959 3.43555L15.833 3.36524C15.675 3.28473 15.4636 3.22797 15.0879 3.19727C14.7044 3.16593 14.211 3.16504 13.5 3.16504H10.667C9.9561 3.16504 9.46259 3.16595 9.0791 3.19727C8.79739 3.22028 8.6076 3.2572 8.46387 3.30859L8.33399 3.36524C8.03176 3.51923 7.77886 3.75343 7.60254 4.04102L7.53125 4.16699C7.4508 4.32498 7.39397 4.53655 7.36328 4.91211C7.33985 5.19893 7.33562 5.54719 7.33399 6.00195H9.33301C10.022 6.00195 10.5791 6.00131 11.0293 6.03809C11.4873 6.07551 11.8937 6.15471 12.2705 6.34668L12.4883 6.46875C12.984 6.7728 13.3878 7.20854 13.6533 7.72949L13.7197 7.87207C13.8642 8.20859 13.9292 8.56974 13.9619 8.9707C13.9987 9.42092 13.998 9.97799 13.998 10.667V12.665ZM18.165 9.33301C18.165 10.022 18.1657 10.5791 18.1289 11.0293C18.0961 11.4302 18.0311 11.7914 17.8867 12.1279L17.8203 12.2705C17.5549 12.7914 17.1509 13.2272 16.6553 13.5313L16.4365 13.6533C16.0599 13.8452 15.6541 13.9245 15.1963 13.9619C14.8593 13.9895 14.4624 13.9935 13.9951 13.9951C13.9935 14.4624 13.9895 14.8593 13.9619 15.1963C13.9292 15.597 13.864 15.9576 13.7197 16.2939L13.6533 16.4365C13.3878 16.9576 12.9841 17.3941 12.4883 17.6982L12.2705 17.8203C11.8937 18.0123 11.4873 18.0915 11.0293 18.1289C10.5791 18.1657 10.022 18.165 9.33301 18.165H6.5C5.81091 18.165 5.25395 18.1657 4.80371 18.1289C4.40306 18.0962 4.04235 18.031 3.70606 17.8867L3.56348 17.8203C3.04244 17.5548 2.60585 17.151 2.30176 16.6553L2.17969 16.4365C1.98788 16.0599 1.90851 15.6541 1.87109 15.1963C1.83431 14.746 1.83496 14.1891 1.83496 13.5V10.667C1.83496 9.978 1.83432 9.42091 1.87109 8.9707C1.90851 8.5127 1.98772 8.10625 2.17969 7.72949L2.30176 7.51172C2.60586 7.0159 3.04236 6.6122 3.56348 6.34668L3.70606 6.28027C4.04237 6.136 4.40303 6.07083 4.80371 6.03809C5.14051 6.01057 5.53708 6.00551 6.00391 6.00391C6.00551 5.53708 6.01057 5.14051 6.03809 4.80371C6.0755 4.34588 6.15483 3.94012 6.34668 3.56348L6.46875 3.34473C6.77282 2.84912 7.20856 2.44514 7.72949 2.17969L7.87207 2.11328C8.20855 1.96886 8.56979 1.90385 8.9707 1.87109C9.42091 1.83432 9.978 1.83496 10.667 1.83496H13.5C14.1891 1.83496 14.746 1.83431 15.1963 1.87109C15.6541 1.90851 16.0599 1.98788 16.4365 2.17969L16.6553 2.30176C17.151 2.60585 17.5548 3.04244 17.8203 3.56348L17.8867 3.70606C18.031 4.04235 18.0962 4.40306 18.1289 4.80371C18.1657 5.25395 18.165 5.81091 18.165 6.5V9.33301Z">
+                                    </path>
+                                </svg></span></button><button
+                            class="text-token-text-secondary hover:bg-token-bg-secondary rounded-lg"
+                            aria-label="Good response" aria-pressed="false"
+                            data-testid="good-response-turn-action-button" data-state="closed"><span
+                                class="flex items-center justify-center touch:w-10 h-8 w-8"><svg width="20" height="20"
+                                    viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
+                                    class="icon">
+                                    <path
+                                        d="M10.9153 1.83987L11.2942 1.88772L11.4749 1.91507C13.2633 2.24201 14.4107 4.01717 13.9749 5.78225L13.9261 5.95901L13.3987 7.6719C13.7708 7.67575 14.0961 7.68389 14.3792 7.70608C14.8737 7.74486 15.3109 7.82759 15.7015 8.03323L15.8528 8.11819C16.5966 8.56353 17.1278 9.29625 17.3167 10.1475L17.347 10.3096C17.403 10.69 17.3647 11.0832 17.2835 11.5098C17.2375 11.7517 17.1735 12.0212 17.096 12.3233L16.8255 13.3321L16.4456 14.7276C16.2076 15.6001 16.0438 16.2356 15.7366 16.7305L15.595 16.9346C15.2989 17.318 14.9197 17.628 14.4866 17.8408L14.2982 17.9258C13.6885 18.1774 12.9785 18.1651 11.9446 18.1651H7.33331C6.64422 18.1651 6.08726 18.1657 5.63702 18.1289C5.23638 18.0962 4.87565 18.031 4.53936 17.8867L4.39679 17.8203C3.87576 17.5549 3.43916 17.151 3.13507 16.6553L3.013 16.4366C2.82119 16.0599 2.74182 15.6541 2.7044 15.1963C2.66762 14.7461 2.66827 14.1891 2.66827 13.5V11.667C2.66827 10.9349 2.66214 10.4375 2.77569 10.0137L2.83722 9.81253C3.17599 8.81768 3.99001 8.05084 5.01397 7.77639L5.17706 7.73928C5.56592 7.66435 6.02595 7.66799 6.66632 7.66799C6.9429 7.66799 7.19894 7.52038 7.33624 7.2803L10.2562 2.16995L10.3118 2.08792C10.4544 1.90739 10.6824 1.81092 10.9153 1.83987ZM7.33136 14.167C7.33136 14.9841 7.33714 15.2627 7.39386 15.4746L7.42999 15.5918C7.62644 16.1686 8.09802 16.6134 8.69171 16.7725L8.87042 16.8067C9.07652 16.8323 9.38687 16.835 10.0003 16.835H11.9446C13.099 16.835 13.4838 16.8228 13.7903 16.6963L13.8997 16.6465C14.1508 16.5231 14.3716 16.3444 14.5433 16.1221L14.6155 16.0166C14.7769 15.7552 14.8968 15.3517 15.1624 14.378L15.5433 12.9824L15.8079 11.9922C15.8804 11.7102 15.9368 11.4711 15.9769 11.2608C16.0364 10.948 16.0517 10.7375 16.0394 10.5791L16.0179 10.4356C15.9156 9.97497 15.641 9.57381 15.2542 9.31253L15.0814 9.20999C14.9253 9.12785 14.6982 9.06544 14.2747 9.03225C13.8477 8.99881 13.2923 8.99807 12.5003 8.99807C12.2893 8.99807 12.0905 8.89822 11.9651 8.72854C11.8398 8.55879 11.8025 8.33942 11.8646 8.13772L12.6556 5.56741L12.7054 5.36331C12.8941 4.35953 12.216 3.37956 11.1878 3.2178L8.49054 7.93948C8.23033 8.39484 7.81431 8.72848 7.33136 8.88967V14.167ZM3.99835 13.5C3.99835 14.2111 3.99924 14.7044 4.03058 15.0879C4.06128 15.4636 4.11804 15.675 4.19854 15.833L4.26886 15.959C4.44517 16.2466 4.69805 16.4808 5.0003 16.6348L5.13019 16.6905C5.27397 16.7419 5.46337 16.7797 5.74542 16.8028C5.97772 16.8217 6.25037 16.828 6.58722 16.8311C6.41249 16.585 6.27075 16.3136 6.1712 16.0215L6.10968 15.8194C5.99614 15.3956 6.00128 14.899 6.00128 14.167V9.00296C5.79386 9.0067 5.65011 9.01339 5.53741 9.02737L5.3587 9.06057C4.76502 9.21965 4.29247 9.66448 4.09601 10.2412L4.06085 10.3584C4.00404 10.5705 3.99835 10.8493 3.99835 11.667V13.5Z">
+                                    </path>
+                                </svg></span></button><button
+                            class="text-token-text-secondary hover:bg-token-bg-secondary rounded-lg"
+                            aria-label="Bad response" aria-pressed="false" data-testid="bad-response-turn-action-button"
+                            data-state="closed"><span class="flex items-center justify-center touch:w-10 h-8 w-8"><svg
+                                    width="20" height="20" viewBox="0 0 20 20" fill="currentColor"
+                                    xmlns="http://www.w3.org/2000/svg" class="icon">
+                                    <path
+                                        d="M12.6687 5.83304C12.6687 5.22006 12.6649 4.91019 12.6394 4.70413L12.6062 4.52542C12.4471 3.93179 12.0022 3.45922 11.4255 3.26272L11.3083 3.22757C11.0963 3.17075 10.8175 3.16507 9.99974 3.16507H8.0554C7.04558 3.16507 6.62456 3.17475 6.32982 3.26175L6.2097 3.30374C5.95005 3.41089 5.71908 3.57635 5.53392 3.78616L5.45677 3.87796C5.30475 4.0748 5.20336 4.33135 5.03392 4.91702L4.83763 5.6221L4.45677 7.01761C4.24829 7.78204 4.10326 8.31846 4.02318 8.73929C3.94374 9.15672 3.94298 9.39229 3.98119 9.56448L4.03587 9.75784C4.18618 10.1996 4.50043 10.5702 4.91771 10.7901L5.05052 10.8477C5.20009 10.9014 5.40751 10.9429 5.72533 10.9678C6.15231 11.0012 6.70771 11.002 7.49974 11.002C7.71076 11.002 7.90952 11.1018 8.0349 11.2715C8.14465 11.4201 8.18683 11.6067 8.15404 11.7862L8.13548 11.8623L7.34447 14.4326C7.01523 15.5033 7.71404 16.6081 8.81126 16.7813L11.5095 12.0606L11.5827 11.9405C11.8445 11.5461 12.2289 11.2561 12.6687 11.1094V5.83304ZM17.3318 8.33304C17.3318 8.97366 17.3364 9.43432 17.2615 9.82327L17.2234 9.98538C16.949 11.0094 16.1821 11.8233 15.1872 12.1621L14.9861 12.2237C14.5624 12.3372 14.0656 12.3321 13.3337 12.3321C13.0915 12.3321 12.8651 12.4453 12.7204 12.6348L12.6638 12.7198L9.74388 17.8301C9.61066 18.0631 9.35005 18.1935 9.08372 18.1602L8.70579 18.1123C6.75379 17.8682 5.49542 15.9213 6.07396 14.041L6.60033 12.3272C6.22861 12.3233 5.90377 12.3161 5.62083 12.294C5.18804 12.26 4.79914 12.1931 4.44701 12.0391L4.29857 11.9668C3.52688 11.5605 2.95919 10.8555 2.72533 10.0205L2.68333 9.85257C2.58769 9.42154 2.62379 8.97768 2.71654 8.49026C2.80865 8.00634 2.97082 7.41139 3.17357 6.668L3.55443 5.27249L3.74583 4.58011C3.9286 3.94171 4.10186 3.45682 4.40404 3.06546L4.53685 2.9053C4.85609 2.54372 5.25433 2.25896 5.70189 2.07425L5.93626 1.99222C6.49455 1.82612 7.15095 1.83499 8.0554 1.83499H12.6667C13.3558 1.83499 13.9128 1.83434 14.363 1.87112C14.8208 1.90854 15.2266 1.98789 15.6033 2.17972L15.821 2.30179C16.317 2.6059 16.7215 3.04226 16.987 3.56351L17.0535 3.70608C17.1977 4.04236 17.2629 4.40311 17.2956 4.80374C17.3324 5.25398 17.3318 5.81094 17.3318 6.50003V8.33304ZM13.9978 10.9961C14.3321 10.9901 14.5013 10.977 14.6413 10.9395L14.7585 10.9033C15.3353 10.7069 15.7801 10.2353 15.9392 9.64163L15.9724 9.46292C15.998 9.25682 16.0017 8.94657 16.0017 8.33304V6.50003C16.0017 5.78899 16.0008 5.29566 15.9695 4.91214C15.9464 4.6301 15.9086 4.44069 15.8572 4.2969L15.8015 4.16702C15.6475 3.86478 15.4133 3.6119 15.1257 3.43558L14.9997 3.36526C14.8418 3.28477 14.6302 3.228 14.2546 3.19729C14.0221 3.1783 13.7491 3.17109 13.4118 3.168C13.6267 3.47028 13.7914 3.81126 13.8904 4.18069L13.9275 4.34378C13.981 4.62163 13.9947 4.93582 13.9978 5.3262V10.9961Z">
+                                    </path>
+                                </svg></span></button><button
+                            class="text-token-text-secondary hover:bg-token-bg-secondary rounded-lg" aria-label="Share"
+                            aria-pressed="false" data-state="closed"><span
+                                class="flex items-center justify-center touch:w-10 h-8 w-8"><svg width="20" height="20"
+                                    viewBox="0 0 20 20" fill="currentColor" xmlns="http://www.w3.org/2000/svg"
+                                    class="icon">
+                                    <path
+                                        d="M2.66821 12.6663V12.5003C2.66821 12.1331 2.96598 11.8353 3.33325 11.8353C3.70052 11.8353 3.99829 12.1331 3.99829 12.5003V12.6663C3.99829 13.3772 3.9992 13.8707 4.03052 14.2542C4.0612 14.6298 4.11803 14.8413 4.19849 14.9993L4.2688 15.1263C4.44511 15.4137 4.69813 15.6481 5.00024 15.8021L5.13013 15.8577C5.2739 15.9092 5.46341 15.947 5.74536 15.97C6.12888 16.0014 6.62221 16.0013 7.33325 16.0013H12.6663C13.3771 16.0013 13.8707 16.0014 14.2542 15.97C14.6295 15.9394 14.8413 15.8825 14.9993 15.8021L15.1262 15.7308C15.4136 15.5545 15.6481 15.3014 15.802 14.9993L15.8577 14.8695C15.9091 14.7257 15.9469 14.536 15.97 14.2542C16.0013 13.8707 16.0012 13.3772 16.0012 12.6663V12.5003C16.0012 12.1332 16.2991 11.8355 16.6663 11.8353C17.0335 11.8353 17.3313 12.1331 17.3313 12.5003V12.6663C17.3313 13.3553 17.3319 13.9124 17.2952 14.3626C17.2624 14.7636 17.1974 15.1247 17.053 15.4613L16.9866 15.6038C16.7211 16.1248 16.3172 16.5605 15.8215 16.8646L15.6038 16.9866C15.227 17.1786 14.8206 17.2578 14.3625 17.2952C13.9123 17.332 13.3553 17.3314 12.6663 17.3314H7.33325C6.64416 17.3314 6.0872 17.332 5.63696 17.2952C5.23642 17.2625 4.87552 17.1982 4.53931 17.054L4.39673 16.9866C3.87561 16.7211 3.43911 16.3174 3.13501 15.8216L3.01294 15.6038C2.82097 15.2271 2.74177 14.8206 2.70435 14.3626C2.66758 13.9124 2.66821 13.3553 2.66821 12.6663ZM9.33521 12.5003V4.9388L7.13696 7.13704C6.87732 7.39668 6.45625 7.39657 6.19653 7.13704C5.93684 6.87734 5.93684 6.45631 6.19653 6.19661L9.52954 2.86263L9.6311 2.77962C9.73949 2.70742 9.86809 2.66829 10.0002 2.66829C10.1763 2.66838 10.3454 2.73819 10.47 2.86263L13.804 6.19661C14.0633 6.45628 14.0634 6.87744 13.804 7.13704C13.5443 7.39674 13.1222 7.39674 12.8625 7.13704L10.6653 4.93977V12.5003C10.6651 12.8673 10.3673 13.1652 10.0002 13.1654C9.63308 13.1654 9.33538 12.8674 9.33521 12.5003Z">
+                                    </path>
+                                </svg></span></button><span class="" data-state="closed"><button type="button"
+                                id="radix-_r_d7_" aria-haspopup="menu" aria-expanded="false" data-state="closed"
+                                class="cursor-pointer text-token-text-secondary hover:bg-token-bg-secondary touch:px-2.5 h-[30px] rounded-md px-1.5"
+                                aria-label="Switch model">
+                                <div class="flex items-center"><svg width="20" height="20" viewBox="0 0 20 20"
+                                        fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="icon">
+                                        <path
+                                            d="M3.502 16.6663V13.3333C3.502 12.9661 3.79977 12.6683 4.16704 12.6683H7.50004L7.63383 12.682C7.93691 12.7439 8.16508 13.0119 8.16508 13.3333C8.16508 13.6547 7.93691 13.9227 7.63383 13.9847L7.50004 13.9984H5.47465C6.58682 15.2249 8.21842 16.0013 10 16.0013C13.06 16.0012 15.5859 13.711 15.9551 10.7513L15.9854 10.6195C16.0845 10.3266 16.3785 10.1334 16.6973 10.1732C17.0617 10.2186 17.3198 10.551 17.2745 10.9154L17.2247 11.2523C16.6301 14.7051 13.6224 17.3313 10 17.3314C8.01103 17.3314 6.17188 16.5383 4.83208 15.2474V16.6663C4.83208 17.0335 4.53411 17.3311 4.16704 17.3314C3.79977 17.3314 3.502 17.0336 3.502 16.6663ZM4.04497 9.24935C3.99936 9.61353 3.66701 9.87178 3.30278 9.8265C2.93833 9.78105 2.67921 9.44876 2.72465 9.08431L4.04497 9.24935ZM10 2.66829C11.9939 2.66833 13.8372 3.46551 15.1778 4.76204V3.33333C15.1778 2.96616 15.4757 2.66844 15.8428 2.66829C16.2101 2.66829 16.5079 2.96606 16.5079 3.33333V6.66634C16.5079 7.03361 16.2101 7.33138 15.8428 7.33138H12.5098C12.1425 7.33138 11.8448 7.03361 11.8448 6.66634C11.8449 6.29922 12.1426 6.0013 12.5098 6.0013H14.5254C13.4133 4.77488 11.7816 3.99841 10 3.99837C6.93998 3.99837 4.41406 6.28947 4.04497 9.24935L3.38481 9.16634L2.72465 9.08431C3.17574 5.46702 6.26076 2.66829 10 2.66829Z">
+                                        </path>
+                                    </svg></div>
+                            </button></span><button
+                            class="text-token-text-secondary hover:bg-token-bg-secondary touch:w-10 flex h-8 w-8 items-center justify-center rounded-lg"
+                            aria-label="More actions" type="button" id="radix-_r_da_" aria-haspopup="menu"
+                            aria-expanded="false" data-state="closed"><svg width="20" height="20" viewBox="0 0 20 20"
+                                fill="currentColor" xmlns="http://www.w3.org/2000/svg" class="icon">
+                                <path
+                                    d="M15.498 8.50159C16.3254 8.50159 16.9959 9.17228 16.9961 9.99963C16.9961 10.8271 16.3256 11.4987 15.498 11.4987C14.6705 11.4987 14 10.8271 14 9.99963C14.0002 9.17228 14.6706 8.50159 15.498 8.50159Z">
+                                </path>
+                                <path
+                                    d="M4.49805 8.50159C5.32544 8.50159 5.99689 9.17228 5.99707 9.99963C5.99707 10.8271 5.32555 11.4987 4.49805 11.4987C3.67069 11.4985 3 10.827 3 9.99963C3.00018 9.17239 3.6708 8.50176 4.49805 8.50159Z">
+                                </path>
+                                <path
+                                    d="M10.0003 8.50159C10.8276 8.50176 11.4982 9.17239 11.4984 9.99963C11.4984 10.827 10.8277 11.4985 10.0003 11.4987C9.17283 11.4987 8.50131 10.8271 8.50131 9.99963C8.50149 9.17228 9.17294 8.50159 10.0003 8.50159Z">
+                                </path>
+                            </svg></button></div>
+                </div>
+                <div class="mt-3 w-full empty:hidden">
+                    <div class="text-center"></div>
+                </div>
+            </div>
+        </div>
+    </article>
+</body>
+
+</html>
