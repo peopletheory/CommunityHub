@@ -8,6 +8,11 @@ const masterSettingSchema = new Schema({
         type: mongoose.Types.ObjectId,
         required: true,
         ref: "NavigationSetting"
+    },
+    memberFields: {
+        type: mongoose.Types.ObjectId,
+        required: true,
+        ref: "MemberFieldSetting"
     }
 })
 

@@ -21,6 +21,8 @@ select {
   font-size: 25px;
   border-radius: 10px;
   align-items: center;
+  padding-left: 25px;
+  color: gray;
 }
 .selectView{
     width: 100%;
@@ -67,30 +69,29 @@ Retrieved 2025-11-19, License - CC BY-SA 3.0
 */
 
 .select_box{
-  overflow: hidden;
-  border: 1px solid #000;
-  position: relative;
       width: 85%;
     margin: auto;
-
+  height: 52px;
+  outline: none;
 }
 .select_box:after{
     width: 0px;
-    height: 0px;
-    border-left: 15px solid transparent;
-    border-right: 15px solid transparent;
-    border-top: 20px solid lightgray;
+    height: 0px;    
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid gray;
     position: absolute;
     top: 40%;
-    right: 5px;
+    right: 20px;
     content: "";
-    z-index: 98;
+    z-index: 100;
  }
 .select_box select{
-  border: 0;
+  border: 1px solid #ccc;
+  border-radius: 10px;
   position: relative;
   z-index: 99;
-  background: none;
+  background: #333;
   height: 100%;
   appearance: none; /* Disable the default arrow */
     -webkit-appearance: none; /* For WebKit-based browsers */

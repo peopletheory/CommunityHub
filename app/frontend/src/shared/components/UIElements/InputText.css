@@ -56,3 +56,6 @@ label.input_dark{
     background: linear-gradient(180deg, #666 50%, #333 50%) !important;
     color: white !important;
 }
+.inputWhite{
+    background-color: whitesmoke !important;
+}

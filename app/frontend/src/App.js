@@ -71,19 +71,37 @@ function App() {
     )
   }
 
+  let start;
+
+  if(token){
+    start = (
+      <>
+        <Background />
+        <TopBar />
+        <NavigationBar />
+        <div className="mainContent">
+          <div className="workspace">
+            {routes}
+          </div>
+        </div>
+      </>
+    )
+  }
+  else{
+    start = (
+      <>
+        <Background />
+        {routes}
+      </>
+    )
+  }
+
   return (
     <ClientContext.Provider value={{subdomain: domain, clientID: clientId, clientName: clientName}}>
       <AuthContext.Provider value={{ isLoggedIn: !!token, token: token, login: login, logout: logout, userId: userId}}>
         <Router>
           <main>
-            <Background />
-            <TopBar />
-            <NavigationBar />
-            <div className="mainContent">
-              <div className="workspace">
-                {routes}
-              </div>
-            </div>
+            {start}
           </main>
         </Router>
       </AuthContext.Provider>

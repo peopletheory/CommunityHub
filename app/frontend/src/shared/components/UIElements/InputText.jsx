@@ -6,8 +6,13 @@ const InputText = ({ group , type, placeholder, inputGrab, labelGrab, state, set
     setState(event.target.value);
   };
 
+  var placeholderInput;
+
   if(required){
-    var placeholderInput = placeholder + " *";
+    placeholderInput = placeholder + " *";
+  }
+  else{
+    placeholderInput = placeholder;
   }
     return (
         <>

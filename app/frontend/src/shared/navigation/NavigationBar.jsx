@@ -6,11 +6,20 @@ import NavigationItem from "./NavigationItem";
 import { useHttpClient } from "../hooks/http-hook";
 import { getIcon } from "../util/icon";
 
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 
 import "./NavigationBar.css";
 
 const NavigationBar = () => {
+
+    const activeLocations = {
+        "/": "",
+        "/members": "members"
+    }
+
+    let location = useLocation().pathname;
+    let active = activeLocations[location];
+
     const { isLoading, error, sendRequest, clearError} = useHttpClient();
     const { clientID } = useContext(ClientContext);
     const [navigationLinks, setNavigationLinks] = useState([]);
@@ -58,13 +67,14 @@ const NavigationBar = () => {
         fetchNavigationSetting();
     }, [clientID, sendRequest]);
 
+    console.log(navigationLinks);
 
     return (
         <>
             <div className="navigationContainer shadow2">
                 <div className="navigationList navigationBar">
                     {navigationLinks.map((i) => (
-                        <NavigationItem item={i}/>
+                        <NavigationItem active={active} item={i}/>
                     ))}
 
                 </div>

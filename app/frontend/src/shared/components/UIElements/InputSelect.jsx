@@ -8,11 +8,11 @@ const InputSelect = () => {
         <>
             <div className="inputContainer selectContainer select_box">
                 <select className="custom-select ">
+                    <option value="">Select Whatever</option>
                     <option value="option1">Option 1</option>
                     <option value="option2">Option 2</option>
                     <option value="option3">Option 3</option>
                 </select>
-                
             </div>
         </>
     )

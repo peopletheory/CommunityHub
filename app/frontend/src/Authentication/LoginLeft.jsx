@@ -28,9 +28,9 @@ const LoginLeft = ({email, setEmail, password, setPassword, login}) => {
                 <form action="">
                     <InputText group="login" type="email" placeholder="Email" inputGrab="input_field" labelGrab="input_label"
                     value={email}
-                    setState={setEmail}/>
+                    setState={setEmail} color={'inputWhite'}/>
 
-                    <InputText group="login" type="password" placeholder="Password" value={password} setState={setPassword}/>
+                    <InputText group="login" type="password" placeholder="Password" value={password} setState={setPassword} color={"inputWhite"}/>
                 </form>
             </div>
 
