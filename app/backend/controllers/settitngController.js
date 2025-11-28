@@ -245,13 +245,35 @@ const saveMyStuff = async (req, res, next) => {
     const master = await MasterSetting.findById(masterID);
     const setting = await MemberFieldSetting.findById(settingid);
 
-    master.memberFields = setting;
+    setting.zipcode = {
+        included: true,
+        type: "text",
+        name: "ZipCode",
+        slug: "zipcode",
+        options: null,
+        req: true,
+        validation: null,
+    }
 
-    await master.save();
+    await setting.save();
 
-    res.json(master);
+    res.json(setting);
 }
 
+const getMemberFields = async (req, res, next) => {
+    const clientID = req.params.cid;
+
+    const myClient = await Client.findById(clientID);
+    const settingID = myClient.settings;
+
+    const masterSetting = await MasterSetting.findById(settingID);
+
+    const memberFieldID = masterSetting.memberFields;
+    
+    const MemberFieldList = await MemberFieldSetting.findById(memberFieldID);
+
+    res.json(MemberFieldList);
+}
 
 const getNavigation = async (req, res, next) => {
     const clientID = req.params.cid;
@@ -347,3 +369,4 @@ exports.masterSetting = masterSetting;
 exports.getNavigation = getNavigation;
 exports.saveMyStuff = saveMyStuff;
 exports.memberFields = memberFields;
+exports.getMemberFields = getMemberFields;

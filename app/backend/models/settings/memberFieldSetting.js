@@ -34,7 +34,7 @@ const memberFieldSettingSchema = new Schema({
     state: {
         type: memberField
     },
-    zicode: {
+    zipcode: {
         type: memberField
     },
     municipality: {

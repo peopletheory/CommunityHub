@@ -12,5 +12,6 @@ router.get("/navigation", settingController.navigationSetting);
 router.get("/master", settingController.masterSetting);
 
 router.get("/getNavigation/:cid", settingController.getNavigation);
+router.get("/getMemberFields/:cid", settingController.getMemberFields);
 
 module.exports = router;
