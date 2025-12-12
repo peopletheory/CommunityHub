@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 import InputText from "../shared/components/UIElements/InputText";
+import FancyHeading from "../shared/components/UIElements/FancyHeading";
 
 import "./MemberContent.css";
 
@@ -10,19 +11,16 @@ const MemberContent = () => {
     return (
         <>
             <div className="leftMemberContainer memberSection">
-                <h3 className="sectionHeading">Search for Members</h3>
+                <FancyHeading text="Search for Members" />
 
-                <div className="member_bar"></div>
-
-                <InputText color="darkInput" state={searchValue} setState={setSearchValue} placeholder={"Serach"} />
+                <InputText color="dark_white" state={searchValue} setState={setSearchValue} placeholder={"Serach"} label="dark_white" required={false} />
             </div>
             <div className="rightMemberContainer memberSection">
-                <h3 className="sectionHeading">Member Actions</h3>
-
-                <div className="member_bar"></div>
+                <FancyHeading text="Member Information" />
+                <FancyHeading text="Member Actions" />
             </div>
         </>
-    )
-}
+    );
+};
 
 export default MemberContent;

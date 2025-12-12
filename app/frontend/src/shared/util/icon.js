@@ -1,4 +1,3 @@
-
 import { FaSun, FaUser } from "react-icons/fa";
 import { FiSidebar } from "react-icons/fi";
 
@@ -19,30 +18,29 @@ import { LuUsers } from "react-icons/lu";
 import { FaUserAltSlash } from "react-icons/fa";
 import { BsFillPersonPlusFill } from "react-icons/bs";
 import { FaCaretDown } from "react-icons/fa";
-
-
+import { FaCalendarAlt } from "react-icons/fa";
 
 export const getIcon = (iconName) => {
-
     const icons = {
-        "IoHome": <IoHome />,
-        "FaHome": <FaHome />,
-        "FaUsers": <FaUsers />,
-        "MdEvent": <MdEvent />,
-        "TbReportMoney": <TbReportMoney/>,
-        "TbReport": <TbReport />,
-        "FaBullhorn": <FaBullhorn />,
-        "FaBuildingColumns": <FaBuildingColumns />,
-        "IoSettingsOutline": <IoSettingsOutline />,
-        "FaSearch": <FaSearch />,
-        "FaPlus": <FaPlus />,
-        "LuUsers": <LuUsers />,
-        "FaUserAltSlash": <FaUserAltSlash />,
-        "BsFillPersonPlusFill": <BsFillPersonPlusFill />,
-        "FaCaretDown": <FaCaretDown />
+        IoHome: <IoHome />,
+        FaHome: <FaHome />,
+        FaUsers: <FaUsers />,
+        MdEvent: <MdEvent />,
+        TbReportMoney: <TbReportMoney />,
+        TbReport: <TbReport />,
+        FaBullhorn: <FaBullhorn />,
+        FaBuildingColumns: <FaBuildingColumns />,
+        IoSettingsOutline: <IoSettingsOutline />,
+        FaSearch: <FaSearch />,
+        FaPlus: <FaPlus />,
+        LuUsers: <LuUsers />,
+        FaUserAltSlash: <FaUserAltSlash />,
+        BsFillPersonPlusFill: <BsFillPersonPlusFill />,
+        FaCaretDown: <FaCaretDown />,
+        FaCalendarAlt: <FaCalendarAlt />,
     };
 
     const icon = icons[iconName];
 
     return icon;
-}
+};

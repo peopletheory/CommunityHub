@@ -1,0 +1,15 @@
+h3.sectionHeading {
+    width: 100%;
+    text-align: center;
+    border-bottom: 3px solid #06acdc;
+    line-height: 0.1em;
+    margin: 10px 0 20px;
+    text-transform: uppercase;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+h3.sectionHeading span {
+    background: rgb(51, 51, 51);
+    padding: 0 10px;
+    font-size: 26px;
+}

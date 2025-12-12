@@ -8,8 +8,7 @@ const Client = require("./../models/client");
 
 const { create } = require("../models/user");
 
-const memberFields = async(req, res, next) => {
-
+const memberFields = async (req, res, next) => {
     var memberField = {
         firstName: {
             included: true,
@@ -18,7 +17,7 @@ const memberFields = async(req, res, next) => {
             slug: "firstName",
             options: null,
             req: true,
-            validation: null
+            validation: null,
         },
         nickname: {
             included: true,
@@ -27,7 +26,7 @@ const memberFields = async(req, res, next) => {
             slug: "nickname",
             options: null,
             req: false,
-            validation: null
+            validation: null,
         },
         lastName: {
             included: true,
@@ -36,7 +35,7 @@ const memberFields = async(req, res, next) => {
             slug: "lastName",
             options: null,
             req: true,
-            validation: null
+            validation: null,
         },
         address1: {
             included: true,
@@ -45,7 +44,7 @@ const memberFields = async(req, res, next) => {
             slug: "address1",
             options: null,
             req: true,
-            validation: null
+            validation: null,
         },
         address2: {
             included: true,
@@ -54,7 +53,7 @@ const memberFields = async(req, res, next) => {
             slug: "address2",
             options: null,
             req: false,
-            validation: null
+            validation: null,
         },
         city: {
             included: true,
@@ -63,7 +62,7 @@ const memberFields = async(req, res, next) => {
             slug: "city",
             options: null,
             req: true,
-            validation: null
+            validation: null,
         },
         state: {
             included: true,
@@ -71,59 +70,59 @@ const memberFields = async(req, res, next) => {
             name: "State",
             slug: "state",
             options: {
-                "AL": "Alabama",
-                "AK": "Alaska",
-                "AZ": "Arizona",
-                "AR": "Arkansas",
-                "CA": "California",
-                "CO": "Colorado",
-                "CT": "Connecticut",
-                "DE": "Delaware",
-                "FL": "Florida",
-                "GA": "Georgia",
-                "HI": "Hawaii",
-                "ID": "Idaho",
-                "IL": "Illinois",
-                "IN": "Indiana",
-                "IA": "Iowa",
-                "KS": "Kansas",
-                "KY": "Kentucky",
-                "LA": "Louisiana",
-                "ME": "Maine",
-                "MD": "Maryland",
-                "MA": "Massachusetts",
-                "MI": "Michigan",
-                "MN": "Minnesota",
-                "MS": "Mississippi",
-                "MO": "Missouri",
-                "MT": "Montana",
-                "NE": "Nebraska",
-                "NV": "Nevada",
-                "NH": "New Hampshire",
-                "NJ": "New Jersey",
-                "NM": "New Mexico",
-                "NY": "New York",
-                "NC": "North Carolina",
-                "ND": "North Dakota",
-                "OH": "Ohio",
-                "OK": "Oklahoma",
-                "OR": "Oregon",
-                "PA": "Pennsylvania",
-                "RI": "Rhode Island",
-                "SC": "South Carolina",
-                "SD": "South Dakota",
-                "TN": "Tennessee",
-                "TX": "Texas",
-                "UT": "Utah",
-                "VT": "Vermont",
-                "VA": "Virginia",
-                "WA": "Washington",
-                "WV": "West Virginia",
-                "WI": "Wisconsin",
-                "WY": "Wyoming"
-                },
+                AL: "Alabama",
+                AK: "Alaska",
+                AZ: "Arizona",
+                AR: "Arkansas",
+                CA: "California",
+                CO: "Colorado",
+                CT: "Connecticut",
+                DE: "Delaware",
+                FL: "Florida",
+                GA: "Georgia",
+                HI: "Hawaii",
+                ID: "Idaho",
+                IL: "Illinois",
+                IN: "Indiana",
+                IA: "Iowa",
+                KS: "Kansas",
+                KY: "Kentucky",
+                LA: "Louisiana",
+                ME: "Maine",
+                MD: "Maryland",
+                MA: "Massachusetts",
+                MI: "Michigan",
+                MN: "Minnesota",
+                MS: "Mississippi",
+                MO: "Missouri",
+                MT: "Montana",
+                NE: "Nebraska",
+                NV: "Nevada",
+                NH: "New Hampshire",
+                NJ: "New Jersey",
+                NM: "New Mexico",
+                NY: "New York",
+                NC: "North Carolina",
+                ND: "North Dakota",
+                OH: "Ohio",
+                OK: "Oklahoma",
+                OR: "Oregon",
+                PA: "Pennsylvania",
+                RI: "Rhode Island",
+                SC: "South Carolina",
+                SD: "South Dakota",
+                TN: "Tennessee",
+                TX: "Texas",
+                UT: "Utah",
+                VT: "Vermont",
+                VA: "Virginia",
+                WA: "Washington",
+                WV: "West Virginia",
+                WI: "Wisconsin",
+                WY: "Wyoming",
+            },
             req: true,
-            validation: null
+            validation: null,
         },
         zipcode: {
             included: true,
@@ -132,7 +131,7 @@ const memberFields = async(req, res, next) => {
             slug: "zipcode",
             options: null,
             req: true,
-            validation: ["5digit"]
+            validation: ["5digit"],
         },
         municipality: {
             included: true,
@@ -140,13 +139,13 @@ const memberFields = async(req, res, next) => {
             name: "Municipality",
             slug: "municipality",
             options: {
-                "csl": "City of South Lyon",
-                "lyon": "Lyon Township",
-                "got": "Green Oak Township",
-                "other": "Other"
+                csl: "City of South Lyon",
+                lyon: "Lyon Township",
+                got: "Green Oak Township",
+                other: "Other",
             },
             req: true,
-            validation: null
+            validation: null,
         },
         emailAddress: {
             included: true,
@@ -155,16 +154,16 @@ const memberFields = async(req, res, next) => {
             slug: "emailAddress",
             options: null,
             req: true,
-            validation: null
+            validation: null,
         },
-        primaryPhoneNumber:{
+        primaryPhoneNumber: {
             included: true,
             type: "text",
             name: "Primary Phone Number",
             slug: "primaryPhoneNumber",
             options: null,
             req: true,
-            validation: null
+            validation: null,
         },
         secondaryPhoneNumber: {
             included: true,
@@ -173,7 +172,7 @@ const memberFields = async(req, res, next) => {
             slug: "secondaryPhoneNumber",
             options: null,
             req: false,
-            validation: null
+            validation: null,
         },
         emergencyNameOne: {
             included: true,
@@ -182,7 +181,7 @@ const memberFields = async(req, res, next) => {
             slug: "emergencyNameOne",
             options: null,
             req: false,
-            validation: null
+            validation: null,
         },
         emergencyPhoneOne: {
             included: true,
@@ -191,7 +190,7 @@ const memberFields = async(req, res, next) => {
             slug: "emergencyPhoneOne",
             options: null,
             req: false,
-            validation: null
+            validation: null,
         },
         emergencyRelationOne: {
             included: true,
@@ -200,7 +199,7 @@ const memberFields = async(req, res, next) => {
             slug: "emergencyRelationOne",
             options: null,
             req: false,
-            validation: null
+            validation: null,
         },
         emergencyNameTwo: {
             included: true,
@@ -209,7 +208,7 @@ const memberFields = async(req, res, next) => {
             slug: "emergencyNameTwo",
             options: null,
             req: false,
-            validation: null
+            validation: null,
         },
         emergencyPhoneTwo: {
             included: true,
@@ -218,7 +217,7 @@ const memberFields = async(req, res, next) => {
             slug: "emergencyPhoneTwo",
             options: null,
             req: false,
-            validation: null
+            validation: null,
         },
         emergencyRelationTwo: {
             included: true,
@@ -227,38 +226,32 @@ const memberFields = async(req, res, next) => {
             slug: "emergencyRelationTwo",
             options: null,
             req: false,
-            validation: null
-        }
-    }
+            validation: null,
+        },
+    };
 
     const mySetting = await new MemberFieldSetting(memberField);
 
     await mySetting.save();
 
-
     res.json(mySetting);
-}
+};
 
 const saveMyStuff = async (req, res, next) => {
     const settingid = "691f837e3d0f176f68d139f8";
-    const masterID = "6917a4af4d3bac9e06687496";
-    const master = await MasterSetting.findById(masterID);
     const setting = await MemberFieldSetting.findById(settingid);
 
-    setting.zipcode = {
-        included: true,
-        type: "text",
-        name: "ZipCode",
-        slug: "zipcode",
-        options: null,
-        req: true,
-        validation: null,
+    const keys = Object.keys(setting._doc);
+
+    for (var k = 0; k < keys.length; k++) {
+        var key = keys[k];
+        setting[key]["unique"] = false;
     }
 
     await setting.save();
 
     res.json(setting);
-}
+};
 
 const getMemberFields = async (req, res, next) => {
     const clientID = req.params.cid;
@@ -269,11 +262,11 @@ const getMemberFields = async (req, res, next) => {
     const masterSetting = await MasterSetting.findById(settingID);
 
     const memberFieldID = masterSetting.memberFields;
-    
+
     const MemberFieldList = await MemberFieldSetting.findById(memberFieldID);
 
     res.json(MemberFieldList);
-}
+};
 
 const getNavigation = async (req, res, next) => {
     const clientID = req.params.cid;
@@ -287,82 +280,81 @@ const getNavigation = async (req, res, next) => {
     const NavigationList = await NavigationSetting.findById(navigationID);
 
     res.json(NavigationList);
-}
+};
 
 const masterSetting = async (req, res, next) => {
     var navigation = "6917a307c45e4d0678e2c469";
 
     const master = {
-        navigation: navigation
-    }
+        navigation: navigation,
+    };
 
     const createdSetting = new MasterSetting(master);
 
-    try{
+    try {
         await createdSetting.save();
-    } catch(err){
+    } catch (err) {
         const error = new HttpError("Something went wrong", 500);
         return next(error);
     }
 
     res.json(createdSetting);
-}
+};
 
 const navigationSetting = async (req, res, next) => {
-    
     const navigation = {
         home: {
             included: true,
             name: "Home",
-            icon: "FaHome"
+            icon: "FaHome",
         },
         members: {
             included: true,
             name: "Members",
-            icon: "FaUsers"
+            icon: "FaUsers",
         },
         events: {
             included: true,
             name: "Events",
-            icon: "MdEvent"
+            icon: "MdEvent",
         },
         payments: {
             included: true,
             name: "Payments",
-            icon: "TbReportMoney"
+            icon: "TbReportMoney",
         },
         statistics: {
             included: true,
             name: "Statistics / Reporting",
-            icon: "TbReport"
+            icon: "TbReport",
         },
         communication: {
             included: true,
             name: "Communication",
-            icon: "FaBullhorn"
+            icon: "FaBullhorn",
         },
         facility: {
             included: true,
             name: "Facility and Faculty",
-            icon: "FaBuildingColumns"
+            icon: "FaBuildingColumns",
         },
         settings: {
             included: true,
             name: "Settings",
-            icon: "IoSettingsOutline"
-        }
+            icon: "IoSettingsOutline",
+        },
     };
 
     const createdSetting = new NavigationSetting(navigation);
 
-    try{
+    try {
         await createdSetting.save();
-    } catch(err){
+    } catch (err) {
         const error = new HttpError("Something went wrong", 500);
         return next(error);
     }
     res.json(navigation);
-}
+};
 
 exports.navigationSetting = navigationSetting;
 exports.masterSetting = masterSetting;

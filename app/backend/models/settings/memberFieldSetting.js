@@ -10,63 +10,67 @@ const memberField = new Schema({
     options: {},
     req: Boolean,
     validation: [],
+    unique: Boolean,
 });
 
 const memberFieldSettingSchema = new Schema({
     firstName: {
-        type: memberField
+        type: memberField,
     },
     nickname: {
-        type: memberField
+        type: memberField,
     },
-    lastName:{
-        type: memberField
+    lastName: {
+        type: memberField,
     },
-    address1:{
-        type: memberField
+    address1: {
+        type: memberField,
     },
-    address2:{
-        type: memberField
+    address2: {
+        type: memberField,
     },
     city: {
-        type: memberField
+        type: memberField,
     },
     state: {
-        type: memberField
+        type: memberField,
     },
     zipcode: {
-        type: memberField
+        type: memberField,
     },
     municipality: {
-        type: memberField
+        type: memberField,
     },
     emailAddress: {
-        type: memberField
+        type: memberField,
     },
     primaryPhoneNumber: {
-        type: memberField
+        type: memberField,
     },
     secondaryPhoneNumber: {
-        type: memberField
+        type: memberField,
     },
     emergencyNameOne: {
-        type: memberField
+        type: memberField,
     },
     emergencyPhoneOne: {
-        type: memberField
+        type: memberField,
     },
     emergencyRelationOne: {
-        type: memberField
+        type: memberField,
     },
     emergencyNameTwo: {
-        type: memberField
+        type: memberField,
     },
     emergencyPhoneTwo: {
-        type: memberField
+        type: memberField,
     },
     emergencyRelationTwo: {
-        type: memberField
-    }
+        type: memberField,
+    },
+    newsletterMethod: {
+        type: memberField,
+    },
 });
 
 module.exports = mongoose.model("MemberFieldSetting", memberFieldSettingSchema);
